@@ -1,0 +1,733 @@
+olorSpace =SetColorSpace
+}
+
+
+*%===================================
+*%%% Device fonts
+*%===================================
+
+*DefaultFont: =RC_FONT_COURIERR
+*DefaultCTT: 0
+
+*DeviceFonts: LIST(
++    =RC_FONT_ALBERTX,
++    =RC_FONT_AOLIVEB,
++    =RC_FONT_AOLIVER,
++    =RC_FONT_ARIALB,
++    =RC_FONT_ARIALI,
++    =RC_FONT_ARIALJ,
++    =RC_FONT_ARIALR,
++    =RC_FONT_COURIERB,
++    =RC_FONT_COURIERI,
++    =RC_FONT_COURIERJ,
++    =RC_FONT_COURIERR,
++    =RC_FONT_LETGOTHB,
++    =RC_FONT_LETGOTHI,
++    =RC_FONT_LETGOTHR,
++    =RC_FONT_MARGOLDR,
++    =RC_FONT_TIMESNRB,
++    =RC_FONT_TIMESNRI,
++    =RC_FONT_TIMESNRJ,
++    =RC_FONT_TIMESNRR,
++    =RC_FONT_WINGDINGS,
++    =RC_FONT_SYMBOL)
+
+*TTFS: AlbertusX
+{
+  *TTFontName: "Albertus Extra Bold"
+  *DevFontName: "Albertus Extra Bold"
+}
+*TTFS: AntiqueOlive
+{
+  *TTFontName: "Antique Olive"
+  *DevFontName: "Antique Olive"
+}
+*TTFS: LetterGothic
+{
+  *TTFontName: "Letter Gothic"
+  *DevFontName: "Letter Gothic"
+}
+*TTFS: Marigold
+{
+  *TTFontName: "Marigold"
+  *DevFontName: "Marigold"
+}
+
+*%===================================
+*%% Optional Tray2
+*%===================================
+*Feature: OptTray2
+{
+    *rcNameID: =TRAY2_DISPLAY *% Lower Paper tray
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: FALSE
+    *Option: FALSE
+    {
+        *rcNameID: =NOT_INSTALLED_DISPLAY
+    }
+    *Option: TRUE
+    {
+        *rcNameID: =INSTALLED_DISPLAY
+    }
+}
+
+*%===================================
+*%%% Printing attributes
+*%===================================
+*RotateCoordinate?: TRUE
+*RotateRaster?: TRUE
+*RotateFont?: TRUE
+*EjectPageWithFF?: FALSE
+
+*TextCaps: LIST(TC_CR_ANY,TC_CR_90,TC_SF_X_YINDEP,TC_SA_CONTIN,TC_IA_ABLE,TC_UA_ABLE)
+*MemoryUsage: LIST(FONT)
+*CursorXAfterCR: AT_PRINTABLE_X_ORIGIN
+*CursorXAfterSendBlockData: AT_GRXDATA_ORIGIN
+*CursorYAfterSendBlockData: AUTO_INCREMENT
+*BadCursorMoveInGrxMode: LIST(X_PORTRAIT,Y_LANDSCAPE)
+*XMoveThreshold: 0
+*YMoveThreshold: 0
+*XMoveUnit: 1200
+*YMoveUnit: 1200
+
+*%%% *MinGrayFill: 1
+*%%% *MaxGrayFill: 100
+
+*%%% *OutputDataFormat: H_BYTE
+*%%% *OptimizeLeftBound?: TRUE
+
+*%===================================
+*%%% Color
+*%===================================
+*Feature: ColorMode
+{
+    *ConcealFromUI?: TRUE
+    *rcNameID: =COLOR_PRINTING_MODE_DISPLAY
+    *DefaultOption: Mono
+    *Option: Mono
+    {
+        *rcNameID: =COLOR_DISPLAY
+        *Color?: FALSE
+        *DevNumOfPlanes: 1
+        *DevBPP: 24
+        *DrvBPP: 24
+        *PaletteSize: 256
+        *PaletteProgrammable?: FALSE
+    }
+}
+
+*%===================================
+*%%% TrueType fonts
+*%===================================
+
+*CharPosition: BASELINE
+*TTFSEnabled?: TRUE
+*FontFormat: OEM_CALLBACK
+*MinFontID: 1
+*MaxFontID: 65535
+*MinGlyphID: 1
+*MaxGlyphID: 1000
+
+*%===================================
+*%%% Cursor commands
+*%===================================
+
+*Command: CmdCR { *Cmd: =CR}
+*Command: CmdLF { *Cmd: =LF}
+*Command: CmdFF { *Cmd: =FF}
+
+*%%% SetCursor(0x6b)
+*%%%     Point(76(0x40c)) uint_16
+*%%% SetCursorRel(0x6c)
+*%%%     Point(76(0x40c)) uint_16
+*Command: CmdXMoveAbsolute
+{
+    *Cmd: ""
+}
+*Command: CmdXMoveRelRight
+{
+    *Cmd: ""
+    *Params: LIST(DestXRel, TextXRes)
+}
+*Command: CmdXMoveRelLeft
+{
+    *Cmd: ""
+    *Params: LIST(DestXRel, TextXRes)
+}
+*Command: CmdYMoveAbsolute
+{
+    *Cmd: ""
+    *Params: LIST(DestY, TextYRes)
+}
+*Command: CmdYMoveRelDown
+{
+    *Cmd: ""
+    *Params: LIST(DestYRel, TextYRes)
+}
+*Command: CmdYMoveRelUp
+{
+    *Cmd: ""
+    *Params: LIST(DestYRel, TextYRes)
+}
+*%%% *Command: CmdPushCursor
+*%%% *Command: CmdPopCursor
+
+*%===================================
+*%%% Font commands
+*%===================================
+
+*Command: CmdSetFontID { *Cmd : "" }
+*Command: CmdSelectFontID
+{
+    *Cmd: ""
+    *Params: LIST(FontHeight, CurrentFontID, TextYRes)
+}
+
+*Command: CmdSetCharCode
+{
+    *Cmd : ""
+}
+
+*Command: CmdBoldOn
+{
+    *Cmd : ""
+}
+*Command: CmdBoldOff
+{
+    *Cmd : ""
+}
+*%%% *Command: CmdItalicOn: "=real32_xy "<3ea1e4f700000000>" =attr_ubyte =eCharShear =SetCharShear"
+*%%% *Command: CmdItalicOff: "=real32_xy "<0000000000000000>" =attr_ubyte =eCharShear =SetCharShear"
+*%%% *Command: CmdWhiteTextOn:
+*%%% *Command: CmdWhiteTextOff:
+*%%% *Command: CmdSelectSingleByteMode:
+*%%% *Command: CmdSelectDoubleByteMode:
+*Command: CmdSetAnyRotation
+{
+    *Cmd: ""
+    *Params: LIST(PrintDirInCCDegrees)
+}
+*Command: CmdSetSimpleRotation
+{
+    *Cmd: ""
+    *Params: LIST(PrintDirInCCDegrees)
+}
+
+*% =========================================================
+*%  UI Constraints
+*% =========================================================
+*InvalidCombination: LIST(OptTray2.FALSE,InputBin.LOWER)
+
+*% =========================================================
+*%  Duplex - ReverseDuplex
+*% =========================================================
+*InvalidCombination: LIST(Duplex.NONE, ReverseDuplex.ON)
+*% =========================================================
+*%  InputBin - PaperType (Transparency)
+*% =========================================================
+*InvalidCombination: LIST(InputBin.UPPER, MediaType.Transparency)
+*InvalidCombination: LIST(InputBin.LOWER, MediaType.Transparency)
+*% =========================================================
+*%  Duplex - MedaiType
+*% =========================================================
+*InvalidCombination: LIST(MediaType.Bond, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Bond, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Thin, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Thin, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Thick, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Thick, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Color, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Color, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Envelope, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Envelope, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Transparency, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Transparency, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Labels, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Labels, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.CardStock, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.CardStock, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(MediaType.Archive, Duplex.VERTICAL)
+*InvalidCombination: LIST(MediaType.Archive, Duplex.HORIZONTAL)
+
+
+*% =========================================================
+*%  Duplex - PaperSize
+*% =========================================================
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.ENV_10)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.ENV_DL)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.ENV_C5)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.ENV_MONARCH)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.ENV_B5)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.EXECUTIVE)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.A5)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.B5)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.A6)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.ENV_C6)
+*InvalidCombination: LIST(Duplex.VERTICAL, PaperSize.POSTCARD)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.ENV_10)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.ENV_DL)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.ENV_C5)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.ENV_MONARCH)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.ENV_B5)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.EXECUTIVE)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.A5)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.B5)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.A6)
+*InvalidCombination: LIST(Duplex.HORIZONTAL, PaperSize.POSTCARD)
+
+*% =========================================================
+*%  A6,PostCard (PageSize) - MediaType
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.A6, MediaType.Envelope)
+*InvalidCombination: LIST(PaperSize.A6, MediaType.Transparency)
+
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.PrinterDefault)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Plain)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Thick)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Thin)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Bond)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Color)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Envelope)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Preprinted)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Recycled)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Archive)
+
+*% =========================================================
+*%  Statement (PageSize) - MediaType
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.STATEMENT, MediaType.Envelope)
+*InvalidCombination: LIST(PaperSize.STATEMENT, MediaType.Transparency)
+
+*% =========================================================
+*%  Envelope(PageSize) - MediaType
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.PrinterDefault)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Plain)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Thick)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Thin)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Bond)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Color)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Preprinted)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Recycled)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Archive)
+
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.PrinterDefault)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Plain)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Thick)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Thin)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Bond)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Color)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Preprinted)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Recycled)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Archive)
+
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.PrinterDefault)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Plain)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Thick)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Thin)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Bond)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Color)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Preprinted)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Recycled)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Archive)
+
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.PrinterDefault)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Plain)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Thick)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Thin)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Bond)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Color)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Preprinted)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Recycled)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Archive)
+
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.PrinterDefault)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Plain)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Thick)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Thin)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Bond)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Color)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Preprinted)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Recycled)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Archive)
+
+*% =========================================================
+*%  PageSize - Transparency(MediaType)
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.LEGAL, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.EXECUTIVE, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.A5, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.B5, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.FOLIO, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_10, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_DL, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_C5, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_C6, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.A6, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.STATEMENT, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.POSTCARD, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.OFICIO, MediaType.Transparency)
+
+*% =========================================================
+*%  PageSize - Duplex
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.ENV_10, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.ENV_10, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(PaperSize.ENV_DL, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.ENV_DL, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(PaperSize.ENV_C5, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.ENV_C5, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(PaperSize.ENV_C6, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.ENV_C6, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(PaperSize.A6, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.A6, Duplex.HORIZONTAL)
+*InvalidCombination: LIST(PaperSize.POSTCARD, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.POSTCARD, Duplex.HORIZONTAL)
+
+*% =========================================================
+*%  CustomPageSize - MediaType
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, MediaType.Transparency)
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, MediaType.Labels)
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, MediaType.CardStock)
+
+
+*% =========================================================
+*%  CustomPageSize - Duplex
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, Duplex.HORIZONTAL)
+
+*% =========================================================
+*%  CustomPageSize - Transparency
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, MediaType.Transparency)
+
+*% =========================================================
+*%  CustomPageSize - InputSlot
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, InputBin.LOWER)
+
+*% =========================================================
+*%  PaperType - InputSlot
+*% =========================================================
+*InvalidCombination: LIST(MediaType.Bond, InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.Bond, InputBin.LOWER)
+*InvalidCombination: LIST(MediaType.Color, InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.Color, InputBin.LOWER)
+*InvalidCombination: LIST(MediaType.Envelope, InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.Envelope, InputBin.LOWER)
+*InvalidCombination: LIST(MediaType.Transparency, InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.Transparency, InputBin.LOWER)
+*InvalidCombination: LIST(MediaType.Labels,InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.Labels, InputBin.LOWER)
+*InvalidCombination: LIST(MediaType.CardStock, InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.CardStock, InputBin.LOWER)
+*InvalidCombination: LIST(MediaType.Cotton, InputBin.UPPER)
+*InvalidCombination: LIST(MediaType.Cotton, InputBin.LOWER)
+
+*% =========================================================
+*%  PaperSize - InputSlot
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.STATEMENT, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.STATEMENT, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.A6, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.A6, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.ENV_MONARCH, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.ENV_DL, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.ENV_DL, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.ENV_C5, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.ENV_C5, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.ENV_C6, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.ENV_C6, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.ENV_10, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.ENV_10, InputBin.LOWER)
+*InvalidCombination: LIST(PaperSize.POSTCARD, InputBin.UPPER)
+*InvalidCombination: LIST(PaperSize.POSTCARD, InputBin.LOWER)
+
+*% =========================================================
+*%  CustomPageSize - Duplex
+*% =========================================================
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, Duplex.VERTICAL)
+*InvalidCombination: LIST(PaperSize.CUSTOMSIZE, Duplex.HORIZONTAL)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              *PPD-Adobe: "4.3"
+*% =========================================
+*% Disclaimer:  The above statement indicates
+*% that this PPD was written using the Adobe PPD
+*% File Format Specification 4.3, but does not 
+*% intend to imply approval and acceptance by
+*% Adobe Systems, Inc. 
+*% =========================================
+*% PPD for Samsung SCX-5835_5935 Series PS
+*% =========================================
+*FileVersion: "1.7"
+*FormatVersion: "4.3"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*PCFileName: "smf583.ppd"
+*Product: "(Samsung SCX-5835_5935 Series)"
+*Manufacturer:  "Samsung"
+*PSVersion: "(3011    ) 0"
+*ModelName: "Samsung SCX-5835_5935 Series"
+*ShortNickName: "Samsung SCX-5835_5935 Series PS"
+*NickName: "Samsung SCX-5835_5935 Series PS"
+*LanguageLevel: "3"
+*Protocols: PJL TBCP
+*FreeVM: "26800000"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*TTRasterizer: Type42
+*?TTRasterizer: "
+  save
+       42 /FontType resourcestatus
+       { pop pop (Type42)} {pop pop (None)} ifelse = flush
+  restore
+"
+*End
+
+*MSBidiQueryFile: "saacps.gdl"
+*% =========================================================
+*% Installable Options
+*% =========================================================
+*OpenGroup: InstallableOptions/Installed Options
+*OpenUI *OptTray2/Tray 2: Boolean
+*DefaultOptTray2: False
+*OptTray2 False/Not Installed: ""
+*OptTray2 True/Installed: ""
+*?OptTray2:"
+      save
+        currentpagedevice /InputAttributes get dup
+        4 known
+         { 4 get null ne {(True)}{(False)} ifelse}
+         { pop (False) } ifelse = flush
+       restore"
+*End
+*CloseUI: *OptTray2
+
+*OpenUI *InstalledMemory/Printer Memory: PickOne
+*DefaultInstalledMemory: 256MB
+*InstalledMemory 256MB/256 MB: ""
+*InstalledMemory 512MB/512 MB: ""
+*CloseUI: *InstalledMemory
+*CloseGroup: InstallableOptions
+
+*VMOption 256MB/256 MB: "26800000"
+*VMOption 512MB/512 MB: "53600000"
+
+*JCLBegin: ""
+*JCLToPSInterpreter: "@PJL ENTER LANGUAGE=POSTSCRIPT<0D0A>"
+*JCLEnd:""
+
+*%==========================================================
+*% Collate
+*%==========================================================
+*OpenUI *Collate/Collate:  Boolean
+*OrderDependency: 70 AnySetup *Collate
+*DefaultCollate: True
+*Collate False/Off: "<</Collate false>> setpagedevice"
+*Collate True/On: "<</Collate true>> setpagedevice"
+*?Collate: "
+   save
+      currentpagedevice /Collate get
+      {(True)}{(False)}ifelse = flush
+   restore
+"
+*End
+*CloseUI: *Collate
+
+*% =========================================================
+*%  Printer Features
+*% =========================================================
+
+*% =========================================================
+*%  Duplex
+*% =========================================================
+*OpenUI *Duplex/Double-sided Printing:  PickOne
+*OrderDependency: 60 AnySetup *Duplex
+*DefaultDuplex: None
+*Duplex None/None: " <</Duplex false>> setpagedevice"
+*Duplex DuplexNoTumble/Long Edge: "
+    <</Duplex true /Tumble false>> setpagedevice"
+*End
+*Duplex DuplexTumble/Short Edge: "
+    <</Duplex true /Tumble true>> setpagedevice"
+*End
+*?Duplex: "
+   save
+      currentpagedevice /Duplex get
+        {currentpagedevice /Tumble get
+            {(DuplexTumble)}{(DuplexNoTumble)}ifelse
+         }{(None)} ifelse = flush
+   restore
+"
+*End  
+*CloseUI: *Duplex
+
+*% =========================================================
+*%  Fit to Page
+*% =========================================================
+
+*OpenUI *PaperPolicy/Fit to Page: PickOne
+*OrderDependency: 25 AnySetup *PaperPolicy
+*DefaultPaperPolicy: Promptuser
+*PaperPolicy Promptuser/Prompt User: "
+   <</DeferredMediaSelection true>> setpagedevice"
+*End
+*PaperPolicy NearestSizeAdjust/Nearest Size and Scale: "
+   <</DeferredMediaSelection false /Policies << /PageSize 3 >> >> setpagedevice"
+*End
+*PaperPolicy NearestSizeNoAdjust/Nearest Size and Crop: "
+   <</DeferredMediaSelection false /Policies << /PageSize 5 >> >> setpagedevice"
+*End
+*CloseUI: *PaperPolicy
+
+*JCLOpenUI *JCLEconomode/Toner Save Mode: PickOne
+*OrderDependency: 10 JCLSetup *JCLEconomode
+*DefaultJCLEconomode: NONE
+*JCLEconomode NONE/Printer Setting: ""
+*JCLEconomode Off/Off: "@PJL SET ECONOMODE=OFF<0D0A>"
+*JCLEconomode On/On: "@PJL SET ECONOMODE=ON<0D0A>"
+*JCLCloseUI: *JCLEconomode
+
+
+*% =========================================================
+*%  Information Page
+*% =========================================================
+*JCLOpenUI *JCLBanner/Information Page: Boolean
+*OrderDependency: 10 JCLSetup *JCLBanner
+*DefaultJCLBanner: False
+*JCLBanner False/Off:"@PJL SET BANNERSHEET=OFF<0D0A>"
+*JCLBanner True/On:"@PJL SET BANNERSHEET=ON<0D0A>" 
+*JCLCloseUI: *JCLBanner
+
+*% =========================================================
+*%  ReverseDuplex
+*% =========================================================
+*OpenUI *SECReverseDuplex/Reverse Duplex Printing:  Boolean
+*OrderDependency: 100 AnySetup *SECReverseDuplex
+*DefaultSECReverseDuplex: False
+*SECReverseDuplex False/Off: "userdict /SECReverseDuplex false put"
+*SECReverseDuplex True/On: "userdict /SECReverseDuplex true put"
+*CloseUI: *SECReverseDuplex
+
+*% =========================================================
+*%  Media Type
+*% =========================================================
+*OpenUI *MediaType/Paper Type: PickOne
+*OrderDependency: 50 AnySetup *MediaType
+*DefaultMediaType: None
+*MediaType None/Printer Default:            ""
+*MediaType Plain/Plain:                     "<</MediaType (Plain)>> setpagedevice"
+*MediaType Thick/Thick:                     "<</MediaType (THICK)>> setpagedevice"
+*MediaType Thin/Thin:                       "<</MediaType (THIN)>> setpagedevice"
+*MediaType Bond/Bond:                       "<</MediaType (Bond)>> setpagedevice"
+*MediaType Color/Color:                     "<</MediaType (Color)>> setpagedevice"
+*MediaType Card/Cardstock:                  "<</MediaType (Card Stock)>> setpagedevice"
+*MediaType Labels/Labels:                   "<</MediaType (Labels)>> setpagedevice"
+*MediaType Transparency/Transparency:       "<</MediaType (Transparency)>> setpagedevice"
+*MediaType Envelope/Envelope:               "<</MediaType (Envelope)>> setpagedevice"
+*MediaType Preprinted/Preprinted:           "<</MediaType (Preprinted)>> setpagedevice"
+*MediaType Recycled/Recycled:               "<</MediaType (Recycled)>> setpagedevice"
+*MediaType Cotton/Cotton:                   "<</MediaType (COTTEN)>> setpagedevice"
+*MediaType Archive/Archive:					"<</MediaType (ARCHIVE)>> setpagedevice"
+*CloseUI: *MediaType
+
+*% =========================================================
+*%  Resolution & Halftone Information
+*% =========================================================
+
+*OpenUI *Resolution/Resolution: Boolean
+*OrderDependency: 10 AnySetup *Resolution
+*DefaultResolution: 600dpi
+*Resolution 1200dpi/1200 dpi (Best): "<</HWResolution [1200 1200]>> setpagedevice"
+*Resolution 600dpi/600 dpi (Normal): "<</HWResolution [600 600]>> setpagedevice"
+*?Resolution: "
+	save
+        currentpagedevice /HWResolution get
+        0 get
+ 	(          ) cvs print (dpi) = flush
+	restore"
+*End
+*CloseUI: *Resolution
+
+
+*DefaultHalftoneType: 9
+*ScreenFreq:  "106.0"
+*ScreenAngle: "45.0"
+*ResScreenFreq 600dpi/600 dpi :  "106.0"
+*ResScreenAngle 600dpi/600 dpi : "45.0"
+*ResScreenFreq 1200dpi/1200 dpi :  "180.0"
+*ResScreenAngle 1200dpi/1200 dpi : "45.0"
+
+
+*% =========================================================
+*%  Paper Source
+*% =========================================================
+
+*OpenUI *InputSlot/Paper Source: PickOne
+*OrderDependency: 20 AnySetup *InputSlot
+*DefaultInputSlot: Auto
+*InputSlot Auto/Printer Auto Selection:"
+ << /ManualFeed false /MediaPosition null>> setpagedevice"
+*End
+*InputSlot Upper/MP Tray:"
+ << /ManualFeed false /MediaPosition 2 >> setpagedevice"
+*End
+*InputSlot Middle/Tray 1:"
+ << /ManualFeed false /MediaPosition 1 >> setpagedevice"
+*End
+*InputSlot Lower/Tray 2:"
+ << /ManualFeed false /MediaPosition 3 >> setpagedevice"
+*End
+*CloseUI: *InputSlot
+
+
+*% =========================================================
+*%  Paper Handling
+*% =========================================================
+*% Use these entries to set paper size unless there is a specific
+*% reason to use PageRegion, such as when using manual feed.
+*OpenUI *PageSize/PageSize: PickOne
+*OrderDependency: 30 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "<</PageSize [612 792] /ImagingBBox null>> setpagedevice"
+*PageSize Legal/Legal: "<</PageSize [612 1008] /ImagingBBox null>> setpagedevice"
+*PageSize Executive/Executive: "<</PageSize [522 756] /ImagingBBox null>> setpagedevice"
+*PageSize A4/A4: "<</PageSize [595 842] /ImagingBBox null>> setpagedevice"
+*PageSize A5/A5: "<</PageSize [420 595] /ImagingBBox null>> setpagedevice"
+*PageSize B5-JIS/JIS B5: "<</PageSize [516 729] /ImagingBBox null>> setpagedevice"
+*PageSize US-Folio/US Folio: "<</PageSize [612 936] /ImagingBBox null>> setpagedevice"
+*PageSize Env10/No.10 Env.: "<</PageSize [297 684] /ImagingBBox null>> setpagedevice"
+*PageSize EnvDL/DL Env.: "<</PageSize [312 624] /ImagingBBox null>> setpagedevice"
+*PageSize EnvC5/C5 Env.: "<</PageSize [459 649] /ImagingBBox null>> setpagedevice"
+*PageSize EnvC6/C6 Env.: "<</PageSize [323 459] /ImagingBBox null>> setpagedevice"
+*PageSize B5-ISO/ISO B5: "<</PageSize [499 709] /ImagingBBox null>> setpagedevice"
+*PageSize EnvMonarch/Monarch Env.: "<</PageSize [279 540] /ImagingBBox null>> setpagedevice"
+*PageSize A6/A6: "<</PageSize [297 420] /ImagingBBox null>> setpagedevice"
+*PageSize Oficio_S/Oficio : "<</PageSize [612 972] /ImagingBBox null>> setpagedevice"
+*PageSize Statement/Statement: "<</PageSize [396 612] /ImagingBBox null>> setpagedevice"
+*PageSize Postcard_S/Post Card 4x6: "<</PageSize [288 432] /ImagingBBox null>> setpagedevice"
+*?PageSize: "
+save currentpagedevice /PageSize get aload pop
+   2 copy gt {exch} if (Unknown) 17 dict
+   dup [288 432] (Postcard_S) put
+   dup [396 612] (Statement) put
+   dup [612 972] (Oficio_S) put
+   d

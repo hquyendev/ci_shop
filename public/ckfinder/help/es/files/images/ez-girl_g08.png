@@ -1,0 +1,381 @@
+orSep Red *ColorModel Gray
+*UIConstraints: *RPSColorSep Green *ColorModel Gray
+*UIConstraints: *RPSColorSep Blue *ColorModel Gray
+*UIConstraints: *RPSColorSep KCyan *ColorModel Gray
+*UIConstraints: *RPSColorSep KMagenta *ColorModel Gray
+*UIConstraints: *RPSColorSep KYellow *ColorModel Gray
+
+*%========== RGBcorrect / Color Profile
+*UIConstraints: *RPSRGBcorrect None *RPSColorRendDict User
+*UIConstraints: *RPSRGBcorrect DetailNormal *RPSColorRendDict User
+*UIConstraints: *RPSColorRendDict User *RPSRGBcorrect None
+*UIConstraints: *RPSColorRendDict User *RPSRGBcorrect DetailNormal
+
+*%========== Paper Type / Destination
+*UIConstraints: *MediaType Labels *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType Labels *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Labels *OutputBin FinSR3000book
+*UIConstraints: *MediaType Cardstock *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType Cardstock *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Cardstock *OutputBin FinSR3000book
+*UIConstraints: *MediaType Thick *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Thick *OutputBin FinSR3000book
+*UIConstraints: *MediaType Thick2 *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType Thick2 *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Thick2 *OutputBin FinSR3000book
+*UIConstraints: *MediaType Thick3 *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType Thick3 *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Thick3 *OutputBin FinSR3000book
+*UIConstraints: *MediaType OHP *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType OHP *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType OHP *OutputBin FinSR3000Shift
+*UIConstraints: *MediaType OHP *OutputBin FinSR3000book
+*UIConstraints: *MediaType Envelope *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType Envelope *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Envelope *OutputBin FinSR3000book
+*UIConstraints: *MediaType Glossy *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Glossy *OutputBin FinSR3000book
+*UIConstraints: *MediaType Coated *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType Coated *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType Coated *OutputBin FinSR3000book
+*UIConstraints: *MediaType ThickDuplexBackSide *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType ThickDuplexBackSide *OutputBin FinSR3000book
+*UIConstraints: *MediaType ThickDuplexBackSide2 *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType ThickDuplexBackSide2 *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType ThickDuplexBackSide2 *OutputBin FinSR3000book
+*UIConstraints: *MediaType ThickDuplexBackSide3 *OutputBin FinSR3030Upper
+*UIConstraints: *MediaType ThickDuplexBackSide3 *OutputBin FinSR3000Upper
+*UIConstraints: *MediaType ThickDuplexBackSide3 *OutputBin FinSR3000book
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType Labels
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Labels
+*UIConstraints: *OutputBin FinSR3000book *MediaType Labels
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType Cardstock
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Cardstock
+*UIConstraints: *OutputBin FinSR3000book *MediaType Cardstock
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Thick
+*UIConstraints: *OutputBin FinSR3000book *MediaType Thick
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType Thick2
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Thick2
+*UIConstraints: *OutputBin FinSR3000book *MediaType Thick2
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType Thick3
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Thick3
+*UIConstraints: *OutputBin FinSR3000book *MediaType Thick3
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType OHP
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType OHP
+*UIConstraints: *OutputBin FinSR3000Shift *MediaType OHP
+*UIConstraints: *OutputBin FinSR3000book *MediaType OHP
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType Envelope
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Envelope
+*UIConstraints: *OutputBin FinSR3000book *MediaType Envelope
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Glossy
+*UIConstraints: *OutputBin FinSR3000book *MediaType Glossy
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType Coated
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType Coated
+*UIConstraints: *OutputBin FinSR3000book *MediaType Coated
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType ThickDuplexBackSide
+*UIConstraints: *OutputBin FinSR3000book *MediaType ThickDuplexBackSide
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType ThickDuplexBackSide2
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType ThickDuplexBackSide2
+*UIConstraints: *OutputBin FinSR3000book *MediaType ThickDuplexBackSide2
+*UIConstraints: *OutputBin FinSR3030Upper *MediaType ThickDuplexBackSide3
+*UIConstraints: *OutputBin FinSR3000Upper *MediaType ThickDuplexBackSide3
+*UIConstraints: *OutputBin FinSR3000book *MediaType ThickDuplexBackSide3
+
+*%========== Destination / Staple
+*UIConstraints: *OutputBin Standard *StapleLocation UpperLeft
+*UIConstraints: *OutputBin Standard *StapleLocation UpperRight
+*UIConstraints: *OutputBin Standard *StapleLocation LowerLeft
+*UIConstraints: *OutputBin Standard *StapleLocation LowerRight
+*UIConstraints: *OutputBin Standard *StapleLocation LeftW
+*UIConstraints: *OutputBin Standard *StapleLocation RightW
+*UIConstraints: *OutputBin Standard *StapleLocation UpperW
+*UIConstraints: *OutputBin Standard *StapleLocation LowerW
+*UIConstraints: *OutputBin Standard *StapleLocation CenterW
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation UpperLeft
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation UpperRight
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation LowerLeft
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation LowerRight
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation LeftW
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation RightW
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation UpperW
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation LowerW
+*UIConstraints: *OutputBin FinSR3030Upper *StapleLocation CenterW
+*UIConstraints: *OutputBin FinSR3030Shift *StapleLocation CenterW
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation UpperLeft
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation UpperRight
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation LowerLeft
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation LowerRight
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation LeftW
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation RightW
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation UpperW
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation LowerW
+*UIConstraints: *OutputBin FinSR3000Upper *StapleLocation CenterW
+*UIConstraints: *OutputBin FinSR3000Shift *StapleLocation CenterW
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation None
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation UpperLeft
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation UpperRight
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation LowerLeft
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation LowerRight
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation LeftW
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation RightW
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation UpperW
+*UIConstraints: *OutputBin FinSR3000book *StapleLocation LowerW
+*UIConstraints: *StapleLocation UpperLeft *OutputBin Standard
+*UIConstraints: *StapleLocation UpperRight *OutputBin Standard
+*UIConstraints: *StapleLocation LowerLeft *OutputBin Standard
+*UIConstraints: *StapleLocation LowerRight *OutputBin Standard
+*UIConstraints: *StapleLocation LeftW *OutputBin Standard
+*UIConstraints: *StapleLocation RightW *OutputBin Standard
+*UIConstraints: *StapleLocation UpperW *OutputBin Standard
+*UIConstraints: *StapleLocation LowerW *OutputBin Standard
+*UIConstraints: *StapleLocation CenterW *OutputBin Standard
+*UIConstraints: *StapleLocation UpperLeft *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation UpperRight *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation LowerLeft *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation LowerRight *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation LeftW *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation RightW *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation UpperW *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation LowerW *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation CenterW *OutputBin FinSR3030Upper
+*UIConstraints: *StapleLocation CenterW *OutputBin FinSR3030Shift
+*UIConstraints: *StapleLocation UpperLeft *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation UpperRight *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation LowerLeft *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation LowerRight *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation LeftW *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation RightW *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation UpperW *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation LowerW *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation CenterW *OutputBin FinSR3000Upper
+*UIConstraints: *StapleLocation CenterW *OutputBin FinSR3000Shift
+*UIConstraints: *StapleLocation None *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation UpperLeft *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation UpperRight *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation LowerLeft *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation LowerRight *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation LeftW *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation RightW *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation UpperW *OutputBin FinSR3000book
+*UIConstraints: *StapleLocation LowerW *OutputBin FinSR3000book
+
+*%========== Destination / Punch
+*UIConstraints: *OutputBin Standard *RIPunch Left2
+*UIConstraints: *OutputBin Standard *RIPunch Left3
+*UIConstraints: *OutputBin Standard *RIPunch Left4
+*UIConstraints: *OutputBin Standard *RIPunch Right2
+*UIConstraints: *OutputBin Standard *RIPunch Right3
+*UIConstraints: *OutputBin Standard *RIPunch Right4
+*UIConstraints: *OutputBin Standard *RIPunch Upper2
+*UIConstraints: *OutputBin Standard *RIPunch Upper3
+*UIConstraints: *OutputBin Standard *RIPunch Upper4
+*UIConstraints: *OutputBin Standard *RIPunch Lower2
+*UIConstraints: *OutputBin Standard *RIPunch Lower3
+*UIConstraints: *OutputBin Standard *RIPunch Lower4
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Left2
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Left3
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Left4
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Right2
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Right3
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Right4
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Upper2
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Upper3
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Upper4
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Lower2
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Lower3
+*UIConstraints: *OutputBin FinSR3000book *RIPunch Lower4
+*UIConstraints: *RIPunch Left2 *OutputBin Standard
+*UIConstraints: *RIPunch Left3 *OutputBin Standard
+*UIConstraints: *RIPunch Left4 *OutputBin Standard
+*UIConstraints: *RIPunch Right2 *OutputBin Standard
+*UIConstraints: *RIPunch Right3 *OutputBin Standard
+*UIConstraints: *RIPunch Right4 *OutputBin Standard
+*UIConstraints: *RIPunch Upper2 *OutputBin Standard
+*UIConstraints: *RIPunch Upper3 *OutputBin Standard
+*UIConstraints: *RIPunch Upper4 *OutputBin Standard
+*UIConstraints: *RIPunch Lower2 *OutputBin Standard
+*UIConstraints: *RIPunch Lower3 *OutputBin Standard
+*UIConstraints: *RIPunch Lower4 *OutputBin Standard
+*UIConstraints: *RIPunch Left2 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Left3 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Left4 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Right2 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Right3 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Right4 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Upper2 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Upper3 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Upper4 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Lower2 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Lower3 *OutputBin FinSR3000book
+*UIConstraints: *RIPunch Lower4 *OutputBin FinSR3000book
+
+*%========== Punch / Staple
+*UIConstraints: *StapleLocation CenterW *RIPunch Left2
+*UIConstraints: *StapleLocation CenterW *RIPunch Left3
+*UIConstraints: *StapleLocation CenterW *RIPunch Left4
+*UIConstraints: *StapleLocation CenterW *RIPunch Right2
+*UIConstraints: *StapleLocation CenterW *RIPunch Right3
+*UIConstraints: *StapleLocation CenterW *RIPunch Right4
+*UIConstraints: *StapleLocation CenterW *RIPunch Upper2
+*UIConstraints: *StapleLocation CenterW *RIPunch Upper3
+*UIConstraints: *StapleLocation CenterW *RIPunch Upper4
+*UIConstraints: *StapleLocation CenterW *RIPunch Lower2
+*UIConstraints: *StapleLocation CenterW *RIPunch Lower3
+*UIConstraints: *StapleLocation CenterW *RIPunch Lower4
+*UIConstraints: *RIPunch Left2 *StapleLocation CenterW
+*UIConstraints: *RIPunch Left3 *StapleLocation CenterW
+*UIConstraints: *RIPunch Left4 *StapleLocation CenterW
+*UIConstraints: *RIPunch Right2 *StapleLocation CenterW
+*UIConstraints: *RIPunch Right3 *StapleLocation CenterW
+*UIConstraints: *RIPunch Right4 *StapleLocation CenterW
+*UIConstraints: *RIPunch Upper2 *StapleLocation CenterW
+*UIConstraints: *RIPunch Upper3 *StapleLocation CenterW
+*UIConstraints: *RIPunch Upper4 *StapleLocation CenterW
+*UIConstraints: *RIPunch Lower2 *StapleLocation CenterW
+*UIConstraints: *RIPunch Lower3 *StapleLocation CenterW
+*UIConstraints: *RIPunch Lower4 *StapleLocation CenterW
+
+*%========== PaperType / Fit to Paper ==========
+*UIConstraints: *MediaType None *RIPaperPolicy PromptUser
+*UIConstraints: *RIPaperPolicy PromptUser *MediaType None
+
+
+
+
+*FreeVM: "2261000"
+*% VMOption None/16 MB RAM: "2261000"
+*% VMOption 80Meg/80 MB RAM: "2261000"
+
+*Password: "0"
+*ExitServer: "
+  count 0 eq 
+  {false}{true exch startjob}ifelse
+  not {(WARNING: Cannot modify initial VM.) =
+       (Missing or invalid Password.) =
+       (Please contact the author.) = flush quit
+  }if
+"
+*End
+*Reset: "
+  count 0 eq
+  {false}{true exch startjob}ifelse
+  not {(WARNING: Cannot reset printer.) =
+       (Missing or invalid Password.) =
+       (Please contact the author.) = flush quit
+  }if 
+  systemdict /quit get exec
+  (WARNING: Printer Reset Failed.) = flush
+"
+*End
+
+*DefaultResolution: 600dpi
+*?Resolution: "
+  save
+  currentpagedevice /HWResolution get 0 get
+  (       ) cvs print (dpi) = flush
+  restore
+"
+*End
+
+*SuggestedJobTimeout: "0"
+*SuggestedWaitTimeout: "300"
+*PrintPSErrors: True
+*%DeviceAdjustMatrix: "[1 0 0 1 0 0]"
+
+*%========== Media Selection ==========
+*LandscapeOrientation: Minus90
+
+*OpenUI *RIPaperPolicy/Fit to Paper: PickOne
+*OrderDependency: 10 AnySetup *RIPaperPolicy
+*DefaultRIPaperPolicy: PromptUser
+*RIPaperPolicy PromptUser/Prompt User: "
+  <</DeferredMediaSelection true>> setpagedevice
+  <</Policies << /PageSize 2 /MediaType 2 >> >> setpagedevice"
+*End
+*RIPaperPolicy NearestSizeAdjust/Nearest Size and Scale: "
+  <</DeferredMediaSelection false>> setpagedevice
+  <</Policies << /PageSize 3 /MediaType 2 >> >> setpagedevice"
+*End
+*RIPaperPolicy NearestSizeNoAdjust/Nearest Size and Crop: "
+  <</DeferredMediaSelection false>> setpagedevice
+  <</Policies << /PageSize 5 /MediaType 2 >> >> setpagedevice"
+*End
+*CloseUI: *RIPaperPolicy
+
+*OpenUI *PageSize: PickOne
+*OrderDependency: 20 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize A3/A3: "<< 
+  /PageSize [842 1191] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize A4/A4: "<< 
+  /PageSize [595 842] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize A5/A5: "<< 
+  /PageSize [420 595] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize A6/A6: "<< 
+  /PageSize [298 420] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize B4/B4 (JIS): "<< 
+  /PageSize [729 1032] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize B5/B5 (JIS): "<< 
+  /PageSize [516 729] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize B6/B6 (JIS): "<< 
+  /PageSize [363 516] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize Legal/Legal: "<< 
+  /PageSize [612 1008] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize Letter/Letter: "<< 
+  /PageSize [612 792] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize HalfLetter/5.5x8.5:"<< 
+  /PageSize [396 612] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize 11x17/11x17: "<< 
+  /PageSize [792 1224] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize 12x18/12x18: "<< 
+  /PageSize [864 1296] /ImagingBBox null >> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize Executive/Executive: "<< 
+  /PageSize [522 756] /ImagingBBox null>> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize F/8x13: "<< 
+  /PageSize [576 936] /ImagingBBox null>> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize Folio/8.25x13: "<< 
+  /PageSize [595 935] /ImagingBBox null>> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize FanFoldGermanLegal/8.5x13: "<< 
+  /PageSize [612 936] /ImagingBBox null>> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize Env10/Com10 Env.: "<< 
+  /PageSize [297 684] /ImagingBBox null>> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize EnvMonarch/Monarch Env.: "<< 
+  /PageSize [279 540] /ImagingBBox null>> setpagedevice
+  false setedgetoedge"
+*End
+*PageSize EnvC5/C5 Env.: "<< 
+  /PageSize [459 

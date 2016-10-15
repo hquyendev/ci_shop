@@ -1,0 +1,687 @@
+*PPD-Adobe:  "4.3"
+*% Adobe PostScript(R) Printer Description File
+*% For Lexmark C762 Laser Printers
+*% Produced by Lexmark International, Inc.
+*%
+*% For use with Windows 2000, Windows XP and Windows Server 2003 PSCRIPT
+*%
+*% Copyright (c) 2004-2005 Lexmark International Inc.  All Rights Reserved.
+*% Permission is granted for redistribution of this file as
+*% long as this copyright notice is intact and the content
+*% of the file is not altered in any way from its original form.
+*%
+*FormatVersion: "4.3"
+*FileVersion:  "3.0"
+*LanguageVersion: English
+*LanguageEncoding: WindowsANSI
+*PCFileName: "lexc762.ppd"
+*Product: "(Lexmark  C762 Laser Printer)"
+*PSVersion: "(3010)"
+*ModelName: "Lexmark  C762 Laser Printer"
+*ShortNickName: "Lexmark  C762 PS"
+*NickName: "Lexmark  C762 PS"
+
+*% ======== Installable Options  ============
+
+*OpenGroup: InstallableOptions/Options Installed
+
+*OpenUI *Tray2/Tray 2: PickOne
+*DefaultTray2: False
+*Tray2 False/Not Installed: ""
+*Tray2 True500/500-Sheet Tray: ""
+*Tray2 TrueEnv/Envelope Drawer: ""
+*Tray2 True2000/2000-Sheet Tray: ""
+*CloseUI: *Tray2
+
+*OpenUI *Tray3/Tray 3: PickOne
+*DefaultTray3: False
+*Tray3 False/Not Installed: ""
+*Tray3 True500/500-Sheet Tray: ""
+*Tray3 TrueEnv/Envelope Drawer: ""
+*Tray3 True2000/2000-Sheet Tray: ""
+*CloseUI: *Tray3
+
+*OpenUI *Tray4/Tray 4: PickOne
+*DefaultTray4: False
+*Tray4 False/Not Installed: ""
+*Tray4 True500/500-Sheet Tray: ""
+*Tray4 TrueEnv/Envelope Drawer: ""
+*CloseUI: *Tray4
+
+*OpenUI *OutputBins/Number of Output Bins: PickOne
+
+*DefaultOutputBins: False
+*OutputBins False/Standard Bin Only: ""
+*OutputBins 1.1Bin/1 - Output Expander: ""
+*OutputBins 1.2Bin/1 - Finisher Option: ""
+*OutputBins 2.1Bin/2 - 1 Finisher Option + 1 Output Expand.: ""
+*OutputBins 5Bin/5 - 5-Bin Mailbox: ""
+*OutputBins 6.2Bin/6 - 1 Finisher Option + 1 5-Bin Mailbox: ""
+*CloseUI: *OutputBins
+
+*OpenUI *Duplexer/Duplex Option: Boolean
+*DefaultDuplexer: False
+*Duplexer False/Not Installed: ""
+*Duplexer True/Installed: ""
+*CloseUI: *Duplexer
+
+*OpenUI *Flash/Flash Memory Card: PickOne
+*DefaultFlash: False
+*Flash False/Not Installed: ""
+*Flash 16Meg/16 MB Flash Memory: ""
+*Flash 32Meg/32 MB Flash Memory: ""
+*CloseUI: *Flash
+
+*OpenUI *HardDisk/Printer Hard Disk: Boolean
+*DefaultHardDisk: False
+*HardDisk False/Not Installed: ""
+*HardDisk True/Installed: ""
+*CloseUI: *HardDisk
+
+*OpenUI *InstalledMemory/Printer Memory: PickOne
+*DefaultInstalledMemory: 128Meg
+*InstalledMemory 128Meg/128 MB Printer Memory: ""
+*InstalledMemory 192Meg/192 MB Printer Memory: ""
+*InstalledMemory 256Meg/256 MB Printer Memory: ""
+*InstalledMemory 320Meg/320 MB Printer Memory: ""
+*InstalledMemory 384Meg/384 MB Printer Memory: ""
+*InstalledMemory 512Meg/512 or more MB Printer Memory: ""
+*CloseUI: *InstalledMemory
+
+*OpenUI *HasManualColorCorrection/HasManualColorCorrection: Boolean
+*DefaultHasManualColorCorrection: True
+*HasManualColorCorrection True/True: ""
+*HasManualColorCorrection False/False: ""
+*CloseUI: *HasManualColorCorrection
+
+*OpenUI *HasPrintandHold/HasPrintandHold: Boolean
+*DefaultHasPrintandHold: True
+*HasPrintandHold True/True: ""
+*HasPrintandHold False/False: ""
+*CloseUI: *HasPrintandHold
+
+*OpenUI *HasKeepPreviousPHJobs/HasKeepPreviousPHJobs: Boolean
+*DefaultHasKeepPreviousPHJobs: True
+*HasKeepPreviousPHJobs True/True: ""
+*HasKeepPreviousPHJobs False/False: ""
+*CloseUI: *HasKeepPreviousPHJobs
+
+*OpenUI *FaxCard/Fax Card: Boolean
+*DefaultFaxCard: False
+*FaxCard False/Not Installed: ""
+*FaxCard True/Installed: ""
+*CloseUI: *FaxCard
+
+*CloseGroup: InstallableOptions
+
+*%=========== User Constraints ===================
+
+*UIConstraints: *Tray2 False		*InputSlot Tray2
+*UIConstraints: *Tray3 False		*InputSlot Tray3
+*UIConstraints: *Tray4 False		*InputSlot Tray4
+
+*% Duplex is "only" available when duplexer unit is installed.
+*UIConstraints: *Duplexer False         *Duplex
+
+*% Tray 2 cannot be 2000-Sheet Tray if Duplexer is Installed
+
+*UIConstraints: *Duplexer True	    *Tray2 True2000
+*UIConstraints: *Tray2    True2000  *Duplexer True
+*UIConstraints: *OutputBins False   *OutputBin Bin1
+*UIConstraints: *OutputBins False   *OutputBin Bin2
+*UIConstraints: *OutputBins False   *OutputBin Bin3
+*UIConstraints: *OutputBins False   *OutputBin Bin4
+*UIConstraints: *OutputBins False   *OutputBin Bin5
+*UIConstraints: *OutputBins False   *OutputBin Bin6
+
+*UIConstraints: *OutputBins 1.1Bin  *OutputBin Bin2
+*UIConstraints: *OutputBins 1.1Bin  *OutputBin Bin3
+*UIConstraints: *OutputBins 1.1Bin  *OutputBin Bin4
+*UIConstraints: *OutputBins 1.1Bin  *OutputBin Bin5
+*UIConstraints: *OutputBins 1.1Bin  *OutputBin Bin6
+
+*UIConstraints: *OutputBins 1.2Bin  *OutputBin Bin2
+*UIConstraints: *OutputBins 1.2Bin  *OutputBin Bin3
+*UIConstraints: *OutputBins 1.2Bin  *OutputBin Bin4
+*UIConstraints: *OutputBins 1.2Bin  *OutputBin Bin5
+*UIConstraints: *OutputBins 1.2Bin  *OutputBin Bin6
+
+*UIConstraints: *OutputBins 2.1Bin  *OutputBin Bin3
+*UIConstraints: *OutputBins 2.1Bin  *OutputBin Bin4
+*UIConstraints: *OutputBins 2.1Bin  *OutputBin Bin5
+*UIConstraints: *OutputBins 2.1Bin  *OutputBin Bin6
+
+*UIConstraints: *OutputBins 5Bin  *OutputBin Bin6
+
+*UIConstraints: *OutputBin Bin3		*CustomPageSize
+*UIConstraints: *OutputBin Bin4		*CustomPageSize
+*UIConstraints: *OutputBin Bin5		*CustomPageSize
+*UIConstraints: *CustomPageSize True 	*OutputBin Bin3
+*UIConstraints: *CustomPageSize True 	*OutputBin Bin4
+*UIConstraints: *CustomPageSize True 	*OutputBin Bin5
+
+*% Finisher jobs are not available when the selected Output Bin is Standard Bin, Bin3, Bin4 and Bin5
+*UIConstraints: *OutputBin      False	  *StapleLocation True
+*UIConstraints: *OutputBin      False	  *HolePunch True
+*UIConstraints: *OutputBin      False	  *Jog EndOfSet
+*UIConstraints: *OutputBin      Bin3	  *StapleLocation True
+*UIConstraints: *OutputBin      Bin3	  *HolePunch True
+*UIConstraints: *OutputBin      Bin3	  *Jog EndOfSet
+*UIConstraints: *OutputBin      Bin4	  *StapleLocation True
+*UIConstraints: *OutputBin      Bin4	  *HolePunch True
+*UIConstraints: *OutputBin      Bin4	  *Jog EndOfSet
+*UIConstraints: *OutputBin      Bin5	  *StapleLocation True
+*UIConstraints: *OutputBin      Bin5	  *HolePunch True
+*UIConstraints: *OutputBin      Bin5	  *Jog EndOfSet
+*UIConstraints: *StapleLocation True	  *OutputBin      False
+*UIConstraints: *HolePunch      True	  *OutputBin      False
+*UIConstraints: *Jog            EndOfSet  *OutputBin      False
+*UIConstraints: *StapleLocation True	  *OutputBin      Bin3
+*UIConstraints: *HolePunch      True	  *OutputBin      Bin3
+*UIConstraints: *Jog            EndOfSet  *OutputBin      Bin3
+*UIConstraints: *StapleLocation True	  *OutputBin      Bin4
+*UIConstraints: *HolePunch      True	  *OutputBin      Bin4
+*UIConstraints: *Jog            EndOfSet  *OutputBin      Bin4
+*UIConstraints: *StapleLocation True	  *OutputBin      Bin5
+*UIConstraints: *HolePunch      True	  *OutputBin      Bin5
+*UIConstraints: *Jog            EndOfSet  *OutputBin      Bin5
+
+*% Env cannot be fed from tray1
+*UIConstraints: *InputSlot Tray1      *PageSize Monarch
+*UIConstraints: *InputSlot Tray1      *PageSize C9
+*UIConstraints: *InputSlot Tray1      *PageSize Comm10
+*UIConstraints: *InputSlot Tray1      *PageSize DL
+*UIConstraints: *InputSlot Tray1      *PageSize C5
+*UIConstraints: *InputSlot Tray1      *PageSize ISOB5
+
+*% Env cannot be fed from Manual Paper
+*UIConstraints: *InputSlot Manual     *PageSize Monarch
+*UIConstraints: *InputSlot Manual     *PageSize C9
+*UIConstraints: *InputSlot Manual     *PageSize Comm10
+*UIConstraints: *InputSlot Manual     *PageSize DL
+*UIConstraints: *InputSlot Manual     *PageSize C5
+*UIConstraints: *InputSlot Manual     *PageSize ISOB5
+
+*% Non-envelope papers cannot be fed from Manual Envelope
+*UIConstraints: *InputSlot ManualEnv  *PageSize Letter
+*UIConstraints: *InputSlot ManualEnv  *PageSize Legal
+*UIConstraints: *InputSlot ManualEnv  *PageSize A4
+*UIConstraints: *InputSlot ManualEnv  *PageSize A5
+*UIConstraints: *InputSlot ManualEnv  *PageSize Executive
+*UIConstraints: *InputSlot ManualEnv  *PageSize B5
+*UIConstraints: *InputSlot ManualEnv  *PageSize Folio
+*UIConstraints: *InputSlot ManualEnv  *PageSize Statement
+*UIConstraints: *InputSlot ManualEnv  *CustomPageSize
+
+*% Env cannot be fed from Tray1
+*UIConstraints: *PageSize Monarch     *InputSlot Tray1
+*UIConstraints: *PageSize C9          *InputSlot Tray1
+*UIConstraints: *PageSize Comm10      *InputSlot Tray1
+*UIConstraints: *PageSize DL          *InputSlot Tray1
+*UIConstraints: *PageSize C5          *InputSlot Tray1
+*UIConstraints: *PageSize ISOB5       *InputSlot Tray1
+
+*% Env cannot be fed from Manual Paper
+*UIConstraints: *PageSize Monarch     *InputSlot Manual
+*UIConstraints: *PageSize C9          *InputSlot Manual
+*UIConstraints: *PageSize Comm10      *InputSlot Manual
+*UIConstraints: *PageSize DL          *InputSlot Manual
+*UIConstraints: *PageSize C5          *InputSlot Manual
+*UIConstraints: *PageSize ISOB5       *InputSlot Manual
+
+*% Non-envelope papers cannot be fed from Manual Envelope
+*UIConstraints: *PageSize Letter      *InputSlot ManualEnv
+*UIConstraints: *PageSize Legal       *InputSlot ManualEnv
+*UIConstraints: *PageSize A4          *InputSlot ManualEnv
+*UIConstraints: *PageSize A5          *InputSlot ManualEnv
+*UIConstraints: *PageSize Executive   *InputSlot ManualEnv
+*UIConstraints: *PageSize B5          *InputSlot ManualEnv
+*UIConstraints: *PageSize Folio       *InputSlot ManualEnv
+*UIConstraints: *PageSize Statement   *InputSlot ManualEnv
+*UIConstraints: *CustomPageSize True  *InputSlot ManualEnv
+
+*% Envelope media type is not supported by Trays and Manual Paper
+*UIConstraints: *MediaType Env	        *InputSlot Tray1
+*UIConstraints: *MediaType Env	        *InputSlot Manual
+
+*% Manual Envelope does not support media types other than envelope and custom types
+*UIConstraints: *MediaType Plain        *InputSlot ManualEnv
+*UIConstraints: *MediaType Bond         *InputSlot ManualEnv
+*UIConstraints: *MediaType Labels       *InputSlot ManualEnv
+*UIConstraints: *MediaType Glossy	*InputSlot ManualEnv
+*UIConstraints: *MediaType Transparency *InputSlot ManualEnv
+*UIConstraints: *MediaType Card         *InputSlot ManualEnv
+*UIConstraints: *MediaType Color        *InputSlot ManualEnv
+*UIConstraints: *MediaType Preprint     *InputSlot ManualEnv
+*UIConstraints: *MediaType Letterhead   *InputSlot ManualEnv
+
+*% Trays and Manual Paper do not support Envelope media type
+*UIConstraints: *InputSlot Tray1	*MediaType Env
+*UIConstraints: *InputSlot Manual	*MediaType Env
+
+*% Manual Envelope does not support media types other than envelope and custom types
+*UIConstraints: *InputSlot ManualEnv	*MediaType Plain
+*UIConstraints: *InputSlot ManualEnv	*MediaType Bond
+*UIConstraints: *InputSlot ManualEnv	*MediaType Labels
+*UIConstraints: *InputSlot ManualEnv	*MediaType Glossy
+*UIConstraints: *InputSlot ManualEnv	*MediaType Transparency
+*UIConstraints: *InputSlot ManualEnv	*MediaType Card
+*UIConstraints: *InputSlot ManualEnv	*MediaType Color
+*UIConstraints: *InputSlot ManualEnv	*MediaType Preprint
+*UIConstraints: *InputSlot ManualEnv	*MediaType Letterhead
+
+*UIConstraints: *Tray2 False      *Tray3 True500
+*UIConstraints: *Tray2 False      *Tray3 TrueEnv
+*UIConstraints: *Tray2 False      *Tray3 True2000
+
+*UIConstraints: *Tray3 False      *Tray4 True500
+*UIConstraints: *Tray3 False      *Tray4 TrueEnv
+
+*% Only one 2000-sheet Tray can be installed and it will be the last Tray
+*UIConstraints: *Tray2 True2000   *Tray3 True500
+*UIConstraints: *Tray2 True2000   *Tray3 TrueEnv
+*UIConstraints: *Tray2 True2000   *Tray3 True2000
+
+*UIConstraints: *Tray3 True2000   *Tray4 True500
+*UIConstraints: *Tray3 True2000   *Tray4 TrueEnv
+
+*% Non-envelope papers cannot be of from Env mediatype
+
+*UIConstraints: *PageSize Letter      *MediaType Env
+*UIConstraints: *PageSize Legal       *MediaType Env
+*UIConstraints: *PageSize B5          *MediaType Env
+*UIConstraints: *PageSize A4          *MediaType Env
+*UIConstraints: *PageSize Executive   *MediaType Env
+*UIConstraints: *PageSize A5          *MediaType Env
+*UIConstraints: *PageSize Folio       *MediaType Env
+*UIConstraints: *PageSize Statement   *MediaType Env
+
+*UIConstraints: *MediaType Env  *PageSize Letter
+*UIConstraints: *MediaType Env  *PageSize Legal
+*UIConstraints: *MediaType Env  *PageSize B5
+*UIConstraints: *MediaType Env  *PageSize A4
+*UIConstraints: *MediaType Env  *PageSize Executive
+*UIConstraints: *MediaType Env  *PageSize A5
+*UIConstraints: *MediaType Env  *PageSize Folio
+*UIConstraints: *MediaType Env  *PageSize Statement
+
+*% Duplexing restricts Envelope paper sizes.
+
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize Monarch
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize C9
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize Comm10
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize DL
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize C5
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize ISOB5
+
+*UIConstraints: *Duplex DuplexTumble      *PageSize Monarch
+*UIConstraints: *Duplex DuplexTumble      *PageSize C9
+*UIConstraints: *Duplex DuplexTumble      *PageSize Comm10
+*UIConstraints: *Duplex DuplexTumble      *PageSize DL
+*UIConstraints: *Duplex DuplexTumble      *PageSize C5
+*UIConstraints: *Duplex DuplexTumble      *PageSize ISOB5
+
+*UIConstraints: *PageSize Monarch	*Duplex DuplexNoTumble       
+*UIConstraints: *PageSize C9	        *Duplex DuplexNoTumble    
+*UIConstraints: *PageSize Comm10	*Duplex DuplexNoTumble
+*UIConstraints: *PageSize DL	        *Duplex DuplexNoTumble
+*UIConstraints: *PageSize C5	        *Duplex DuplexNoTumble
+*UIConstraints: *PageSize ISOB5	        *Duplex DuplexNoTumble
+
+*UIConstraints: *PageSize Monarch	*Duplex DuplexTumble       
+*UIConstraints: *PageSize C9	        *Duplex DuplexTumble    
+*UIConstraints: *PageSize Comm10	*Duplex DuplexTumble
+*UIConstraints: *PageSize DL	        *Duplex DuplexTumble
+*UIConstraints: *PageSize C5	        *Duplex DuplexTumble
+*UIConstraints: *PageSize ISOB5	        *Duplex DuplexTumble
+
+*% Duplexing restricts some Media Types.
+
+*% Stapling restricts some MediaTypes.
+
+*UIConstraints: *StapleLocation  True      *MediaType Env
+*UIConstraints: *StapleLocation  True      *MediaType Transparency
+
+*UIConstraints: *MediaType Env        	    *StapleLocation  True
+*UIConstraints: *MediaType Transparency     *StapleLocation  True
+
+*% Stapling restricts Envelope paper sizes.
+
+*UIConstraints: *StapleLocation  True      *CustomPageSize
+*UIConstraints: *StapleLocation  True      *PageSize Monarch
+*UIConstraints: *StapleLocation  True      *PageSize C9
+*UIConstraints: *StapleLocation  True      *PageSize Comm10
+*UIConstraints: *StapleLocation  True      *PageSize DL
+*UIConstraints: *StapleLocation  True      *PageSize C5
+*UIConstraints: *StapleLocation  True      *PageSize ISOB5
+
+*UIConstraints: *CustomPageSize  True	   *StapleLocation  True
+*UIConstraints: *PageSize	 Monarch   *StapleLocation  True
+*UIConstraints: *PageSize 	 C9	   *StapleLocation  True
+*UIConstraints: *PageSize 	 Comm10    *StapleLocation  True
+*UIConstraints: *PageSize 	 DL        *StapleLocation  True
+*UIConstraints: *PageSize 	 C5        *StapleLocation  True
+*UIConstraints: *PageSize 	 ISOB5     *StapleLocation  True
+
+*% Stapling will appear only when Finisher is installed.
+
+*UIConstraints: *OutputBins False	*StapleLocation  True
+*UIConstraints: *OutputBins 1.1Bin	*StapleLocation  True
+*UIConstraints: *OutputBins 5Bin	*StapleLocation  True
+
+*% Hole Punch restricts some MediaTypes.
+
+*UIConstraints: *HolePunch  True      *MediaType Env
+*UIConstraints: *HolePunch  True      *MediaType Transparency
+
+*UIConstraints: *MediaType Env        	    *HolePunch  True
+*UIConstraints: *MediaType Transparency     *HolePunch  True
+
+*% Hole Punch restricts Envelope paper sizes.
+
+*UIConstraints: *HolePunch	True      *PageSize CustomPageSize
+*UIConstraints: *HolePunch 	True      *PageSize Monarch
+*UIConstraints: *HolePunch 	True      *PageSize C9
+*UIConstraints: *HolePunch 	True      *PageSize Comm10
+*UIConstraints: *HolePunch 	True      *PageSize DL
+*UIConstraints: *HolePunch 	True      *PageSize C5
+*UIConstraints: *HolePunch 	True      *PageSize ISOB5
+
+*UIConstraints: *CustomPageSize  True	   *HolePunch  	True
+*UIConstraints: *PageSize	 Monarch   *HolePunch	True
+*UIConstraints: *PageSize 	 C9	   *HolePunch	True
+*UIConstraints: *PageSize 	 Comm10    *HolePunch	True
+*UIConstraints: *PageSize 	 DL        *HolePunch	True
+*UIConstraints: *PageSize 	 C5        *HolePunch	True
+*UIConstraints: *PageSize 	 ISOB5     *HolePunch	True
+
+*% Hole Punch will appear only when Finisher is installed.
+
+*UIConstraints: *OutputBins False	*HolePunch	True
+*UIConstraints: *OutputBins 1.1Bin	*HolePunch	True
+*UIConstraints: *OutputBins 5Bin	*HolePunch	True
+
+*% Offset pages restricts some MediaTypes.
+
+*UIConstraints: *Jog  EndOfSet	*MediaType Env
+*UIConstraints: *Jog  EndOfSet 	*MediaType Transparency
+
+*UIConstraints: *MediaType Env        	    *Jog  EndOfSet
+*UIConstraints: *MediaType Transparency     *Jog  EndOfSet
+
+*% Offset pages restrict Envelope paper sizes.
+
+*UIConstraints: *Jog    EndOfSet  *PageSize Monarch
+*UIConstraints: *Jog    EndOfSet  *PageSize C9
+*UIConstraints: *Jog    EndOfSet  *PageSize Comm10
+*UIConstraints: *Jog    EndOfSet  *PageSize DL
+*UIConstraints: *Jog    EndOfSet  *PageSize C5
+*UIConstraints: *Jog    EndOfSet  *PageSize ISOB5
+
+*UIConstraints: *CustomPageSize  True	   *Jog    EndOfSet
+*UIConstraints: *PageSize	 Monarch   *Jog    EndOfSet
+*UIConstraints: *PageSize 	 C9	   *Jog    EndOfSet
+*UIConstraints: *PageSize 	 Comm10    *Jog    EndOfSet
+*UIConstraints: *PageSize 	 DL        *Jog    EndOfSet
+*UIConstraints: *PageSize 	 C5        *Jog    EndOfSet
+*UIConstraints: *PageSize 	 ISOB5     *Jog    EndOfSet
+
+*% Offset Pages will appear only when Finisher is installed.
+
+*UIConstraints: *OutputBins False	*Jog    EndOfSet
+*UIConstraints: *OutputBins 1.1Bin	*Jog    EndOfSet
+*UIConstraints: *OutputBins 5Bin	*Jog    EndOfSet
+
+*% === Basic Device Capabilities ============
+
+*LanguageLevel: "3"
+*Protocols: PJL TBCP
+*FreeVM: "2058000"
+*VMOption 128Meg/128 MB Printer Memory:         "2058000"
+*VMOption 192Meg/192 MB Printer Memory:         "2058000"
+*VMOption 256Meg/256 MB Printer Memory:         "2058000"
+*VMOption 320Meg/320 MB Printer Memory: 	"2058000"
+*VMOption 384Meg/384 MB Printer Memory:         "2058000"
+*VMOption 512Meg/512 or more MB Printer Memory: "2058000"
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*TTRasterizer:  Type42
+*?TTRasterizer:""
+*FileSystem: True
+*?FileSystem: ""
+*VariablePaperSize: True
+*Throughput: "25"
+*Password: "0"
+*ExitServer: "
+ count 0 eq   % is the password on the stack?
+ { true }
+ { dup        % potential password
+   statusdict /checkpassword get exec not
+ } ifelse
+ {  %  if no password or not valid
+   (WARNING : Cannot perform the exitserver command.) =
+   (Password supplied is not valid.) =
+   (Please contact the author of this software.) = flush
+   quit
+ } if
+ serverdict /exitserver get exec
+ "
+*End
+*Reset: "
+ count 0 eq  % is the password on the stack?
+ { true }
+ { dup      % potential password
+   statusdict /checkpassword get exec not
+ } ifelse
+ {  %  if no password or not valid
+   (WARNING : Cannot reset printer.) =
+   (Password supplied is not valid.) =
+   (Please contact the author of this software.) = flush
+   quit
+ } if
+ serverdict /exitserver get exec
+ systemdict /quit get exec
+ (WARNING : Printer Reset Failed.) = flush
+ "
+*End
+
+*% === Job Control Language ==
+
+*JCLBegin: ""
+*JCLToPSInterpreter: ""
+*JCLEnd: ""
+
+*% === Print Resolution ============
+
+*OpenUI *Resolution/Resolution: PickOne
+*DefaultResolution: 600dpi
+*OrderDependency: 100 AnySetup *Resolution
+*Resolution 600dpi/4800 CQ:   "
+ << /HWResolution [600 600] >> setpagedevice
+ << /DeviceRenderingInfo << /ImageEnhancement 1 >> >> setpagedevice
+ "
+*End
+*Resolution 1200dpi/1200 dpi: "
+ << /HWResolution [1200 1200] >> setpagedevice"
+*End
+
+*?Resolution: "
+ save
+ currentpagedevice /HWResolution get 0 get
+ (     ) cvs print (dpi) = flush
+ restore
+ "
+*End
+*CloseUI: *Resolution
+
+*% === Halftone Information ===============
+
+*ScreenFreq: "60.0"
+*ScreenAngle: "45.0"
+*ResScreenFreq  600dpi:   "60.0"
+*ResScreenAngle 600dpi:   "45.0"
+*ResScreenFreq  1200dpi:   "60.0"
+*ResScreenAngle 1200dpi:   "45.0"
+
+*DefaultScreenProc: Dot
+*ScreenProc Dot: "
+ {abs exch abs 2 copy add 1 gt {1 sub dup mul exch 1 sub dup mul add 1
+ sub }{dup mul exch dup mul add 1 exch sub }ifelse }
+ "
+*End
+*ScreenProc Line: "{ pop }"
+*ScreenProc Ellipse: "{ dup 5 mul 8 div mul exch dup mul exch add sqrt 1 exch sub }"
+
+*DefaultTransfer: Factory
+*Transfer Factory: "{ }"
+*Transfer Factory.Inverse: "{ 1 exch sub }"
+
+*OpenUI *StapleLocation/Staple: PickOne
+*DefaultStapleLocation: PrtSet
+*OrderDependency: 170 AnySetup *StapleLocation
+*StapleLocation PrtSet/Printer Setting: ""
+*StapleLocation False/Off: "<< /Staple 0 >> setpagedevice"
+*StapleLocation True/On:   "<< /Staple 3 >> setpagedevice"
+*CloseUI: *StapleLocation
+
+*OpenUI *HolePunch/Hole Punch: PickOne
+*DefaultHolePunch: PrtSet
+*OrderDependency: 170 AnySetup *HolePunch
+*HolePunch PrtSet/Printer Setting: ""
+*HolePunch Flase/Off: "<< /Punch 0 >> setpagedevice"
+*HolePunch True/On:  "<< /Punch 3 >> setpagedevice"
+*CloseUI: *HolePunch
+
+*OpenUI *Jog/Offset Pages: PickOne
+*DefaultJog: PrtSet
+*OrderDependency: 170 AnySetup *Jog
+*Jog PrtSet/Printer Setting:  ""
+*Jog False/Off:                "<< /Jog 0 >> setpagedevice"
+*Jog EndOfSet/Between Copies: "<< /Jog 3 >> setpagedevice"
+*CloseUI: *Jog
+
+*OpenUI *OutputBin/Output Bin: PickOne
+*DefaultOutputBin: PrtSet
+*OrderDependency:  45 AnySetup *OutputBin
+*OutputBin PrtSet/Printer Setting:""
+*OutputBin False/Standard Bin: "<< /OutputAttributes << /Priority [0] >> >> setpagedevice"
+*OutputBin Bin1/Bin 1:         "<< /OutputAttributes << /Priority [1] >> >> setpagedevice"
+*OutputBin Bin2/Bin 2:         "<< /OutputAttributes << /Priority [2] >> >> setpagedevice"
+*OutputBin Bin3/Bin 3:         "<< /OutputAttributes << /Priority [3] >> >> setpagedevice"
+*OutputBin Bin4/Bin 4:         "<< /OutputAttributes << /Priority [4] >> >> setpagedevice"
+*OutputBin Bin5/Bin 5:         "<< /OutputAttributes << /Priority [5] >> >> setpagedevice"
+*OutputBin Bin6/Bin 6:         "<< /OutputAttributes << /Priority [6] >> >> setpagedevice"
+*CloseUI: *OutputBin
+
+*OpenUI *Collate/Collate Copies: Boolean
+*DefaultCollate: False
+*OrderDependency: 150 AnySetup *Collate
+*Collate False/Off: "<< /Collate false >> setpagedevice"
+*Collate True/On:   "<< /Collate true >> setpagedevice"
+*CloseUI: *Collate
+
+*% === Features ===
+*JCLOpenUI *JCLTonerDarkness/Toner Darkness: PickOne
+*DefaultJCLTonerDarkness: None
+*OrderDependency: 20 JCLSetup  *JCLTonerDarkness
+*JCLTonerDarkness None/Printer Setting: ""
+*JCLTonerDarkness 1/1: "@PJL SET DENSITY = 1 <0A>"
+*JCLTonerDarkness 2/2: "@PJL SET DENSITY = 2 <0A>"
+*JCLTonerDarkness 3/3: "@PJL SET DENSITY = 3 <0A>"
+*JCLTonerDarkness 4/4: "@PJL SET DENSITY = 4 <0A>"
+*JCLTonerDarkness 5/5: "@PJL SET DENSITY = 5 <0A>"
+*JCLCloseUI: *JCLTonerDarkness
+
+*OpenUI *MediaType/Media Type: PickOne
+*DefaultMediaType: None
+*OrderDependency: 140 AnySetup *MediaType
+*MediaType None/Printer Setting: ""
+*MediaType Plain/Plain Paper:           "<< /MediaType (Plain) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Bond/Bond:                   "<< /MediaType (Bond) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Labels/Labels:               "<< /MediaType (Labels) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Glossy/Glossy Paper:   	"<< /MediaType (Glossy Paper) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Transparency/Transparency:   "<< /MediaType (Transparency) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Env/Envelope:                "<< /MediaType (Envelope) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Card/Card Stock:             "<< /MediaType (Card Stock) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Color/Colored Paper:         "<< /MediaType (Color) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Preprint/Preprinted:         "<< /MediaType (Preprinted) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Letterhead/Letterhead:       "<< /MediaType (Letterhead) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom1/Custom Type 1:       "<< /MediaType (Custom Type 1) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom2/Custom Type 2:       "<< /MediaType (Custom Type 2) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom3/Custom Type 3:       "<< /MediaType (Custom Type 3) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom4/Custom Type 4:       "<< /MediaType (Custom Type 4) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom5/Custom Type 5:       "<< /MediaType (Custom Type 5) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom6/Custom Type 6:       "<< /MediaType (Custom Type 6) /Policies << /MediaType 2 >> >> setpagedevice"
+*CloseUI: *MediaType
+
+
+*OpenUI *Duplex/Duplex: PickOne
+*DefaultDuplex: None
+*OrderDependency: 40 AnySetup *Duplex
+*Duplex None/Simplex: "<< /Duplex false >> setpagedevice"
+*Duplex DuplexNoTumble/Duplex - Long Edge: "
+ statusdict /duplexer get exec
+  { << /Duplex true /Tumble false >> setpagedevice }
+  { << /Duplex false >> setpagedevice }
+  ifelse
+ "
+*End
+*Duplex DuplexTumble/Duplex - Short Edge: "
+ statusdict /duplexer get exec
+ { << /Duplex true /Tumble true >> setpagedevice }
+ { << /Duplex false >> setpagedevice }
+ ifelse
+ "
+*End
+
+*?Duplex: "
+ save
+ currentpagedevice /Duplex get {(True)}{(False)}ifelse = flush
+ restore
+ "
+*End
+*CloseUI: *Duplex
+
+*JCLOpenUI *JCLPortRotation/Port Rotation: PickOne
+*DefaultJCLPortRotation: None
+*OrderDependency: 10 JCLSetup  *JCLPortRotation
+*JCLPortRotation None/Printer Setting: ""
+*JCLPortRotation True/On: "@PJL LPORTROTATE<0A>"
+*JCLCloseUI: *JCLPortRotation
+
+*% === Paper  ==========================================
+*LandscapeOrientation: Plus90
+
+*OpenUI *PageSize:  PickOne
+*OrderDependency: 30 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 792] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Legal/Legal: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 1008] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize A4/A4: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [595 842] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize A5/A5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [420 595] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Executive/Executive: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [522 756] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize B5/B5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [516 729] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Folio/Folio: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 936] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Statement/Statement: "
+ << /Policies << /PageSize 2 >> >> setpagedevice

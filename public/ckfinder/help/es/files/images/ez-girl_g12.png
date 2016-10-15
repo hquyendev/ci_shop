@@ -1,0 +1,553 @@
+ble
+*UIConstraints: *MediaType Transparency	*Duplex DuplexNoTumble
+*UIConstraints: *MediaType Transparency	*Duplex DuplexTumble
+
+*% Duplexing restricts Envelope paper sizes and Statement.
+
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize Monarch
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize C9
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize Comm10
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize DL
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize C5
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize ISOB5
+
+*UIConstraints: *Duplex DuplexTumble      *PageSize Monarch
+*UIConstraints: *Duplex DuplexTumble      *PageSize C9
+*UIConstraints: *Duplex DuplexTumble      *PageSize Comm10
+*UIConstraints: *Duplex DuplexTumble      *PageSize DL
+*UIConstraints: *Duplex DuplexTumble      *PageSize C5
+*UIConstraints: *Duplex DuplexTumble      *PageSize ISOB5
+
+*UIConstraints: *PageSize Monarch	*Duplex DuplexNoTumble       
+*UIConstraints: *PageSize C9	        *Duplex DuplexNoTumble    
+*UIConstraints: *PageSize Comm10	*Duplex DuplexNoTumble
+*UIConstraints: *PageSize DL	        *Duplex DuplexNoTumble
+*UIConstraints: *PageSize C5	        *Duplex DuplexNoTumble
+*UIConstraints: *PageSize ISOB5	        *Duplex DuplexNoTumble
+
+*UIConstraints: *PageSize Monarch	*Duplex DuplexTumble       
+*UIConstraints: *PageSize C9	        *Duplex DuplexTumble    
+*UIConstraints: *PageSize Comm10	*Duplex DuplexTumble
+*UIConstraints: *PageSize DL	        *Duplex DuplexTumble
+*UIConstraints: *PageSize C5	        *Duplex DuplexTumble
+*UIConstraints: *PageSize ISOB5	        *Duplex DuplexTumble
+
+*UIConstraints: *Duplex DuplexNoTumble      *PageSize Statement
+*UIConstraints: *Duplex DuplexTumble      *PageSize Statement
+*UIConstraints: *PageSize Statement        *Duplex DuplexNoTumble
+*UIConstraints: *PageSize Statement        *Duplex DuplexTumble
+
+
+*% === Basic Device Capabilities ============
+
+*LanguageLevel: "3"
+*Protocols: PJL TBCP
+*FreeVM: "2058000"
+*VMOption 128Meg/128  MB Printer Memory:         "2058000"
+*VMOption 256Meg/256  MB Printer Memory:         "2058000"
+*VMOption 384Meg/384  MB Printer Memory:         "2058000"
+*VMOption 640Meg/640  MB Printer Memory:         "2058000"
+*VMOption 768Meg/768  MB Printer Memory:         "2058000"
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*TTRasterizer:  Type42
+*?TTRasterizer:""
+*FileSystem: True
+*?FileSystem: ""
+*VariablePaperSize: True
+*Throughput: "25"
+*Password: "0"
+*ExitServer: "
+ count 0 eq   % is the password on the stack?
+ { true }
+ { dup        % potential password
+   statusdict /checkpassword get exec not
+ } ifelse
+ {  %  if no password or not valid
+   (WARNING : Cannot perform the exitserver command.) =
+   (Password supplied is not valid.) =
+   (Please contact the author of this software.) = flush
+   quit
+ } if
+ serverdict /exitserver get exec
+ "
+*End
+*Reset: "
+ count 0 eq  % is the password on the stack?
+ { true }
+ { dup      % potential password
+   statusdict /checkpassword get exec not
+ } ifelse
+ {  %  if no password or not valid
+   (WARNING : Cannot reset printer.) =
+   (Password supplied is not valid.) =
+   (Please contact the author of this software.) = flush
+   quit
+ } if
+ serverdict /exitserver get exec
+ systemdict /quit get exec
+ (WARNING : Printer Reset Failed.) = flush
+ "
+*End
+
+*% === Job Control Language ==
+
+*JCLBegin: ""
+*JCLToPSInterpreter: ""
+*JCLEnd: ""
+
+*% === Print Resolution ============
+*OpenUI *Resolution/Resolution: PickOne
+*DefaultResolution: 600dpi4
+*OrderDependency: 100 AnySetup *Resolution
+*Resolution 1200dpi/1200 dpi: "
+ << /HWResolution [1200 1200] >> setpagedevice << /DeviceRenderingInfo << /ImageEnhancement 0 >> >> setpagedevice
+"
+*End
+*Resolution 600dpi4/4800 CQ:   "
+ << /HWResolution [600 600] >> setpagedevice 
+ << /DeviceRenderingInfo << /ImageEnhancement 1 /ImageEnhancementType 4 >> >> setpagedevice
+"
+*End
+*?Resolution: "
+ save
+ currentpagedevice /HWResolution get 0 get
+ (     ) cvs print (dpi) = flush
+ restore
+ "
+*End
+*CloseUI: *Resolution
+
+*% === Halftone Information ===============
+
+*ScreenFreq: "60.0"
+*ScreenAngle: "45.0"
+*ResScreenFreq  600dpi4:   "60.0"
+*ResScreenAngle 600dpi4:   "45.0"
+*ResScreenFreq  1200dpi:   "60.0"
+*ResScreenAngle 1200dpi:   "45.0"
+*DefaultScreenProc: Dot
+*ScreenProc Dot: "
+ {abs exch abs 2 copy add 1 gt {1 sub dup mul exch 1 sub dup mul add 1
+ sub }{dup mul exch dup mul add 1 exch sub }ifelse }
+ "
+*End
+*ScreenProc Line: "{ pop }"
+*ScreenProc Ellipse: "{ dup 5 mul 8 div mul exch dup mul exch add sqrt 1 exch sub }"
+
+*DefaultTransfer: Factory
+*Transfer Factory: "{ }"
+*Transfer Factory.Inverse: "{ 1 exch sub }"
+
+*OpenUI *OutputBin/Output Bin: PickOne
+*DefaultOutputBin: StandardBin
+*OrderDependency:  45 AnySetup *OutputBin
+*OutputBin StandardBin/Standard Bin: "<< /OutputAttributes << /Priority [0] >> >> setpagedevice"
+*CloseUI: *OutputBin
+
+*OpenUI *Collate/Collate Copies: Boolean
+*DefaultCollate: False
+*OrderDependency: 150 AnySetup *Collate
+*Collate False/Off: "<< /Collate false >> setpagedevice"
+*Collate True/On:   "<< /Collate true >> setpagedevice"
+*CloseUI: *Collate
+
+*% === Features ===
+*JCLOpenUI *JCLTonerDarkness/Toner Darkness: PickOne
+*DefaultJCLTonerDarkness: None
+*OrderDependency: 20 JCLSetup  *JCLTonerDarkness
+*JCLTonerDarkness None/Printer Setting: ""
+*JCLTonerDarkness 1/1: ""
+*JCLTonerDarkness 2/2: ""
+*JCLTonerDarkness 3/3: ""
+*JCLTonerDarkness 4/4: ""
+*JCLTonerDarkness 5/5: ""
+*JCLCloseUI: *JCLTonerDarkness
+
+*OpenUI *MediaType/Media Type: PickOne
+*DefaultMediaType: None
+*OrderDependency: 140 AnySetup *MediaType
+*MediaType None/Printer Setting: ""
+*MediaType Plain/Plain Paper:           "<< /MediaType (Plain) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Bond/Bond:                   "<< /MediaType (Bond) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Labels/Labels:               "<< /MediaType (Labels) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Vinyl/Vinyl Labels:          "<< /MediaType (Vinyl Labels) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Glossy/Glossy Paper:   	"<< /MediaType (Glossy Paper) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Transparency/Transparency:   "<< /MediaType (Transparency) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Envelope/Envelope:           "<< /MediaType (Envelope) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Card/Card Stock:             "<< /MediaType (Card Stock) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Color/Colored Paper:         "<< /MediaType (Color) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Preprint/Preprinted:         "<< /MediaType (Preprinted) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Letterhead/Letterhead:       "<< /MediaType (Letterhead) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom1/Custom Type 1:       "<< /MediaType (Custom Type 1) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom2/Custom Type 2:       "<< /MediaType (Custom Type 2) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom3/Custom Type 3:       "<< /MediaType (Custom Type 3) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom4/Custom Type 4:       "<< /MediaType (Custom Type 4) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom5/Custom Type 5:       "<< /MediaType (Custom Type 5) /Policies << /MediaType 2 >> >> setpagedevice"
+*MediaType Custom6/Custom Type 6:       "<< /MediaType (Custom Type 6) /Policies << /MediaType 2 >> >> setpagedevice"
+*CloseUI: *MediaType
+
+*OpenUI *Duplex/Duplex: PickOne
+*DefaultDuplex: None
+*OrderDependency: 40 AnySetup *Duplex
+*Duplex None/Simplex: "<< /Duplex false >> setpagedevice"
+*Duplex DuplexNoTumble/Duplex - Long Edge: "
+ statusdict /duplexer get exec
+  { << /Duplex true /Tumble false >> setpagedevice }
+  { << /Duplex false >> setpagedevice }
+  ifelse
+ "
+*End
+*Duplex DuplexTumble/Duplex - Short Edge: "
+ statusdict /duplexer get exec
+ { << /Duplex true /Tumble true >> setpagedevice }
+ { << /Duplex false >> setpagedevice }
+ ifelse
+ "
+*End
+
+*?Duplex: "
+ save
+ currentpagedevice /Duplex get {(True)}{(False)}ifelse = flush
+ restore
+ "
+*End
+*CloseUI: *Duplex
+
+*JCLOpenUI *JCLPortRotation/Port Rotation: PickOne
+*DefaultJCLPortRotation: None
+*OrderDependency: 10 JCLSetup  *JCLPortRotation
+*JCLPortRotation None/Printer Setting: ""
+*JCLPortRotation True/On: "@PJL LPORTROTATE<0A>"
+*JCLCloseUI: *JCLPortRotation
+
+
+*ADHasEuro: True
+
+
+*OpenUI *HasManualColorCorrection/HasManualColorCorrection: Boolean
+
+*DefaultHasManualColorCorrection: True
+*HasManualColorCorrection True/True: ""
+*CloseUI: *HasManualColorCorrection
+
+*OpenUI *HasKeepPreviousPHJobs/HasKeepPreviousPHJobs: Boolean
+*DefaultHasKeepPreviousPHJobs: True
+*HasKeepPreviousPHJobs True/True: ""
+*CloseUI: *HasKeepPreviousPHJobs
+
+*OpenUI *HasPrintandHold/HasPrintandHold: Boolean
+*DefaultHasPrintandHold: True
+*HasPrintandHold True/True: ""
+*CloseUI: *HasPrintandHold
+
+*OpenUI *StatusWindow/StatusWindow: Boolean
+*DefaultStatusWindow: True
+*StatusWindow True/True: ""
+*CloseUI: *StatusWindow
+
+*OpenUI *ShowStatusWindowAfterPrinting/ShowStatusWindowAfterPrinting: Boolean
+*DefaultShowStatusWindowAfterPrinting: True
+*ShowStatusWindowAfterPrinting True/True: ""
+*CloseUI: *ShowStatusWindowAfterPrinting
+
+*OpenUI *HasPrintQuality/HasPrintQuality: Boolean
+*DefaultHasPrintQuality: True
+*HasPrintQuality True/True: ""
+*CloseUI: *HasPrintQuality
+
+
+*%  If IsCustomPage block presents in the PPD then command for Custom Page Size will 
+*%  go from Plugin and there should not be any command for *CustomPageSize in PPD. 
+*%  Changes is for IO-CR004(262031).
+
+*OpenUI *IsCustomPage/IsCustomPage: Boolean
+*DefaultIsCustomPage: True
+*IsCustomPage True/True: ""
+*CloseUI: *IsCustomPage
+
+*% === Paper  ==========================================
+*LandscapeOrientation: Plus90
+
+*OpenUI *PageSize:  PickOne
+*OrderDependency: 30 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 792] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Legal/Legal: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 1008] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize A4/A4: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [595 842] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize A5/A5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [420 595] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Executive/Executive: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [522 756] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize B5/B5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [516 729] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Folio/Folio: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 936] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Statement/Statement: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [396 612] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Monarch/7 3/4 Envelope 3 7/8 x 7 1/2 in: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [279 540] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize C9/9 Envelope 3 7/8 x 8 7/8 in: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [279 639] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize Comm10/10 Envelope 4 1/8 x 9 1/2 in: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [297 684] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize DL/DL Envelope 110 x 220 mm: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [312 624] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize C5/C5 Envelope 162 x 229 mm: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [459 649] /ImagingBBox null >> setpagedevice"
+*End
+*PageSize ISOB5/B5 Envelope 176 x 250 mm: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [499 709] /ImagingBBox null >> setpagedevice"
+*End
+*?PageSize: "
+ save
+ 17 dict
+   dup /letter (Letter) put
+   dup /legal (Legal) put
+   dup /a4 (A4) put
+   dup /a5 (A5) put
+   dup /executivepage (Executive) put
+   dup /b5 (B5) put
+   dup /folio (Folio) put
+   dup /statement (Statement) put
+   dup /3.875x7.5envelope (Monarch) put
+   dup /3.875x8.875envelope (C9) put
+   dup /4.125x9.5envelope (Comm10) put
+   dup /110x220envelope (DL) put
+   dup /162x229envelope (C5) put
+   dup /176x250envelope (Envelope.499.709) put
+ statusdict /papersize get exec
+ 3 1 roll  {get} stopped {(Unknown)}if
+ exch  not { print (.Transverse) }if
+ = flush
+ restore
+ "
+*End
+*CloseUI: *PageSize
+
+*% These entries will set up the frame buffer.
+*% Usually used with input source selection rather than selection by size (AutoSelect).
+
+*OpenUI *PageRegion:  PickOne
+*OrderDependency: 40 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 792] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion Legal: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 1008] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion A4: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [595 842] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion A5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [420 595] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion Executive: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [522 756] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion B5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [516 729] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion Folio: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [612 936] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion Statement: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [396 612] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion Monarch: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [279 540] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion C9: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [279 639] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion Comm10: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [297 684] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion DL: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [312 624] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion C5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [459 649] /ImagingBBox null >> setpagedevice"
+*End
+*PageRegion ISOB5: "
+ << /Policies << /PageSize 2 >> >> setpagedevice
+ << /PageSize [499 709] /ImagingBBox null >> setpagedevice"
+*End
+*CloseUI: *PageRegion
+
+*% **** Printable Area by key word ****
+*DefaultImageableArea: Letter
+*ImageableArea Letter:                  "13 13 596 779"
+*ImageableArea Legal:                   "13 13 596 995"
+*ImageableArea A4:                      "10 13 588 829"
+*ImageableArea A5:                      "13 13 407 583"
+*ImageableArea Executive:               "13 13 510 744"
+*ImageableArea B5:                      "13 13 505 716"
+*ImageableArea Folio:                   "13 13 596 921"
+*ImageableArea Statement:               "13 13 384 599"
+*ImageableArea Monarch:                 "13 13 266 526"
+*ImageableArea C9:                      "13 13 266 624"
+*ImageableArea Comm10:                  "13 13 284 668"
+*ImageableArea DL:                      "13 13 296 608"
+*ImageableArea C5:                      "13 13 445 634"
+*ImageableArea ISOB5:                   "13 13 486 694"
+*?ImageableArea: "
+ save
+ /cvp { cvi (            ) cvs print ( ) print } bind def
+ newpath clippath pathbbox
+ 4 -2 roll exch 2 {ceiling cvp} repeat
+ exch 2 {floor cvp} repeat flush
+ restore
+ "
+*End
+
+
+*% **** Physical paper dimensions by key word ****
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter:    "612 792"
+*PaperDimension Legal:     "612 1008"
+*PaperDimension A4:        "595 842"
+*PaperDimension A5:        "420 595"
+*PaperDimension Executive: "522 756"
+*PaperDimension B5:        "516 729"
+*PaperDimension Folio:     "612 936"
+*PaperDimension Statement: "396 612"
+*PaperDimension Monarch:   "279 540"
+*PaperDimension C9:        "279 639"
+*PaperDimension Comm10:    "297 684"
+*PaperDimension DL:        "312 624"
+*PaperDimension C5:        "459 649"
+*PaperDimension ISOB5:     "499 709"
+
+*%CustomPageSize True:  "
+*%statusdict /setuniversalsize known
+*%{
+*%5 -2 roll
+*%2 copy
+*%<< /UniversalDetails
+*%	<< /Type 99
+*%              /PageSize [9 -2 roll]
+*% 	>>
+*%>> setpagedevice
+*%<< /PageSize [5 -2 roll]
+*%     /ImagingBBox null
+*%>> setpagedevice
+*%}
+*%{
+*%pop pop pop
+*%statusdict begin {2 setignoresize}stopped {pop}if end
+*%<< /PageSize [5 -2 roll]
+*%      /ImagingBBox null
+*%      /Policies <</PageSize 7>>
+*%>> setpagedevice
+*%}ifelse"
+*%*End
+
+*ParamCustomPageSize   Width:           1 points 216 612
+*ParamCustomPageSize   Height:          2 points 216 3456
+*ParamCustomPageSize   WidthOffset:     3 points 0   0
+*ParamCustomPageSize   HeightOffset:    4 points 0   0
+*ParamCustomPageSize   Orientation:     5 int    1   1
+
+*MaxMediaWidth:  "612"
+*MaxMediaHeight: "3456"
+
+*HWMargins: 12 12 12 12
+*RequiresPageRegion All: True
+
+*% === Input Trays =======================================
+
+
+*OpenUI *InputSlot:  PickOne
+*OrderDependency: 20 AnySetup *InputSlot
+*DefaultInputSlot: AutoSelect
+*InputSlot AutoSelect/Auto Select: "
+"
+*End
+*InputSlot Tray1/Tray 1: "
+ <</DeferredMediaSelection true>> setpagedevice
+ << /ManualFeed false /MediaPosition null >> setpagedevice
+ currentpagedevice /InputAttributes get 0 get setpagedevice
+ << /InputAttributes << /Priority [0] >> >> setpagedevice"
+*End
+*InputSlot Tray2/Tray 2: "
+ <</DeferredMediaSelection true>> setpagedevice
+ << /ManualFeed false /MediaPosition null >> setpagedevice
+ userdict /lms
+ currentpagedevice /InputAttributes get 1 known { 1 }{ 0 }ifelse put
+ currentpagedevice /InputAttributes get lms get setpagedevice
+ << /InputAttributes << /Priority [lms] >> >> setpagedevice"
+*End
+*InputSlot MultiPurpose/Multi-Purpose Feeder: "
+ <</DeferredMediaSelection true>> setpagedevice
+ << /ManualFeed false /MediaPosition null >> setpagedevice
+ userdict /lms
+ currentpagedevice /InputAttributes get 4 known { 4 }{ 0 }ifelse put
+ currentpagedevice /InputAttributes get lms get setpagedevice
+ << /InputAttributes << /Priority [lms] >> >> setpagedevice"
+*End
+*InputSlot Manual/Manual Paper: "
+ <</DeferredMediaSelection true>> setpagedevice
+ << /ManualFeed true /MediaPosition null >> setpagedevice"
+*End
+*InputSlot ManualEnv/Manual Envelope: "
+ <</DeferredMediaSelection true>> setpagedevice
+ << /ManualFeed true /MediaPosition null >> setpagedevice"
+*End
+*?InputSlot: "
+ save
+ [(Tray1)(Tray2)(Multipurpose)(Manual)(ManualEnv)]
+ statusdict /papertray get exec
+ {get exec} stopped { pop pop (Unknown) } if = flush
+ restore
+ "
+*End
+*CloseUI: *InputSlot
+*% === Font Information ==========================================
+
+*DefaultFont: Courier
+*Font AlbertusMT: Standard "(

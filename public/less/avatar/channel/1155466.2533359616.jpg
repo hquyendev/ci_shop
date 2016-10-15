@@ -1,0 +1,135 @@
+ttings registration.
+				Removed ADF element and ADF-style information under description element.
+		</xs:documentation>
+        <xs:documentation>2.0.0.13: 
+				Removed description/@contentType (replaced by entryPoint/hostInBrowser).
+				Renamed deployment/@visible to deployment/@install.
+				Moved deployment/install/@runAfterInstall and @promptBelowVersion to deployment/@.
+				Removed deployment/install element.
+				Moved dependency/installFrom/@codebase, @group, @size, @hash, @hashAlg to dependency/assemblyDependency. 
+				Removed dependency/installFrom element.
+				Moved all non-Whidbey schema to asmv3 (specifically: entryPoint/@hostInBrowser, entryPoint/@name)
+				Changed dependency/@visible, @preRequisite, @indirec, @discoverable to boolean instead of YesNoType.
+				Changed appPathData/@external to boolean
+				Added annotations to capture asm.v2 vs. asm.v3 for use with the schema generation tool.
+				Changed resourcesType/@typeId, @itemId, @typeName, @itemName to @typeIds, @itemIds, @typeNames, @itemNames and made them list types instead of string/integer.
+				Added migration, PnP, imaging, shortcut, file attributes, redirectInfo, installerRegistration for CMI.
+				Fixed categoryMembership syntax to comply with CMI schema.
+				Moved dependency/@supportUrl to dependency/dependentAssembly and dependency/dependentOS.
+				Renamed dependent/@displayName to description and moved to dependency/dependentAssembly and dependency/dependentOS.
+				Made identity/@version optional (again).
+				Added any declaration under IPermission to allow for custom permissions. Added Permission element under PermissionSet for custom permissions.
+				Added hash element to file and dependency/dependentAssembly.			
+				Added file/@writeableType attribute for Whidbey data support.
+				Added migration/@customDataMigration attribute for Whidbey data support.
+				Moved dependentAssembly/@resourceType to asm.v3
+				Allowed arbitary XML namespaces under IPermission
+				Added better version number patterns.
+				Made instrumentation/@componentType optional.
+				Misc schema changes for Eventing.
+				Added systemProtection/@noJournaling	and @noPerUserVirtualization.
+				Added deployment/@trustUrlParameters for ClickOnce.
+		</xs:documentation>
+        <xs:documentation>2.0.0.12: 
+				Fixed bug in privacy schema (schemaLocation must be xml.0.0.0.1.xsd instead of http://www.w3.org/2001/xml.xsd.
+				Added systemProtection elements for Strongbox.
+				Added licensing element.
+				Fixed casing on sidebarTile category element (left old sideBarTile casing for transition purposes).
+				Added trustedPlatformInfo element for NGSCB (TUreche).
+				Removed support for category element, use categoryMembership/category instead
+				Renamed categoryCMI element and categoryCMIType back to category and categoryType.
+				Removed support for stringTable element; use localization/resources/stringTable instead.
+				ClickOnce:
+					Added dependency/@visible attribute for ClickOnce/component store. 
+					Added dependency/@resourceSatelliteName, @resourceFallbackCulture and @resourceFallbackCultureInternal for ClickOnce loc scenarios
+					Removed dependency/@primaryDependency; use resourceType="resources" instead to figure out which dependency is NOT an application dependency.
+					Added entryPoint/hostInBrowser for Avalon.
+					Changed deployment\subscription\update\periodic\* to expiration\@maximumAge
+					Moved deployment\install\@visible to deployment\@visible.
+					Removed deployment\install\@shellVisible, use @visible instead to determine if app is Online or Installed.
+					Added deployment\install\@runAfterInstall attribute.
+					Added file\@optional and file\@group for ClickOnce incremental download feature.					
+					Added deployment\install\@diskPadSize and @promptBelowVersion
+					Changed deployment/@isRequiredUpdate to deployment/@minimumRequiredVersion.
+				Change privacy schema to reflect change M6/M7 plans.
+				Removed tasks category and schema.
+				Made comClassType\OLE\auxUserType and comClassType\OLE\miscStatus attributes on comClassType to match XP SP1 DCR for VB scenarios.
+				Removed experimental categoryReference element.
+				Added prototype schema for state separation: configurableState, operationalState, temporaryState, dataState. Categories: fileRegistration, 
+directoryRegistration and settingsRegistration.
+				Changed processContents to be consistently "lax".
+				Added security/trustInfo/trustedPlatformInfo element for NGSCB/Platinum.				
+				Changed dependency/@discoverable to be boolean instead of yesNo.
+				Added buildFilter attributes to assemblyIdentity, dependency, file, directory, categoryMembership, configuration, instrumentation, registryKeys\*, localization\*, genericCommand
+				Removed genericCommand, use genericCommands instead.
+				Added file/@importPath attribute, renamed file/@targetPath attribute to destinationPath.
+				Added file/dependencies/fileDependency/@destinationPath, SrcHash, SrcVer, DepType.
+				Disabled registryKeyNameType validation.
+				Made registryValueType\@name optional.
+				Merged Windows Eventing schema into master schema to reduce number of schema files.
+				Changed eventData schema according to Windows Eventing team. Changed eventInstanceType/@category to be xs:string instead of xs:int
+				Added memberships/categoryMembership/@typeName back to the schema.
+		</xs:documentation>
+        <xs:documentation>2.0.0.11: 
+				Added schema for user accounts, groups, security descriptors (trustInfo/security/accessControl/*).
+				Added schema for COM registration (AppID, OLE, inproc handlers, local server, 16 bit, dll surrogates etc.): file/comClass/*, comAppId/*
+				Added description/@contentType for Avalon MIME filter.
+				Added dependency/@primaryDependency attribute to allow ClickOnce to detect which dependency is the application vs. satellites etc.
+				Removed satelliteCategory and localizationCategory elements.
+				Changed casing of dependency/@resourceType enumeration values to camelCasing (manifestResources instead of ManifestResources, resources instead of Resources)
+				Added third enumeration value "languageEnabling" to indicate that wildcarding on the dependency on culture (dependency/@culture="*") should be allowed.
+				Picked up new privacy schema.
+		</xs:documentation>
+        <xs:documentation>2.0.0.10: 
+				sideBarTile: removed URL attribute, added maxHeight and maxWidth attributes
+				Changed file/@loadFrom to file/@targetPath to unify with MSI terminology. Removed file/@filePath
+				Reconciled category syntax with CMI:
+				- New memberships/categoryMember syntax:
+					- moved category element under memberships parent element
+					- renamed category element to categoryMembership
+					- changed identity attribute to individual name,version etc. attributes					
+				- Added categoryIdentityType/@typeName attribute, removed categoryIdentityType/@identity attribute.
+				- categoryMembership: added @typeName, @subCategory and @description attributes, removed @subType attribute.
+				- Merged categoryMemberType sub-elements into categoryMembershipType				
+				- Existing Fusion category syntax still supported for migration: made all categoryIdentityReferenceType optional
+				Reconciled localization with CMI:
+				- Added localization element.
+				- Added dependency/@resourceType attribute
+				- Marked stringTable element as deprecated (will remove when Fusion switches over)
+				Turned trustInfo/security/requestedPrivileges/@requestedExecutionLevel into separate attributes
+				Turned trustInfo/security/deployment into a deploymentAuthoritiesType complex type (no schema change).
+				Changed schemaType to allow ##any attribute instead of ##other.
+				Added dependency/override prototype schema.
+				Moved categoryDefinition prototype schema to categoryDefinitions/categoryDefinition.
+				WMI.Config: renamed configuration/schema/schema sub-element to configuration/configurationSchema/schema element
+				
+				Disambiguated the schema to work with current Whidbey System.XML:
+				- Made all top-level elements bounded (dependency, file, category, entryPoint, clrClass, clsSurrogate, comInterfaceExternalProxyStub) 
+				- Changed unbounded "sequence" for top-level elements to unbounded "choice"				
+				- Made all top-level elements minOccur="1"
+				- Changed sku/any, product/any, package/any, feature/any, categoryCMI/any to be ##other.
+				- Changed most unbounded sequence to unbounded choice / made sub-elements non-optional/maxOccur=1:
+				    services, services/service, trustInfo/security/deployment, memberships, registryKeys, registryKeys/registryValues, file, file/comCLass, file/dependencies,
+				    ADF, trustInfo/security/applicationRequestMinimum/PermissionSet, CATEGORIESType
+				Added xml.0.0.0.1.xsd to properly support the XML namespace items (lang attribute etc.) in the latest Whidbey XML parser.
+		</xs:documentation>
+        <xs:documentation>2.0.0.9: Change casing in trustInfo/security to be camelCase for everything except Permission element (TrustInfo/Security still has everything upper-case).		
+				Make IPermission element optional and make IPermission.version attribute optional.
+				Moved deploymentAuthority under security node, made deploymentAuthority unbounded.
+				Changed XMLDSIG schema to allow empty string in reference.URI attribute (potential bug in System.XML's anyURI type?)
+				Temporarily removed ADF schema until after design preview.
+				Changed casing of include statements to be identical to casing of actual schema files.
+		</xs:documentation>
+        <xs:documentation>2.0.0.8: Resync with OS componentization schema: added assembly attributes, sync with Whidbey CLickOnce schema, sync with WinfuseManifest schema.
+				installFrom didn't have group attribute: what are the permissible values? Just string?
+				dependency.name was reference in a key constraint, which made it non-optional. Removed the constraint in *.adaptive_elements.xsd
+				dependentOS.displayName was not optional
+				configuration.configFile was not in the adaptive schema, only in v2 schema.
+				trustInfo.PermissionSet.IPermission: #any attribute didn't have the "skip" PI
+				defaultAssemblyRequest and AssemblyRequest were not optional
+				AssemblyRequest didn't allow more than one occurrance
+				PermissionSet ID was not declared as type xs:ID
+				added displayName attribute to dependency
+				Changes to make manifest accessible via XSD.EXE generated classes: removed extra choice, made several unbounded elements bounded and made the containing sequence unbounded.
+				Changed trustInfo to current Avalon casing (TrustInfo)
+				GDF merged into ADF.

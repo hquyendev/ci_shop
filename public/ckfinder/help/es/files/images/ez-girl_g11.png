@@ -1,0 +1,371 @@
+s: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-33-generic_3.13.0-33.58_i386.deb
+Size: 14606000
+MD5sum: dd4b7488fcb4b25821658de9d7ecbd7f
+SHA1: b031a3a7b3000dd648c7a01feee54143e6a6f03d
+SHA256: 05e763ebea19967c9f3840affa7ebc4b0396e89c5bb840b514b977d3a006195a
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-33-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141674
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-33.58
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-33-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-33-lowlatency_3.13.0-33.58_i386.deb
+Size: 51665028
+MD5sum: 833940ceee1b0b43df23a47534f1a482
+SHA1: da6082e149d073cdc756065950424ae3726947d2
+SHA256: 8072d28bd342c8ff9726c9125b877fa19fa17d7e7a13d3671878659aec600f65
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-34-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31724
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-34.60
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-34-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-34-generic_3.13.0-34.60_i386.deb
+Size: 14594192
+MD5sum: b78846402b01ee4a72908f033bc9382e
+SHA1: f72c73e301c37cfb054dff6eecc2b285fb7ba573
+SHA256: fc4e8d304c945f01aa6aa2d9587e7774926d83458d91bd29fbcea5d53d1cfb48
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-34-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141675
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-34.60
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-34-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-34-lowlatency_3.13.0-34.60_i386.deb
+Size: 51633626
+MD5sum: 0e4cd59b1f8575d92665d4917657992a
+SHA1: 2ea0e1280fd8b6d05d1a7f76c83272062b5c054a
+SHA256: 5dced295dfcdc4d14edb3af11abd0e7e08cfab6b4bff698edc32faf37570d392
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-35-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31767
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-35.62
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-35-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-35-generic_3.13.0-35.62_i386.deb
+Size: 14611594
+MD5sum: b5c43f978aca632baba70de16745f058
+SHA1: 1000abeb7a14de7e369c99075ac7717ebfb42b75
+SHA256: 034d79023b1b11a1871db28340be61fd476995f983f9176c74055c743163e6ec
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-35-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141741
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-35.62
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-35-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-35-lowlatency_3.13.0-35.62_i386.deb
+Size: 51633780
+MD5sum: 51eb756ce864988923d5b3231e62d84a
+SHA1: 2c77ed08905adc2857dca56baab80fd7a15a0dc4
+SHA256: 17a768a5bd167846714ad8ad5f9148fc14c4eaacf6a7e53e2a7c3785b750a149
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-36-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31772
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-36.63
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-36-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-36-generic_3.13.0-36.63_i386.deb
+Size: 14673470
+MD5sum: c826ab99bd772b679635546cce40978a
+SHA1: 06f0830f534761390f1cde9396c2a7461d132cec
+SHA256: 29d354b5e031f1e1949608455c0493b4a51a08dd250a9acac3bde1a7df8571e8
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-36-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141784
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-36.63
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-36-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-36-lowlatency_3.13.0-36.63_i386.deb
+Size: 51699364
+MD5sum: efc74f13f031ca39c11f151742b02d62
+SHA1: 6a2c1c87e6ee0dd7a3357cc13563012c7bc89ed8
+SHA256: c265d30d3b32086b53aab0e333bdb9afab8a2ec3fd19e71731777f6e7837b682
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-37-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31789
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-37.64
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-37-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-37-generic_3.13.0-37.64_i386.deb
+Size: 14631452
+MD5sum: 40c2946806b90f7aa651982f0b5fd06c
+SHA1: 1d8ec47bb0df202299ad8313cf455186fe499b2c
+SHA256: e15cbef3ee01f93e59e5e871be5a9b08b47a7a16e073be2d81d7f7f115218794
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-37-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141817
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-37.64
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-37-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-37-lowlatency_3.13.0-37.64_i386.deb
+Size: 51694302
+MD5sum: 83e220a99c697f92c98cb8e57d3c9130
+SHA1: da493ced3a0cac0ae436a5199e7ca40e844adb9e
+SHA256: 4b51383426f2373111681bef3d097941fbfc5e7f1f9351c14439dfb777336ab0
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-39-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31800
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-39.66
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-39-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-39-generic_3.13.0-39.66_i386.deb
+Size: 14628038
+MD5sum: 31ac1f1e1c9bf4002dc9dd6c862a0d4b
+SHA1: cbc80e87df816e5e1bc2263a8d78d44ce237c246
+SHA256: 7c590e04d543d4b16ca4cad12c92dc8949fa92244a1207982019a1c1948f2510
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-39-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141835
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-39.66
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-39-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-39-lowlatency_3.13.0-39.66_i386.deb
+Size: 51688660
+MD5sum: 72ed15091ddf72df4c6bf806243a8569
+SHA1: e7db8062216227ae6549a9a0ca09490bcc32e4fc
+SHA256: 0b0ad4c52915de19ec1946bf8754d175114beabe6a0e61aa039cb5ef9bd0b619
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-40-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31822
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-40.69
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-40-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-40-generic_3.13.0-40.69_i386.deb
+Size: 14666300
+MD5sum: 67349d484df8b237891d2f18798757af
+SHA1: 29e3b9c35527a0071320d27b99df37b61d288710
+SHA256: d3b940b4e2882a2002539b045a35ec519fffd7d2c8ba280f4e3b1d05ca5fd136
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-40-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141861
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-40.69
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-40-lowlatency
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-40-lowlatency_3.13.0-40.69_i386.deb
+Size: 51619708
+MD5sum: 3a28ddf2c81fa29a868811bdb51f9de5
+SHA1: 1a4f7c2d70c206ea8413b40d745d8d8892bd835d
+SHA256: c89821a981d47dbbba345339b78c969b30f0b23b836b0ef9e8148d9fc39ab814
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: bd0fd555621e91ceb843a7a52aafcd8b
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-41-generic
+Priority: optional
+Section: kernel
+Installed-Size: 31836
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-41.70
+Provides: fuse-module, ivtv-modules, kvm-api-4, linux-image, linux-image-3.0, redhat-cluster-modules
+Depends: initramfs-tools (>= 0.36ubuntu6), module-init-tools (>= 3.3-pre11-4ubuntu3)
+Pre-Depends: dpkg (>= 1.10.24)
+Recommends: grub-pc | grub-efi-ia32 | grub | lilo (>= 19.1)
+Suggests: fdutils, linux-doc-3.13.0 | linux-source-3.13.0, linux-tools, linux-headers-3.13.0-41-generic
+Conflicts: hotplug (<< 0.0.20040105-1)
+Filename: pool/main/l/linux/linux-image-3.13.0-41-generic_3.13.0-41.70_i386.deb
+Size: 14673138
+MD5sum: 6e57ef3b84dbf599360cee5b8fdf5de0
+SHA1: 4515676b1daeba0c278b76e8be6da74921e27367
+SHA256: 1ade01f8cbfc9a7a54bbf53c18e27f86179fbde2d4f5685127d445668d4b450a
+Description: Linux kernel image for version 3.13.0 on 32 bit x86 SMP
+Description-md5: 0bbcc82b16ba6f0f5ba74a7f4e44756a
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+Supported: 9m
+
+Package: linux-image-3.13.0-41-lowlatency
+Priority: optional
+Section: kernel
+Installed-Size: 141891
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: i386
+Source: linux
+Version: 3.13.0-41.70
+Provides: fuse-module, ivtv-module
