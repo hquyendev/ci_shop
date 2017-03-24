@@ -9,8 +9,7 @@ class Danh_muc extends HQ_Controller{
 		$slug = str_replace('_', '-', $slug);
 		$cate = $this->Cate_model->getSlug($slug);
 		if(!isset($cate[0])){
-			$this->load->view("error/404");
-			return;	
+			return $this->load->view("error/404");
 		}
 		$id = $cate[0]['id'];
 		$perpage = 20;
