@@ -16,8 +16,6 @@
 						<th width="100">Ảnh</th>
 						<th>Tên sản phẩm</th>
 						<th width="80">Số lượng</th>
-						<th width="150">Màu sắc</th>
-						<th width="150">Size</th>
 						<th>Đơn giá</th>
 						<th>Thành tiền</th>
 						<th>Thao tác</th>
@@ -34,20 +32,6 @@
 							<td><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" title="<?=$value['name']?>" width="100%"></td>
 							<td><a href="<?=ROOT?>san-pham/<?=$value['id']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
 							<td><input type="number" name="qty" value="<?=$value['_qty']?>" style="padding:0; text-align:center"></td>
-							<td>
-								<select name="color" class="browser-default">
-								<?php foreach ($color as $ckey => $cvalue) { ?>
-									<option <?=$value['option']['color'] == $ckey?'selected':''?> value="<?=$ckey?>"><?=$cvalue?></option>
-								<?php } ?>
-								</select>
-							</td>
-							<td>
-								<select name="size" class="browser-default">
-								<?php foreach ($size as $ckey => $cvalue) { ?>
-									<option <?=$value['option']['size'] == $ckey?'selected':''?> value="<?=$ckey?>"><?=$cvalue?></option>
-								<?php } ?>
-								</select>
-							</td>
 							<td><span class="price"><?=number_format($value['price'])?> VNĐ</span></td>
 							<td><span id="item-total-price-<?=$value['id']?>" class="price"><?=number_format($value['price']*$value['_qty'])?> VNĐ</span></td>
 							<td>

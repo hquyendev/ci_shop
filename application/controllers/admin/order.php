@@ -127,5 +127,30 @@ class Order extends HQ_Controller{
     	}
 	}
 
+	public function update($id = FALSE)
+	{
+		is_ajax();
+		$action = $this->input->get('action');
+		if(!in_array($action, array(-1,1,2,3,4))){
+			return message('Không thực hiện được thao tác này');
+		}
+		if(!$id){
+			message('Không tìm thấy bài viết này');return;
+		}
+		$param = array(
+			'status' => $action
+		);
+		if($this->Cart_model->updateOrder($id, $param))
+    	{
+    		message('Cập nhật đơn hàng thành công',3000, false, 'success');
+    		transfer(FALSE, 3000);
+    		return;
+    	}
+    	else
+    	{
+   			message('Xoá bài viết thất bại');return;
+    	}
+	}
+
 
 }

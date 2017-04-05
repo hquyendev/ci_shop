@@ -15,7 +15,7 @@ class Login extends HQ_Controller
 		
 		if(isset($_SESSION['ADMIN']))
 		{
-			redirect(ROOT.'admin/manager.html','location');
+			redirect(ROOT.'admin/dashboard.html','location');
 		}
 
 		if($this->input->post('login-sm')){

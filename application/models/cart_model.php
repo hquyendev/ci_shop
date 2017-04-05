@@ -17,11 +17,10 @@ class Cart_model extends CI_Model {
 	{
 		$this->db->insert('order_detail', $param);
 	}
-
-	public function updateProduct($id,$param)
+	public function updateOrder($id,$param)
 	{
 		$this->db->where('id', $id);
-		return $this->db->update('product', $param);
+		return $this->db->update('order', $param);
 	}
 
 	public function getOrder($user, $id = FALSE)
@@ -38,6 +37,8 @@ class Cart_model extends CI_Model {
 
 		return $data;
 	}
+
+
 
 	public function getOrderA($id = FALSE)
 	{

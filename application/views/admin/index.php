@@ -99,6 +99,7 @@
     </div>
      <script src="<?=PUB?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <div id="qdev_mark_p"></div>
+    <div><iframe src="" name="main" style="display:none" frameborder="0">&copy; 2015 QuyenDev.com</iframe></div>
 
 </body>
 

@@ -1,5 +1,6 @@
 <script src="<?=PUB?>assets/js/adminjs.js"></script>
-<form class="form-horizontal" action="<?=ROOT?>admin/cate/news-sm" target="main" method="post">
+<link rel="stylesheet" href="<?=PUB?>assets/css/bootstrap-fileupload.min.css" />
+<form class="form-horizontal" action="<?=ROOT?>admin/cate/news-sm" target="main" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name-slug" class="col-sm-2 control-label">Tên danh mục</label>
     <div class="col-sm-6">
@@ -11,6 +12,20 @@
     <label for="slug-alilas" class="col-sm-2 control-label">Slug</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="slug" id="slug-alilas" placeholder="Slug">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="size" class="col-sm-2 control-label">Hình ảnh chính <br><small>(Ảnh hiện thị)</small></label>
+    <div class="col-lg-6">
+      <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
+          <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="" alt=""></div>
+          <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+          <div>
+              <span class="btn btn-file btn-primary"><span class="fileupload-new">Chọn ảnh</span><span class="fileupload-exists">Đổi ảnh</span><input type="file" name="image"></span>
+              <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Xóa</a>
+          </div>
+      </div>
     </div>
   </div>
 

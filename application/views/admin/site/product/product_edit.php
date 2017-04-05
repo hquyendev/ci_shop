@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?=PUB?>assets/css/bootstrap-fileupload.min.css" />
 <?php $image = explode('|', $data['image']); ?>
-<form class="form-horizontal" action="<?=ROOT?>admin/product/news-sm" method="post" target="main" enctype="multipart/form-data">
+<form class="form-horizontal" action="<?=ROOT?>admin/product/edit-sm/<?=$data['id']?>" method="post" target="main" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Tên sản phẩm</label>
     <div class="col-sm-6">
@@ -20,25 +20,11 @@
     <div class="col-sm-6">
       <select name="cate" class="form-control"  id="">
         <option value="">--Chọn danh mục--</option>
-        <?=showSelect($this->data['cate'])?>
+        <?=showSelect($this->data['cate'], '---', $data['cate'])?>
       </select>
     </div>
   </div>
   
-  <div class="form-group">
-    <label for="color" class="col-sm-2 control-label">Màu sắc <br><small>(Ngăn cách bằng dấu , )</small></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control"  name="color" id="color" value="<?=$data['color']?>"  placeholder="Trắng,Xanh,Xanh rêu,Đỏ"/>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="size" class="col-sm-2 control-label">Size <br><small>(Ngăn cách bằng dấu , )</small></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" name="size" id="size" value="<?=$data['size']?>"  placeholder="28,29,30,31,32"/>
-    </div>
-  </div>
-
   <div class="form-group">
     <label for="size" class="col-sm-2 control-label">Hình ảnh chính <br><small>(Ảnh hiện thị)</small></label>
     <div class="col-lg-6">
@@ -53,15 +39,6 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="image2" class="col-sm-2 control-label">Hình ảnh phụ</label>
-    <div class="col-sm-4">
-      <input type="file" class="form-control" value="" name="image2[]" multiple id="image2" />
-    </div>
-    <div class="col-sm-4">
-      Nhấn giữ nút 'Ctrl' để chọn nhiều ảnh
-    </div>
-  </div>
  <div class="form-group">
     <label for="water" class="col-sm-2 control-label">Đóng dấu watermark ảnh</label>
     <div class="col-sm-6">
@@ -97,9 +74,8 @@
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
-      <button type="submit" class="btn btn-success">Thêm mới</button>
+      <button type="submit" class="btn btn-success">Cập nhật</button>
     </div>
   </div>
 </form>
 <script src="<?=PUB?>assets/js/bootstrap-fileupload.js"></script>
-ư

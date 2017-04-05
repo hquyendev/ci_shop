@@ -18,7 +18,9 @@ class HQ_Controller extends CI_Controller
 		$this->load->model('Product_model');
 		$this->load->model('Cart_model');
 		$this->load->model('User_model');
+		$this->load->model('Guide_model');
 		$this->data['cate'] = $this->Cate_model->getCate();
+		$this->data['guide'] = $this->Guide_model->getGuide();
 		if($id = get_cookie('LOGIN'))
 		{
 			$login = $this->User_model->getUser($id);

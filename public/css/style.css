@@ -40,6 +40,9 @@ input.success{
 .form-search button:hover{
 	background-color: #1EA89D;
 }
+.banner{
+	background: #2c3941;
+}
 
 .item-banner{
 	position: relative;

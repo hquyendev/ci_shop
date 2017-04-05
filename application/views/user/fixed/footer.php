@@ -36,17 +36,34 @@ $(document).ready(function(){
 </script>
 <div class="container">
   <div class="row">
-    <div class="col l6 s12">
-      <h5 class="white-text">Footer Content</h5>
-      <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+    <div class="col l3 s12">
+      <a href="<?=ROOT?>" title="Trang chủ" class=" item-logo"><img src="<?=UPLOAD?>logo2.png" width="100%" class="logo" title="Logo"></a>
     </div>
-    <div class="col l4 offset-l2 s12">
-      <h5 class="white-text">Links</h5>
-      <ul>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+    <div class="col l3 s12">
+      <h5 class="footer-title">Chuyên mục </h5>
+      <ul class="footer-cate block">
+        <?php for ($i=0; $i < count($this->data['guide']); $i++) { ?>
+        <li><a href="<?=ROOT?>huong-dan/<?=$this->data['guide'][$i]['slug']?>.html" title="<?=$this->data['guide'][$i]['name']?>" ><span class="fa fa-angle-right"></span> <?=$this->data['guide'][$i]['name']?></a></li>
+        <?php } ?>
+      </ul>
+    </div>
+    <div class="col l3 s12">
+      <h5 class="footer-title">Danh mục </h5>
+      <ul class="footer-cate">
+        <?php $cate = $this->data['cate']; ?>
+        <?php 
+        foreach ($cate as $key => $value) {
+          echo '<li><a href="'.ROOT.'danh-muc/'.$value['slug'].'.html" title="'.$value['name'].'"><span class="fa fa-angle-right"></span> '.$value['name'].'</a></li>';
+          }
+        ?>
+      </ul>
+    </div>
+    <div class="col l3 s12">
+      <h5 class="footer-title">Liên hệ </h5>
+      <ul class="footer-cate">
+        <li><div><span class="fa fa-phone"></span> (+84)-8888-4444</div></li>
+        <li><div><span class="fa fa-map-marker"></span> 113 Nguyễn Đình Chiểu, Q1, Dakao, HCM</div></li>
+        <li><div><span class="fa fa-envelope"></span> shop123@seashop.vn</div></li>
       </ul>
     </div>
   </div>
@@ -54,7 +71,7 @@ $(document).ready(function(){
 <div><iframe src="" name="main" style="display:none" frameborder="0">&copy; 2015 QuyenDev.com</iframe></div>
 <div class="footer-copyright">
   <div class="container">
-  © 2014 Copyright Text
-  <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+  &copy; 2017 QuyenDev.com
+  <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
   </div>
 </div>

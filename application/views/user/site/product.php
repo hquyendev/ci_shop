@@ -10,11 +10,11 @@
 		<span class="final"><?=$listParent[count($listParent)-1]['name']?></span>
 	</div>
 </div>
-<div class="row  detail">
-	<div class="col s8">
+<div class="row">
+	<div class="col s12  detail">
 		<div class="row">
-			<div class="col s6">
-				<div class="image">
+			<div class="col s4">
+				<div class="image-preview">
 					<img class="preview-image materialboxed1" width="100" data-src="<?=ROOT?>upload/product/origin/<?=@$image[0]?>" src="<?=ROOT?>upload/product/450/<?=@$image[0]?>" alt="<?=$data['name']?>">
 				</div>
 				<div class="list-image">
@@ -47,50 +47,64 @@
 					<img src="<?=ROOT?>upload/product/450/<?=@$image[0]?>" alt="<?=$data['name']?>">
 				</div>
 			</div>
-			<div class="col s6">
+			<div class="col s8">
 				<div class="info">
 					<form action="<?=ROOT?>gio-hang/add/<?=$data['id']?>.html" method="post" target="main">
 						<h3 class="name"><?=$data['name']?></h3>
 						<p class="price"><?=number_format($data['price'])?> VNĐ</p>
+				      	Số lượng <input value="1" id="first_name2"  name="qty" type="number" class="validate input-qty"> Kg
 						<div>
-							<select name="color">
-						      <option value="" disabled selected>Chọn màu</option>
-						      <?php foreach ($color as $key => $value) {
-						      	echo '<option value="'.$key.'">'.$value.'</option>';
-						      } ?>
-						    </select>
-						</div>
-						<div>
-							<select name="size">
-						      <option value="" disabled selected>Chọn Size</option>
-						      <?php foreach ($size as $key => $value) {
-						      	echo '<option value="'.$key.'">'.$value.'</option>';
-						      } ?>
-						    </select>
-						</div>
-				      	Số lượng <input value="1" id="first_name2"  name="qty" type="number" class="validate input-qty">
-						<div>
-							<button class="waves-effect waves-light btn"><span class="fa fa-shopping-cart"></span> Mua hàng</button>
+							<button class="waves-effect waves-light btn btn-buy"><span class="fa fa-shopping-cart"></span> Mua hàng</button>
 						</div>
 					</form>
-					<div><a href="<?=ROOT?>tai-khoan/san-pham-yeu-thich/<?=$data['id']?>.html" title="Thêm <?=$data['name']?> vào danh sách yêu thích" target="main"><span class="fa fa-heart"></span> Thêm vào danh sách sản phẩm yêu thích</a></div>
+					<div class="info-items">
+						<div class="info-item">
+							<span class="key">Danh mục:</span>
+							<span class="val"><a href="<?=ROOT?>danh-muc/<?=$listParent[count($listParent)-2]['slug']?>.html" title="<?=$listParent[count($listParent)-2]['name']?>"><?=$listParent[count($listParent)-2]['name']?></a></span>
+						</div>
+						<div class="info-item">
+							<span class="key">Mã sản phẩm:</span>
+							<span class="val"><?=$data['id']?></span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col s12">
 				<div class="description">
+					<div class="description-title"><span>Chi tiết sản phẩm</span></div>
 					<?=$data['detail']?>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="col s4">
-		<div class="product-viewed">
-			<h4 class="title">Sản phẩm đã xem</h4>
-		</div>
-		<div class="product-viewed">
-			<h4 class="title">Sản phẩm cùng danh mục</h4>
+	<div class="col s12 product-relate">
+			<div id="show-item" class="show-item">
+			<div class="product-viewed ">
+				<h4 class="title">Sản phẩm cùng danh mục</h4>
+				<div id="show-item" class="show-item">
+					<?php if($data_relate) { ?>
+					<?php foreach ($data_relate as $key => $value) { ?>
+					<?php $image = explode('|', $value['image']); ?>
+						<div class="item">
+							<div class="box-item">
+								<div class="image">
+									<a href="<?=ROOT?>gio-hang/add/<?=$value['id']?>.html" title="Thêm <?=$value['name']?> vào giỏ hàng" target="main" class="action-item buy"><span class="fa fa-cart-plus"></span> <span class="buy-text">Mua hàng</span></a>
+									<a href="<?=ROOT?>san-pham/<?=$value['id']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" alt="<?=$value['name']?>" ></a></div>
+								<div class="info">
+									<a href="<?=ROOT?>san-pham/<?=$value['id']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a>
+									<div class="price"><?=number_format($value['price'])?> VNĐ</div>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					<?php } else { ?>
+					<div class="card-panel orange lighten-5 center-align" style="margin:8px">Chưa có dữ liệu trong danh mục này</div>
+					<?php } ?>
+
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

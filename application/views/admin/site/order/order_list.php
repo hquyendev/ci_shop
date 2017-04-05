@@ -20,7 +20,18 @@
 			<td><?=$value['count']?></td>
 			<td><?=number_format($value['money'])?></td>
 			<td>
-				<?=$value['status']==0?'<label class="label label-danger">Chờ xác nhận</label>':''?>
+				<div style="margin:5px;" class="btn-group">
+					<button data-toggle="dropdown" class="btn btn-default btn-xs dropdown-toggle">Thay đổi <span class="caret"></span></button>
+				  	<ul class="dropdown-menu">
+						<li><a href="<?=ROOT?>admin/order/update/<?=$value['id']?>?action=0" class="text-default" target="main">Chờ xác nhận</a></li>
+						<li><a href="<?=ROOT?>admin/order/update/<?=$value['id']?>?action=1" class="text-warning" target="main">Đã xác nhận & chờ giao hàng</a></li>
+						<li><a href="<?=ROOT?>admin/order/update/<?=$value['id']?>?action=2" class="text-info" target="main">Đang giao hàng</a></li>
+						<li><a href="<?=ROOT?>admin/order/update/<?=$value['id']?>?action=3" class="text-success" target="main"><span class="fa fa-check"></span> Đã giao hàng & Thanh toán</a></li>
+						<li class="divider"></li>
+						<li><a href="<?=ROOT?>admin/order/update/<?=$value['id']?>?action=-1" class="text-danger"target="main">Huỷ</a></li>
+				  	</ul>
+				</div>
+				<?=$value['status']==0?'<label class="label label-default">Chờ xác nhận</label>':''?>
 				<?=$value['status']==1?'<label class="label label-warning">Đã xác nhận & chờ giao hàng</label>':''?>
 				<?=$value['status']==2?'<label class="label label-info">Đang giao hàng</label>':''?>
 				<?=$value['status']==3?'<label class="label label-success"><span class="fa fa-check"></span> Đã giao hàng & Thanh toán</label>':''?>

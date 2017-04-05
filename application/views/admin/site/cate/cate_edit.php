@@ -1,5 +1,6 @@
 <script src="<?=PUB?>assets/js/adminjs.js"></script>
-<form class="form-horizontal" action="<?=ROOT?>admin/cate/edit-sm/<?=$data['id']?>" target="main" method="post">
+<link rel="stylesheet" href="<?=PUB?>assets/css/bootstrap-fileupload.min.css" />
+<form class="form-horizontal" action="<?=ROOT?>admin/cate/edit-sm/<?=$data['id']?>" target="main" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name-slug" class="col-sm-2 control-label">Tên danh mục</label>
     <div class="col-sm-6">
@@ -15,6 +16,20 @@
   </div>
 
   <div class="form-group">
+    <label for="size" class="col-sm-2 control-label">Hình ảnh chính <br><small>(Ảnh hiện thị)</small></label>
+    <div class="col-lg-6">
+      <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
+          <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="<?=ROOT?>upload/cate/350/<?=$data['image']?>" alt=""></div>
+          <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
+          <div>
+              <span class="btn btn-file btn-primary"><span class="fileupload-new">Chọn ảnh</span><span class="fileupload-exists">Đổi ảnh</span><input type="file" name="image"></span>
+              <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Xóa</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <label for="meta" class="col-sm-2 control-label">Meta tag</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="meta" id="meta" value="<?=$data['meta']?>" placeholder="Meta tag">
@@ -24,7 +39,7 @@
   <div class="form-group">
     <label for="desc" class="col-sm-2 control-label">Description</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" name="desc" id="desc" value="<?=$data['desc']?>" placeholder="Description">
+      <input type="text" class="form-control" name="desc" id="desc" value="<?=$data['des']?>" placeholder="Description">
     </div>
   </div>
   <?php $cate = $this->data['cate']; ?>
@@ -40,7 +55,7 @@
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
-      <button type="submit" class="btn btn-success">Thêm mới</button>
+      <button type="submit" class="btn btn-success">Cập nhật</button>
     </div>
   </div>
 </form>

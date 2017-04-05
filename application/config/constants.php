@@ -45,7 +45,7 @@ $source_folder = ltrim(rtrim(str_replace('index.php', '', $_SERVER['SCRIPT_NAME'
 define('HTTP_PROTOCOL',    	(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? "https" : "http");
 define('ROOT', 				sprintf('%s://%s/%s' ,HTTP_PROTOCOL, $_SERVER['HTTP_HOST'], $source_folder?$source_folder.'/':''));
 define('URI', 				str_replace(array($source_folder,'//'), '', $_SERVER['REQUEST_URI']));
-define('BASE', 				sprintf('%s/%s/', $_SERVER['DOCUMENT_ROOT'], $source_folder));
+define('BASE', 				sprintf('%s/%s', $_SERVER['DOCUMENT_ROOT'], $source_folder));
 define('PUB', 				ROOT.'public/');
 define('UPLOAD', 			ROOT.'upload/');
 /* End of file constants.php */

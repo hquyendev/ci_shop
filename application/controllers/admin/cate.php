@@ -45,6 +45,7 @@ class Cate extends HQ_Controller{
 		$meta = $this->input->post('meta');
 		$desc = $this->input->post('desc');
 		$parent = intval($this->input->post('parent'));
+		$image = $_FILES['image'];
 
 	  	if(!$name)
 	  	{
@@ -68,17 +69,67 @@ class Cate extends HQ_Controller{
   			message('Slug danh mục này đã có!'); return;
   		}
 
+  		$imageSize = getimagesize($image['tmp_name']);
+
+
+		$config['upload_path'] = BASE.'upload/cate/350/';
+		$config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+		$config['max_size']	= '1500';
+		$config['max_width']  = '1600';
+		$config['max_height']  = '1280';
+        $this->load->library("upload", $config);
+
+      	
+  		if($image){
+	  		$imageSize = getimagesize($image['tmp_name']);
+
+			$config['upload_path'] = BASE.'upload/cate/350/';
+			$config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+			$config['max_size']	= '1500';
+			$config['max_width']  = '1600';
+			$config['max_height']  = '1280';
+	        $this->load->library("upload", $config);
+	        $result = $this->upload->do_upload("image");
+	      	if($result){
+	            $check = $this->upload->data();
+	            if(!move_uploaded_file($image['tmp_name'], BASE.'upload/cate/origin/'.$check['file_name']))
+	            {
+	            	copy($image['tmp_name'], BASE.'upload/cate/origin/'.$check['file_name']);
+	            }
+	            $image_name = $check['file_name'];
+	            $this->load->library("image_lib");
+
+	           	$config['image_library'] = 'gd2';
+	            $config['source_image']	= BASE.'upload/cate/350/'.$check['file_name'];
+	            $config['create_thumb'] = FALSE;
+	            $config['maintain_ratio'] = TRUE;
+	            $config['width'] = 450;
+	            $config['height'] = $config['width'] * $imageSize[1] / $imageSize[0];
+	            $this->image_lib->initialize($config);
+	            
+	            $this->image_lib->resize();
+	            $config['wm_type'] = 'overlay';
+				$config['wm_overlay_path'] = BASE.'upload/watermark.png';
+				$config['wm_vrt_alignment'] = 'bottom';
+				$config['wm_hor_alignment'] = 'right';
+				$config['wm_padding'] = -10;
+				$config['wm_opacity'] = 50;
+	            $this->image_lib->initialize($config);
+	            $this->image_lib->watermark();
+	        }
+  		}
 	  	$param = array(
 	  		'name'		=> $name,
 	  		'slug'		=> $slug,
 	  		'meta'		=> $meta,
 	  		'des'		=> $desc,
 	  		'parent'	=> $parent,
+	  		'image'  	=> $image_name,
 	  		);
 
-	  	if($this->Cate_model->insertCate($param))
+  		if($this->Cate_model->insertCate($param))
 	  	{
-  			message('Thêm danh mục mới thành công','success'); return;
+  			message('Thêm danh mục mới thành công',3000, false,'success'); return;
 	  	}
 	  	else
 	  	{
@@ -93,6 +144,8 @@ class Cate extends HQ_Controller{
 		$slug = $this->input->post('slug');
 		$meta = $this->input->post('meta');
 		$desc = $this->input->post('desc');
+		$image = $_FILES['image'];
+		$image_name = "";
 		$parent = intval($this->input->post('parent'));
 		if(!$id)
 		{
@@ -131,12 +184,51 @@ class Cate extends HQ_Controller{
   			message('Slug danh mục này đã có!'); return;
   		}
 
+  		if($image){
+	  		$imageSize = getimagesize($image['tmp_name']);
+
+			$config['upload_path'] = BASE.'upload/cate/350/';
+			$config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+			$config['max_size']	= '1500';
+			$config['max_width']  = '1600';
+			$config['max_height']  = '1280';
+	        $this->load->library("upload", $config);
+	        $result = $this->upload->do_upload("image");
+	      	if($result){
+	            $check = $this->upload->data();
+	            if(!move_uploaded_file($image['tmp_name'], BASE.'upload/cate/origin/'.$check['file_name']))
+	            {
+	            	copy($image['tmp_name'], BASE.'upload/cate/origin/'.$check['file_name']);
+	            }
+	            $image_name = $check['file_name'];
+	            $this->load->library("image_lib");
+
+	           	$config['image_library'] = 'gd2';
+	            $config['source_image']	= BASE.'upload/cate/350/'.$check['file_name'];
+	            $config['create_thumb'] = FALSE;
+	            $config['maintain_ratio'] = TRUE;
+	            $config['width'] = 450;
+	            $config['height'] = $config['width'] * $imageSize[1] / $imageSize[0];
+	            $this->image_lib->initialize($config);
+	            $this->image_lib->resize();
+	            $config['wm_type'] = 'overlay';
+				$config['wm_overlay_path'] = BASE.'upload/watermark.png';
+				$config['wm_vrt_alignment'] = 'bottom';
+				$config['wm_hor_alignment'] = 'right';
+				$config['wm_padding'] = -10;
+				$config['wm_opacity'] = 50;
+	            $this->image_lib->initialize($config);
+	            $this->image_lib->watermark();
+	        }
+  		}
+
 	  	$param = array(
 	  		'name'		=> $name,
 	  		'slug'		=> $slug,
 	  		'meta'		=> $meta,
 	  		'des'		=> $desc,
 	  		'parent'	=> $parent,
+	  		'image'	=> $image_name,
 	  		);
 
 	  	if($this->Cate_model->updateCate($id,$param))

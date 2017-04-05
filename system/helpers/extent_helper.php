@@ -117,14 +117,14 @@ if ( ! function_exists('showSelectChoose'))
 
 if ( ! function_exists('showSelect'))
 {
-	function showSelect($data, $text = '--- '){
+	function showSelect($data, $text = '--- ', $cateId = FALSE){
 		foreach ($data as $key => $value) {
 			if($value['children']){
 				echo '<optgroup label="'.$text.' '.$value['name'].'"></optgroup>';
 				showSelect($value['children'], $text.'--- ');
 			}
 			else
-				echo '<option value="'.$value['id'].'">'.$text.' '.$value['name'].'</option>';
+				echo '<option '.($value['id']==$cateId?'selected':'').' value="'.$value['id'].'">'.$text.' '.$value['name'].'</option>';
 		}
 	}
 }
