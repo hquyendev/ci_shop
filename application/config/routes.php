@@ -40,6 +40,10 @@
 
 $route['danh_muc/(:any)'] = "danh_muc/index/$1";
 $route['san_pham/(:any)'] = "san_pham/index/$1";
+$route['subscribe'] = "subscribe/index";
+$route['gioi_thieu/(:any)'] = "gioi_thieu/index/$1";
+$route['blog/(:any)'] = "blog/index/$1";
+$route['video/(:any)'] = "video/index/$1";
 $route['huong_dan/(:any)'] = "huong_dan/index/$1";
 $route['default_controller'] = "home";
 $route['404_override'] = '';

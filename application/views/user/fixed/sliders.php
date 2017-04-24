@@ -1,8 +1,8 @@
 <div class="slider-wrapper">
     <div class="slider">
-        <a href="#" class="slider-item cnow" style="background-image: url('<?=UPLOAD?>slide/6.jpg');"></a>
-        <a href="#" class="slider-item" style="background-image: url('<?=UPLOAD?>slide/7.jpg');"></a>
-        <a href="#" class="slider-item" style="background-image: url('<?=UPLOAD?>slide/8.jpg');"></a>
+    	<?php foreach ($sliders as $key => $value) { ?>
+        	<a href="#" class="slider-item <?=$key==0?'cnow':''?>" style="background-image: url('<?=UPLOAD?>slider/origin/<?=$value['image']?>');"></a>
+    	<?php } ?>
     </div>
 </div>
 <script>

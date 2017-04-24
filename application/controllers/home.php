@@ -2,6 +2,8 @@
 class Home extends HQ_Controller{
 	function __construct(){
 		parent:: __construct();		
+		$this->load->model('Slider_model');
+		$this->load->model('Intro_model');
 	}
 	public function index()
 	{
@@ -14,7 +16,8 @@ class Home extends HQ_Controller{
 		{
 			$showView = FALSE;
 		}
-		//echo '<pre>';print_r($data);exit();
+		$temps['sliders'] = $this->Slider_model->getSlider();
+		$temps['intros'] = $this->Intro_model->getIntro();
 		$temps['site'] = 'home';
 		$temps['saleProduct'] = $saleProduct;
 		$temps['showView'] = $showView;

@@ -141,4 +141,18 @@ $(document).ready(function(){
 			}
 		});
 	});*/
+	function youtube_parser(url){
+	    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+	    if(!url)
+	    	return false
+	    var match = url.match(regExp);
+	    return (match&&match[7].length==11)? match[7] : false;
+	}
+	$.each($('.video-post').find("._getThumbnail"),function(index, item){
+		var id_yt = youtube_parser($(item).attr('_getThumbnail'));
+		var img = $('<img src="https://img.youtube.com/vi/' + id_yt + '/0.jpg">');
+		$(item).append(img);
+	});
+	$('.video-embed').attr('src', 'https://www.youtube.com/embed/' + youtube_parser($('.video-embed').attr('src')));
+
 });

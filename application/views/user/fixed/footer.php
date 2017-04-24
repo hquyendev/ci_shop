@@ -39,32 +39,48 @@ $(document).ready(function(){
     <div class="col l3 s12">
       <a href="<?=ROOT?>" title="Trang chủ" class=" item-logo"><img src="<?=UPLOAD?>logo2.png" width="100%" class="logo" title="Logo"></a>
     </div>
-    <div class="col l3 s12">
-      <h5 class="footer-title">Chuyên mục </h5>
-      <ul class="footer-cate block">
-        <?php for ($i=0; $i < count($this->data['guide']); $i++) { ?>
-        <li><a href="<?=ROOT?>huong-dan/<?=$this->data['guide'][$i]['slug']?>.html" title="<?=$this->data['guide'][$i]['name']?>" ><span class="fa fa-angle-right"></span> <?=$this->data['guide'][$i]['name']?></a></li>
-        <?php } ?>
-      </ul>
-    </div>
-    <div class="col l3 s12">
-      <h5 class="footer-title">Danh mục </h5>
-      <ul class="footer-cate">
-        <?php $cate = $this->data['cate']; ?>
-        <?php 
-        foreach ($cate as $key => $value) {
-          echo '<li><a href="'.ROOT.'danh-muc/'.$value['slug'].'.html" title="'.$value['name'].'"><span class="fa fa-angle-right"></span> '.$value['name'].'</a></li>';
-          }
-        ?>
-      </ul>
-    </div>
-    <div class="col l3 s12">
-      <h5 class="footer-title">Liên hệ </h5>
-      <ul class="footer-cate">
-        <li><div><span class="fa fa-phone"></span> (+84)-8888-4444</div></li>
-        <li><div><span class="fa fa-map-marker"></span> 113 Nguyễn Đình Chiểu, Q1, Dakao, HCM</div></li>
-        <li><div><span class="fa fa-envelope"></span> shop123@seashop.vn</div></li>
-      </ul>
+    <div class="col l9 s12">
+      <div class="row">
+        <div class="col s12">
+          <form action="<?=ROOT?>subscribe" method="post" target="main">
+            <div class="input-field input-group col s6">
+                <input id="icon_prefix" type="text" class="validate" name="email" placeholder="Nhập Email nhận thông báo khuyến mãi">
+                <span class="suffix">
+                    <button type="submit" class="btn waves-effect waves-light red"><span class="fa fa-send"></span></button>
+                </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="footer-title">Chuyên mục </h5>
+          <ul class="footer-cate block">
+            <?php for ($i=0; $i < count($this->data['guide']); $i++) { ?>
+            <li><a href="<?=ROOT?>huong-dan/<?=$this->data['guide'][$i]['slug']?>.html" title="<?=$this->data['guide'][$i]['name']?>" ><span class="fa fa-angle-right"></span> <?=$this->data['guide'][$i]['name']?></a></li>
+            <?php } ?>
+          </ul>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="footer-title">Danh mục </h5>
+          <ul class="footer-cate">
+            <?php $cate = $this->data['cate']; ?>
+            <?php 
+            foreach ($cate as $key => $value) {
+              echo '<li><a href="'.ROOT.'danh-muc/'.$value['slug'].'.html" title="'.$value['name'].'"><span class="fa fa-angle-right"></span> '.$value['name'].'</a></li>';
+              }
+            ?>
+          </ul>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="footer-title">Liên hệ </h5>
+          <ul class="footer-cate">
+            <li><div><span class="fa fa-phone"></span> (+84)-8888-4444</div></li>
+            <li><div><span class="fa fa-map-marker"></span> 113 Nguyễn Đình Chiểu, Q1, Dakao, HCM</div></li>
+            <li><div><span class="fa fa-envelope"></span> shop123@seashop.vn</div></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

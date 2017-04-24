@@ -89,7 +89,7 @@ CREATE TABLE `shop_guide` (
   `time` int(11) DEFAULT NULL,
   `active` tinyint(1) DEFAULT '11',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,8 +98,39 @@ CREATE TABLE `shop_guide` (
 
 LOCK TABLES `shop_guide` WRITE;
 /*!40000 ALTER TABLE `shop_guide` DISABLE KEYS */;
-INSERT INTO `shop_guide` VALUES (1,'Chính sách bảo hành','Chính sách bảo hành','chinh-sach-bao-hanh',NULL,0,NULL,1),(2,'Chính sách vận chuyển','Chính sách vận chuyên','chinh-sach-van-chuyen',NULL,0,NULL,1),(3,'Hướng dẫn mua hàng','Hướng dẫn mua hàng','huong-dan-mua-hang',NULL,0,NULL,1),(4,'Bản đồ','Bản đồ','ban-do',NULL,0,NULL,1),(5,'Liên hệ','Liên hệ','lien-he',NULL,0,NULL,1);
+INSERT INTO `shop_guide` VALUES (1,'Chính sách bảo hành','Chính sách bảo hành','chinh-sach-bao-hanh',NULL,0,NULL,1),(2,'Chính sách vận chuyển','Chính sách vận chuyên','chinh-sach-van-chuyen',NULL,0,NULL,1),(3,'Hướng dẫn mua hàng','Hướng dẫn mua hàng','huong-dan-mua-hang',NULL,0,NULL,1),(4,'Bản đồ','Bản đồ','ban-do',NULL,0,NULL,1),(5,'Liên hệ','Liên hệ','lien-he',NULL,0,NULL,1),(6,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989797,11),(7,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989801,11),(8,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989850,11),(9,'Test','<p>đasadsad</p>\n','test','17022154_218122591996843_435425160893870',1,1491990216,11),(10,'Test','<p>đasadsad</p>\n','test','17022154_218122591996843_435425160893870',1,1491990219,11),(11,'Thực phẩm sạch','<p>Đ&acirc;y l&agrave; thực phẩm sạch</p>\n','thuc-pham-sach',NULL,1,1492704154,11),(12,'Tươi ngon','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng thực phẩm tươi sống nhất</p>\n','tuoi-ngon',NULL,1,1492704282,11),(13,'Tươi sống','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng sản phẩm tươi sống</p>\n','tuoi-song',NULL,1,1492704552,11);
 /*!40000 ALTER TABLE `shop_guide` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop_intro`
+--
+
+DROP TABLE IF EXISTS `shop_intro`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_intro` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci,
+  `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `remove` tinyint(1) DEFAULT '1',
+  `time` int(11) DEFAULT NULL,
+  `active` tinyint(1) DEFAULT '11',
+  `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop_intro`
+--
+
+LOCK TABLES `shop_intro` WRITE;
+/*!40000 ALTER TABLE `shop_intro` DISABLE KEYS */;
+INSERT INTO `shop_intro` VALUES (2,'An toàn','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng sản phẩm an to&agrave;n</p>\n','an-toan','71.jpg',1,1492704645,-1,NULL),(3,'Nguồn gốc','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng sản phẩm c&oacute; nguồn gốc r&otilde; r&agrave;ng</p>\n','nguon-goc','72.jpg',1,1492706108,1,'Chúng tôi luôn sử dụng sản phẩm có nguồn gốc rõ ràng'),(4,'Nhân viên','<p>Cộng đồng nh&acirc;n vi&ecirc;n nhiệt huyế</p>\n','nhan-vien','4.jpg',1,1492705564,1,NULL),(5,'Sản phẩm','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng sản phẩm tươi sống</p>\n','san-pham','1.jpg',1,1492704913,1,NULL),(6,'Vệ sinh','<p>Sản phẩm lu&ocirc;n đạt vệ sinh</p>\n','ve-sinh','2.jpg',1,1492705410,1,NULL);
+/*!40000 ALTER TABLE `shop_intro` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -195,6 +226,89 @@ INSERT INTO `shop_order_detail` VALUES (1,'Nón thời trang hàn quốc NON 116
 UNLOCK TABLES;
 
 --
+-- Table structure for table `shop_post_product`
+--
+
+DROP TABLE IF EXISTS `shop_post_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_post_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product` int(11) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop_post_product`
+--
+
+LOCK TABLES `shop_post_product` WRITE;
+/*!40000 ALTER TABLE `shop_post_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `shop_post_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop_post_type`
+--
+
+DROP TABLE IF EXISTS `shop_post_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_post_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop_post_type`
+--
+
+LOCK TABLES `shop_post_type` WRITE;
+/*!40000 ALTER TABLE `shop_post_type` DISABLE KEYS */;
+INSERT INTO `shop_post_type` VALUES (1,'video','Video',1,1491907655),(2,'blog','Blog',1,1491907655);
+/*!40000 ALTER TABLE `shop_post_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop_posts`
+--
+
+DROP TABLE IF EXISTS `shop_posts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `content` text,
+  `status` int(1) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  `type` varchar(10) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
+  `view` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop_posts`
+--
+
+LOCK TABLES `shop_posts` WRITE;
+/*!40000 ALTER TABLE `shop_posts` DISABLE KEYS */;
+INSERT INTO `shop_posts` VALUES (1,'test','Test','<p>dasdsad</p>\n',1,1491990730,NULL,'17022154_218122591996843_4354251608938707979_n11.jpg',NULL),(2,'test2','Test','<p>dasdasdsa</p>\n',-1,1491991753,'blog','unnamed.jpg',NULL),(3,'huong-dan-cach-nau-mon-ca-ri-ga','Huớng dẫn cách nấu món cà ri gà ','<p>Day la noi dung</p>\n',-1,1492013828,'video',NULL,NULL),(4,'cach-lam-sach-rau-cu-qua','Cách làm sạch rau củ quả ','<p>Hay ăn sạch uống sạch ngay h&ocirc;m nay</p>\n',1,1492425793,'blog','post-4.jpg',NULL),(5,'dsadasdasdasdasd','dsadasdasdasdasd','<p>dasdsad</p>\n',-1,1492014170,'blog','Screen_Shot_2017-04-08_at_10.08_.46_PM_2.png',NULL),(6,'chuan-rau-sach-la-nhu-the-nao','Chuẩn rau sạch là như thế nào','',1,1492428015,'blog','2.jpg',NULL),(7,'che-bien-hai-san-tuoi-ngon','Chế biến hải sản tươi ngon','',1,1492428129,'blog','6.jpg',NULL),(8,'huong-dan-cach-nau-mon-suon-xao-chua-ngot','Hướng dẫn cách nấu món Sườn Xào Chua Ngọt','',1,1492429382,'video','https://www.youtube.com/watch?v=hbhSY2ggKIY',NULL),(9,'huong-dan-cach-nau-mon-tom-rang-me','Hướng dẫn cách nấu món Tôm rang me','',1,1492429435,'video','https://www.youtube.com/watch?v=phWaz6hj07k',NULL),(10,'cach-che-bien-mon-goi-bo-bop-thau-cuc-ngon','Cách chế biến món Gỏi Bò Bóp Thấu cực ngon','',1,1492429454,'video','https://www.youtube.com/watch?v=nItt3hUhJwo',NULL),(11,'goi-muc-thai-lan','Gỏi mực Thái Lan','',1,1492429472,'video','https://www.youtube.com/watch?v=pgkcqRokNek',NULL),(12,'che-suong-sa-hat-luu','Chè sương sa hạt lựu','',1,1492429488,'video','https://www.youtube.com/watch?v=X7yqjlEIMXo',NULL),(13,'cach-nau-tra-sua-thai-thom-ngon-cuc-don-gian','Cách nấu trà sữa Thái thơm ngon cực đơn giản','',1,1492429507,'video','https://www.youtube.com/watch?v=T015rIHYL3w',NULL),(14,'https-www-youtube-com-watch-v-glju1qua42s','https://www.youtube.com/watch?v=gLJu1quA42s','',-1,1492429525,'video','https://www.youtube.com/watch?v=T015rIHYL3w',NULL),(15,'cach-lam-banh-sua-tuoi-chien-thom-ngon','Cách làm Bánh sữa tươi chiên thơm ngon','',1,1492429539,'video','https://www.youtube.com/watch?v=gLJu1quA42s',NULL),(16,'cach-lam-banh-ran-doremon-banh-dorayaki-chanh-chua','Cách làm Bánh rán Doremon (bánh Dorayaki) chanh chua ','',1,1492429571,'video','https://www.youtube.com/watch?v=Tdfvu_0Ctf8',NULL);
+/*!40000 ALTER TABLE `shop_posts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `shop_product`
 --
 
@@ -225,6 +339,60 @@ LOCK TABLES `shop_product` WRITE;
 /*!40000 ALTER TABLE `shop_product` DISABLE KEYS */;
 INSERT INTO `shop_product` VALUES (430,'Cá biển sơ chế',17,'0','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','8.jpg','120000',0,'0',1491322440,1),(431,'Ngêu biển',19,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p2.jpg|a774d2800bafb51c189d72ec2e3f3041.jpg|f04f8595a5fefb386af6641e086c868a.jpg|0246349e28a05110c9adb1dbcd8752a4.jpg|135a8e4c5f7d55ad914d9acf779c3c12.jpg','120000',100,'',1491125874,1),(432,'Tôm Mỹ',22,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p3.jpg|2ade777df3635be386c48c32e952e46d.jpg|f13e7852971c44e73235c9387844308f.jpg|f28df896ade58fd859fc1e5c8d560036.jpg|8c17c3f15707fd8a90944f487d025e94.jpg','400000',100,'',1491125899,1),(433,'Cá hồi Canada',17,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p4.jpg|dddecec507e52100c792ffd171f7f734.jpg|808e451e6abb60ffe379d397e486955f.jpg|618e4f23fd4f0a0142dcc44ba672bd3e.jpg|e0644f79e2183087b0e76f579b926248.jpg','350000',100,'',1491125928,1),(434,'Cá nục biển',20,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p5.jpg|cff15a9888f1e0b6c075b5a50ef94a98.jpg|f4a80461888596287295274f1ef9adcf.jpg|72e7cf42628da5b4b7a5c27e3655b9d6.jpg|e24ad9dac6bc1e958777385b53bd3861.jpg','150000',100,'',1491125961,1),(435,'Cá hồi chế biến sẵn',20,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p6.jpg|76924f9e7926e5e50d55778fbf0f6e41.jpg|8aa16cbf7056b71524e865043ba46986.jpg|e0ab381731ae51bce0dd0a3af4df6fe6.jpg|ea4ef873d3201d8b5b7c54b46624967f.jpg','650000',100,'',1491125988,1),(436,'Cá hồi chế biến sẵn',16,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p61.jpg|d33aef73f37f05c9499004002e94d077.jpg|f70c7bf8aae1e318232e67e3128536ec.jpg|f1a633c72490f024ceab1895946a7cbf.jpg|e36aefa6a11dee69093dffdc8416fb55.jpg','650000',100,'',1491125997,1),(437,'Cá uớp muối',20,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p7.jpg|e13479233b66ec4456e3ae585c0dc779.jpg|2be8a6467ce8da17235f446e431bb8ad.jpg|14bd715f9d695dec8f883cdf99cc7ebf.jpg|9ef25cd96371103fd3079f7d5e58ca56.jpg','250000',100,'',1491126034,1),(438,'Tôm chế biến sẵn',20,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p8.jpg|ade6455a5faa9bb320da79de5b98ac4d.jpg|6bcc0266632986d946bfa13c14cfcadb.jpg|19f44c0c4d12b9c2f8f5c7f2ebdcd537.jpg|249d0442cbfdf5370de496903ca74760.jpg','350000',100,'',1491126051,1),(439,'Tôm chế biến sẵn',22,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p81.jpg|fdc04dfebc3bba86416582f8d35db1bb.jpg|29956fdb741490d40267cfc4b3f1e843.jpg|1de12cec3ffdea9ef2fd866e367d7e5b.jpg|7e3b49111c34c94e2822d2bcb57e6b28.jpg','350000',100,'',1491126057,1),(440,'Tôm chế biến sẵn',18,'','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p82.jpg|a59b5140ebca35f5faa03592b78d6934.jpg|389d2fbfc7e822ce55bcfc8d72893a18.jpg|e5cba69585834f6772235e32140344d4.jpg|772dd73a81c09bd632edf3bd57af5ac0.jpg','350000',100,'',1491126063,1),(441,'Cá biển sơ chế',17,'0','<p>Đ&acirc;y l&agrave; m&ocirc; tả cho sản phẩm</p>\n','p110.jpg','120000',0,'0',1491316666,1);
 /*!40000 ALTER TABLE `shop_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop_slider`
+--
+
+DROP TABLE IF EXISTS `shop_slider`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_slider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) DEFAULT NULL,
+  `caption` varchar(255) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop_slider`
+--
+
+LOCK TABLES `shop_slider` WRITE;
+/*!40000 ALTER TABLE `shop_slider` DISABLE KEYS */;
+INSERT INTO `shop_slider` VALUES (1,NULL,NULL,NULL,-1,1491903796),(2,'17239712_1405224422875182_4250549768410670145_o1.jpg',NULL,NULL,-1,1491903991),(3,'17022154_218122591996843_4354251608938707979_n.jpg',NULL,NULL,-1,1491904628),(4,'17239712_1405224422875182_4250549768410670145_o2.jpg',NULL,NULL,-1,1491905036),(5,'6.jpg',NULL,NULL,1,1492086284),(6,'7.jpg',NULL,NULL,1,1492086423),(7,'8.jpg',NULL,NULL,1,1492086436);
+/*!40000 ALTER TABLE `shop_slider` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shop_subscribe`
+--
+
+DROP TABLE IF EXISTS `shop_subscribe`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_subscribe` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `active` int(1) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shop_subscribe`
+--
+
+LOCK TABLES `shop_subscribe` WRITE;
+/*!40000 ALTER TABLE `shop_subscribe` DISABLE KEYS */;
+INSERT INTO `shop_subscribe` VALUES (1,'',1,NULL),(2,'dasdas',1,NULL),(3,'dasdasdasd',1,NULL),(4,'dasdasdasddasd',1,NULL);
+/*!40000 ALTER TABLE `shop_subscribe` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -269,4 +437,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-05 22:44:29
+-- Dump completed on 2017-04-24 23:44:08

@@ -52,9 +52,34 @@
                         <i class="fa fa-list"></i> Danh mục
                     </a>                   
                 </li>
+                <li class="panel <?=$this->router->fetch_class()=='intro'?'active':''?>">
+                    <a href="<?=ROOT?>admin/intro/lists.html" >
+                        <i class="fa fa-user"></i> Bài viết giới thiệu
+                    </a>                   
+                </li>
                 <li class="panel <?=$this->router->fetch_class()=='guide'?'active':''?>">
                     <a href="<?=ROOT?>admin/guide/lists.html" >
-                        <i class="fa fa-circle"></i> Bài viết hướng dẫn
+                        <i class="fa fa-support"></i> Bài viết hướng dẫn
+                    </a>                   
+                </li>
+                <li class="panel <?=$this->router->fetch_class()=='blog'?'active':''?>">
+                    <a href="<?=ROOT?>admin/blog/lists.html" >
+                        <i class="fa fa-file-text-o"></i> Trang nội dung
+                    </a>                   
+                </li>
+                <li class="panel <?=$this->router->fetch_class()=='video'?'active':''?>">
+                    <a href="<?=ROOT?>admin/video/lists.html" >
+                        <i class="fa fa-file-video-o"></i> Trang video
+                    </a>                   
+                </li>
+                <li class="panel <?=$this->router->fetch_class()=='subscribe'?'active':''?>">
+                    <a href="<?=ROOT?>admin/subscribe.html" >
+                        <i class="fa fa-check"></i> Đăng ký nhận tin
+                    </a>                   
+                </li>
+                <li class="panel <?=$this->router->fetch_class()=='slider'?'active':''?>">
+                    <a href="<?=ROOT?>admin/slider/lists.html" >
+                        <i class="fa fa-image"></i> Cấu hình banner
                     </a>                   
                 </li>
                 <li class="panel <?=$this->router->fetch_class()=='order'?'active':''?>">
@@ -81,7 +106,7 @@
                 <div class="col-lg-12">
                     <h2>
                         <?=@$title?> 
-                        <?php if($this->router->fetch_method()=='lists') { ?><a style="float:right" class="btn btn-info" href="<?=ROOT?>admin/<?=$this->router->fetch_class()?>/news.html"><span class="fa fa-plus"></span> Thêm <?=strtolower($title)?> mới</a><?php } ?>
+                        <?php if(($this->router->fetch_method()=='lists' OR $this->router->fetch_method()=='edit')  && !isset($no_new)) { ?><a style="float:right" class="btn btn-info" href="<?=ROOT?>admin/<?=$this->router->fetch_class()?>/news.html"><span class="fa fa-plus"></span> Thêm <?=strtolower($title)?> mới</a><?php } ?>
                     </h2>
                 </div>
                 <hr />
