@@ -43,8 +43,9 @@ $(document).ready(function(){
       <div class="row">
         <div class="col s12">
           <form action="<?=ROOT?>subscribe" method="post" target="main">
-            <div class="input-field input-group col s6">
-                <input id="icon_prefix" type="text" class="validate" name="email" placeholder="Nhập Email nhận thông báo khuyến mãi">
+            <div class="col s8" style="color: white">Đăng ký Email để nhận thông tin ưu đãi và khuyến mãi khủng</div>
+            <div class="input-field input-group col s8">
+                <input id="icon_prefix" type="text" class="validate" name="email" placeholder="Nhập Email">
                 <span class="suffix">
                     <button type="submit" class="btn waves-effect waves-light red"><span class="fa fa-send"></span></button>
                 </span>

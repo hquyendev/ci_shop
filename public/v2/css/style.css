@@ -50,7 +50,7 @@ nav ul a{
 	background-color: #6ea2c1;
 }
 .banner{
-	background: #8bb4cd;
+	background: #b8f0ff;
 
 }
 .item-logo{
@@ -218,7 +218,6 @@ img.logo{
 }
 .panel-desc{
     font-size: 28px;
-    font-family: fantasy;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -1156,4 +1155,20 @@ div.view-more a.view-more-item.disable{
 }
 .video-post .video{
 	text-align: center;
+}
+.blog-title{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    color: #5285a4;
+}
+.blog-title:hover{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    color: #739eb8;
 }

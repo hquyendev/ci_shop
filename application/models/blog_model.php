@@ -21,7 +21,7 @@ class Blog_model extends CI_Model {
 		return $this->db->update('posts', $param);
 	}
 
-	public function getBlog($id = FALSE)
+	public function getBlog($id = FALSE, $limit=FALSE, $offset=0)
 	{
 		$this->db->select('*');
 		$this->db->from('posts');
@@ -29,6 +29,8 @@ class Blog_model extends CI_Model {
 			$this->db->where('id', $id);
 		$this->db->where('type', 'blog');
 		$this->db->where('status', 1);
+		if($limit)
+			$this->db->limit($limit, $offset);
 		$q = $this->db->get();
 
 		$data = $q->result_array();

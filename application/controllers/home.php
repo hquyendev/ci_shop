@@ -4,6 +4,8 @@ class Home extends HQ_Controller{
 		parent:: __construct();		
 		$this->load->model('Slider_model');
 		$this->load->model('Intro_model');
+		$this->load->model('Blog_model');
+		$this->load->model('Video_model');
 	}
 	public function index()
 	{
@@ -18,6 +20,8 @@ class Home extends HQ_Controller{
 		}
 		$temps['sliders'] = $this->Slider_model->getSlider();
 		$temps['intros'] = $this->Intro_model->getIntro();
+		$temps['blogs'] = $this->Blog_model->getBlog(FALSE, 3, 0);
+		$temps['videos'] = $this->Video_model->getVideo(FALSE, 4, 0);
 		$temps['site'] = 'home';
 		$temps['saleProduct'] = $saleProduct;
 		$temps['showView'] = $showView;

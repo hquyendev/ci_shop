@@ -43,3 +43,46 @@
 		 ?>
 	</div>
 </div>
+
+
+<div class="show-menu">
+		<div class="panel-title">Blogs</div>
+		<div class="panel-desc">Cách nấu những món ăn ngon cho gia đình của bạn</div>
+	<div class="row">
+		<?php 
+		foreach ($blogs as $key => $value) { ?>
+			<div class="col s4">
+				<div class="box-menu">
+					<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>">
+						<img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>">
+						<div class="overlay"></div>
+					</a>
+				</div>
+				<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
+			</div>
+		<?php	
+		}
+		?>
+	</div>
+</div>
+
+<div class="show-menu">
+		<div class="panel-title">Blogs</div>
+		<div class="panel-desc">Cách nấu những món ăn ngon cho gia đình của bạn</div>
+	<div class="row">
+		<?php 
+		foreach ($video as $key => $value) { ?>
+			<div class="col s4">
+				<div class="box-menu">
+					<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>">
+						<img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>">
+						<div class="overlay"></div>
+					</a>
+				</div>
+				<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
+			</div>
+		<?php	
+		}
+		 ?>
+	</div>
+</div>
