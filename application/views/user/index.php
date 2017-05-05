@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CI SHOP</title>
+	<title>Hải sản Ông Vũ</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/materialize.css?t=1.1">
 	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/font-awesome.css?t=1.1">
