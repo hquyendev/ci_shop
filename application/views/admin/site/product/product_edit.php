@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="<?=PUB?>assets/css/bootstrap-fileupload.min.css" />
-<?php $image = explode('|', $data['image']); ?>
-<form class="form-horizontal" action="<?=ROOT?>admin/product/edit-sm/<?=$data['id']?>" method="post" target="main" enctype="multipart/form-data">
+<?php $image = isset($data)?explode('|', $data['image']):array(); ?>
+<form class="form-horizontal" action="<?=ROOT?>admin/product/edit-sm/<?=isset($data['id'])?$data['id']:''?>" method="post" target="main" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Tên sản phẩm</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" name="name" value="<?=$data['name']?>" id="name" placeholder="Tên sản phẩm">
+      <input type="text" class="form-control" name="name" value="<?=isset($data['name'])?$data['name']:''?>" id="name" placeholder="Tên sản phẩm">
     </div>
   </div>
 
   <div class="form-group">
     <label for="price" class="col-sm-2 control-label">Giá tiền</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" name="price" value="<?=$data['price']?>" id="price" placeholder="Giá tiền">
+      <input type="text" class="form-control" name="price" value="<?=isset($data['price'])?$data['price']:''?>" id="price" placeholder="Giá tiền">
     </div>
   </div>
 
@@ -29,7 +29,7 @@
     <label for="size" class="col-sm-2 control-label">Hình ảnh chính <br><small>(Ảnh hiện thị)</small></label>
     <div class="col-lg-6">
       <div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
-          <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" alt=""></div>
+          <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="<?=ROOT?><?=isset($data)?'upload/product/450/'.$image[0]:'public/assets/img/demoUpload.jpg'?>" alt=""></div>
           <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 10px;"></div>
           <div>
               <span class="btn btn-file btn-primary"><span class="fileupload-new">Chọn ảnh</span><span class="fileupload-exists">Đổi ảnh</span><input type="file" name="image"></span>
@@ -49,7 +49,7 @@
   <div class="form-group">
     <label for="detail" class="col-sm-2 control-label">Mô tả chi tiết</label>
     <div class="col-sm-9">
-      <textarea name="detail" id="detail" ><?=$data['detail']?></textarea>
+      <textarea name="detail" id="detail" ><?=isset($data['detail'])?$data['detail']:''?></textarea>
       <script src="<?=PUB?>ckeditor/ckeditor.js"></script>
       <script src="<?=PUB?>ckfinder/ckfinder.js"></script>
       <script>

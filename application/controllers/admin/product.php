@@ -19,7 +19,7 @@ class Product extends HQ_Controller{
 	public function news()
 	{
 		$temps['title'] = 'Thêm sản phẩm mới';
-		$temps['site'] = 'product_new';
+		$temps['site'] = 'product_edit';
 		$this->load->view("admin/index", $temps);
 	}
 
@@ -147,11 +147,20 @@ class Product extends HQ_Controller{
 		if(!$cate) {message('Danh mục sản phẩm không được để trống!');return;}
 
 		
+    	$param = array(
+    		'name'		=> $name,
+    		'price'		=> $price,
+    		'cate'		=> $cate,
+    		'qty'		=> $qty,
+    		'color'		=> $color,
+    		'size'		=> $size,
+    		'detail'	=> $detail,
+    		'time'		=> $time
+    		);
 		if(!$this->Cate_model->getCate($cate)){message('Danh mục này không tồn tại!'); return; }
 		$listImage = array();
 
-		if($image){
-			echo "asdas";
+		if($image['tmp_name']){
 			$imageSize = getimagesize($image['tmp_name']);
 
 
@@ -168,26 +177,8 @@ class Product extends HQ_Controller{
 	            	copy($image['tmp_name'], BASE.'upload/product/origin/'.$check['file_name']);
 	            }
 	            $listImage[] = $check['file_name'];
-	            $this->load->library("image_lib");
 
-	           	$config['image_library'] = 'gd2';
-	            $config['source_image']	= BASE.'upload/product/450/'.$check['file_name'];
-	            $config['create_thumb'] = FALSE;
-	            $config['maintain_ratio'] = TRUE;
-	            $config['width'] = 450;
-	            $config['height'] = $config['width'] * $imageSize[1] / $imageSize[0];
-	            $this->image_lib->initialize($config);
-	            $this->image_lib->resize();
-
-	            $config['wm_type'] = 'overlay';
-				$config['wm_overlay_path'] = BASE.'upload/watermark.png';
-				$config['wm_vrt_alignment'] = 'bottom';
-				$config['wm_hor_alignment'] = 'right';
-				$config['wm_padding'] = -10;
-				$config['wm_opacity'] = 50;
-	            $this->image_lib->initialize($config);
-	            $this->image_lib->watermark();
-
+    			$param['image']		= implode('|', $listImage);
 
 	        }else{
 	            message($this->upload->display_errors());return;
@@ -196,18 +187,7 @@ class Product extends HQ_Controller{
 	    	$listImage = explode('|', $prod['image']);
 	    }
 
-    	$param = array(
-    		'name'		=> $name,
-    		'price'		=> $price,
-    		'cate'		=> $cate,
-    		'qty'		=> $qty,
-    		'color'		=> $color,
-    		'size'		=> $size,
-    		'image'		=> implode('|', $listImage),
-    		'detail'	=> $detail,
-    		'time'		=> $time
-    		);
-    	if($this->Product_model->updateProduct($id,$param))
+    	if($id?($this->Product_model->updateProduct($id,$param)):($this->Product_model->insertProduct($param)))
     	{
     		message('Cập nhật sản phẩm:<b>'.$name.'</b> thành công',3000, false, 'success');return;
     	}

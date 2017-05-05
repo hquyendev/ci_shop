@@ -51,14 +51,14 @@
 	<div class="row">
 		<?php 
 		foreach ($blogs as $key => $value) { ?>
-			<div class="col s4">
+			<div class="col s3">
 				<div class="box-menu">
-					<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>">
+					<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>">
 						<img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>">
 						<div class="overlay"></div>
 					</a>
 				</div>
-				<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
+				<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
 			</div>
 		<?php	
 		}
@@ -67,19 +67,21 @@
 </div>
 
 <div class="show-menu">
-		<div class="panel-title">Blogs</div>
-		<div class="panel-desc">Cách nấu những món ăn ngon cho gia đình của bạn</div>
-	<div class="row">
+		<div class="panel-title">Videos</div>
+		<div class="panel-desc">Videos / Clips</div>
+	<div class="row video-post">
 		<?php 
-		foreach ($video as $key => $value) { ?>
-			<div class="col s4">
+		foreach ($videos as $key => $value) { ?>
+			<div class="col s3">
 				<div class="box-menu">
-					<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>">
-						<img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>">
+					<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
+
+					</a>
+					<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>">
 						<div class="overlay"></div>
 					</a>
 				</div>
-				<a href="<?=ROOT?>blog/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
+				<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
 			</div>
 		<?php	
 		}
