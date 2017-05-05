@@ -3,14 +3,14 @@
 <head>
 	<title>CI SHOP</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/materialize.css">
-	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/style.css">
-	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/jquery.pslider.css" />
-	<script type="text/javascript" src="<?=PUB?>v2/js/jquery.js"></script>
-	<script type="text/javascript" src="<?=PUB?>v2/js/quyen.js"></script>
-	<script type="text/javascript" src="<?=PUB?>v2/js/jquery.pslider.js"></script>
-	<script type="text/javascript" src="<?=PUB?>v2/js/materialize.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/materialize.css?t=1.1">
+	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/font-awesome.css?t=1.1">
+	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/style.css?t=1.1">
+	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/jquery.pslider.css?t=1.1" />
+	<script type="text/javascript" src="<?=PUB?>v2/js/jquery.js?t=1.1"></script>
+	<script type="text/javascript" src="<?=PUB?>v2/js/quyen.js?t=1.1"></script>
+	<script type="text/javascript" src="<?=PUB?>v2/js/jquery.pslider.js?t=1.1"></script>
+	<script type="text/javascript" src="<?=PUB?>v2/js/materialize.js?t=1.1"></script>
 	<link rel="shortcut icon" href="<?=ROOT?>favicon.ico" type="image/x-icon">
 </head>
 <body>
