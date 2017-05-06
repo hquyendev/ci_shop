@@ -87,19 +87,19 @@ $(document).ready(function(){
         <div class="col l4 s12">
           <h5 class="footer-title">Liên hệ </h5>
           <ul class="footer-cate">
-            <li><div><span class="fa fa-phone"></span> (+84)-8888-4444</div></li>
-            <li><div><span class="fa fa-map-marker"></span> 113 Nguyễn Đình Chiểu, Q1, Dakao, HCM</div></li>
-            <li><div><span class="fa fa-envelope"></span> shop123@seashop.vn</div></li>
+            <li><div><span class="fa fa-phone"></span> 090 285 39 51</div></li>
+            <li><div><span class="fa fa-map-marker"></span> Thanh Đa, Quận Bình Thạnh Thành phố Hồ Chí Minh</div></li>
+            <li><div><span class="fa fa-envelope"></span> haisanongvu@gmail.com</div></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div><iframe src="" name="main" style="display:none" frameborder="0">&copy; 2015 QuyenDev.com</iframe></div>
+<div><iframe src="" name="main" style="display:none" frameborder="0">&copy; 2017 HaiSanOngVu</iframe></div>
 <div class="footer-copyright">
   <div class="container">
-  &copy; 2017 QuyenDev.com
+  &copy; 2017 HaiSanOngVu
   <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
   </div>
 </div>
