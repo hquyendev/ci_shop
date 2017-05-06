@@ -14,7 +14,18 @@
 				<div class="video">
 					<iframe class=" video-embed" src="<?=$data['image']?>" frameborder="0" allowfullscreen width="560" height="315"></iframe>
 				</div>
+				<div class="info-item" style="margin-bottom: 10px;">
+					<div class="fb-like" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+				</div>
+				<div class="content"><?=$data['content']?></div>
+				
+				<div class="col s12">
+					<div class="description">
+						<div class="fb-comments" data-href="<?=ROOT?>video/<?=$data['id']?>-<?=$data['slug']?>.html" data-numposts="5"></div>
+					</div>
+				</div>
 			</div>
+
 			<?php } ?>
 		</div>
 		<div class="item-post-vert item-post col s4 x12">
@@ -32,9 +43,25 @@
 		
 		</div>
 	</div>
+
+	<div class="col s12">
+		<div class="description">
+			<div class="fb-comments" data-href="<?=ROOT?>video/<?=$data['id']?>-<?=$data['slug']?>.html" data-numposts="5"></div>
+		</div>
+	</div>
 <!-- 	<?php if($showView) { ?>
 	<div class="view-more">
 		<a href="<?=ROOT?>api/get/1?c=<?=$id?>" c="<?=$id?>" page="1" api="<?=ROOT?>api/get/" target="main" id="view-more-item" class="view-more-item btn-large "><span id="loadding" class="fa"></span> Xem thêm</a>
 	</div>
 	<?php } ?> -->
 </div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=897560213704213";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

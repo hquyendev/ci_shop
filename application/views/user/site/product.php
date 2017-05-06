@@ -66,6 +66,9 @@
 							<span class="key">Mã sản phẩm:</span>
 							<span class="val"><?=$data['id']?></span>
 						</div>
+						<div class="info-item">
+							<div class="fb-like" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -110,7 +113,7 @@
 	<div class="row">
 		<div class="col s12">
 			<div class="description">
-				<div class="fb-comments" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($value['name'])?>.html" data-numposts="5"></div>
+				<div class="fb-comments" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-numposts="5"></div>
 			</div>
 		</div>
 	</div>
