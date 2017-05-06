@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.16, for osx10.12 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.35, for Linux (x86_64)
 --
 -- Host: localhost    Database: ci_shop
 -- ------------------------------------------------------
--- Server version	5.7.16
+-- Server version	5.6.35
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -98,7 +98,7 @@ CREATE TABLE `shop_guide` (
 
 LOCK TABLES `shop_guide` WRITE;
 /*!40000 ALTER TABLE `shop_guide` DISABLE KEYS */;
-INSERT INTO `shop_guide` VALUES (1,'Chính sách bảo hành','Chính sách bảo hành','chinh-sach-bao-hanh',NULL,0,NULL,1),(2,'Chính sách vận chuyển','Chính sách vận chuyên','chinh-sach-van-chuyen',NULL,0,NULL,1),(3,'Hướng dẫn mua hàng','Hướng dẫn mua hàng','huong-dan-mua-hang',NULL,0,NULL,1),(4,'Bản đồ','Bản đồ','ban-do',NULL,0,NULL,1),(5,'Liên hệ','Liên hệ','lien-he',NULL,0,NULL,1),(6,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989797,11),(7,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989801,11),(8,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989850,11),(9,'Test','<p>đasadsad</p>\n','test','17022154_218122591996843_435425160893870',1,1491990216,11),(10,'Test','<p>đasadsad</p>\n','test','17022154_218122591996843_435425160893870',1,1491990219,11),(11,'Thực phẩm sạch','<p>Đ&acirc;y l&agrave; thực phẩm sạch</p>\n','thuc-pham-sach',NULL,1,1492704154,11),(12,'Tươi ngon','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng thực phẩm tươi sống nhất</p>\n','tuoi-ngon',NULL,1,1492704282,11),(13,'Tươi sống','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng sản phẩm tươi sống</p>\n','tuoi-song',NULL,1,1492704552,11);
+INSERT INTO `shop_guide` VALUES (1,'Chính sách bảo hành','Chính sách bảo hành','chinh-sach-bao-hanh',NULL,0,NULL,1),(2,'Chính sách vận chuyển','Chính sách vận chuyên','chinh-sach-van-chuyen',NULL,0,NULL,1),(3,'Hướng dẫn mua hàng','Hướng dẫn mua hàng','huong-dan-mua-hang',NULL,0,NULL,1),(4,'Bản đồ','<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31351.497999136234!2d106.69896745654773!3d10.816114170759292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175289c3683f2a7%3A0xf8213d8614e6f0b0!2zVGhhbmggxJBhLCBDxrAgeMOhIFRoYW5oIMSQYSwgcGjGsOG7nW5nIDI3LCBCw6xuaCBUaOG6oW5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1493997504816\" width=\"800\" height=\"600\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>','ban-do',NULL,0,1493997733,1),(5,'Liên hệ','Liên hệ','lien-he',NULL,0,NULL,1),(6,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989797,11),(7,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989801,11),(8,'Test','<p>dasdasdasdasdsad&nbsp;</p>\n','test',NULL,1,1491989850,11),(9,'Test','<p>đasadsad</p>\n','test','17022154_218122591996843_435425160893870',1,1491990216,11),(10,'Test','<p>đasadsad</p>\n','test','17022154_218122591996843_435425160893870',1,1491990219,11),(11,'Thực phẩm sạch','<p>Đ&acirc;y l&agrave; thực phẩm sạch</p>\n','thuc-pham-sach',NULL,1,1492704154,11),(12,'Tươi ngon','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng thực phẩm tươi sống nhất</p>\n','tuoi-ngon',NULL,1,1492704282,11),(13,'Tươi sống','<p>Ch&uacute;ng t&ocirc;i lu&ocirc;n sử dụng sản phẩm tươi sống</p>\n','tuoi-song',NULL,1,1492704552,11);
 /*!40000 ALTER TABLE `shop_guide` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -437,4 +437,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-24 23:44:08
+-- Dump completed on 2017-05-06 11:18:29
