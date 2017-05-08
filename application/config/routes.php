@@ -38,13 +38,14 @@
 |
 */
 
-$route['danh_muc/(:any)'] = "danh_muc/index/$1";
+$route['hai_san/(:any)'] = "hai_san/index/$1";
+$route['hai_san/(:any)/(:any)'] = "hai_san/index/$1/$2";
 $route['san_pham/(:any)'] = "san_pham/index/$1";
 $route['subscribe'] = "subscribe/index";
 $route['gioi_thieu/(:any)'] = "gioi_thieu/index/$1";
-$route['blog/(:any)'] = "blog/index/$1";
-$route['video/(:any)'] = "video/index/$1";
 $route['huong_dan/(:any)'] = "huong_dan/index/$1";
+$route['video/(:any)'] = "video/index/$1";
+$route['khach_hang/(:any)'] = "khach_hang/index/$1";
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 

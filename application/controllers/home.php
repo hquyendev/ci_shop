@@ -6,10 +6,10 @@ class Home extends HQ_Controller{
 		$this->load->model('Intro_model');
 		$this->load->model('Blog_model');
 		$this->load->model('Video_model');
+		$this->load->model('Guide_model');
 	}
 	public function index()
 	{
-		$saleProduct = $this->Product_model->getSale(16);
 		$showView = TRUE;
 		$data = $this->Product_model->getNew();
 		$perpage = 20;
@@ -22,8 +22,8 @@ class Home extends HQ_Controller{
 		$temps['intros'] = $this->Intro_model->getIntro();
 		$temps['blogs'] = $this->Blog_model->getBlog(FALSE, 3, 0);
 		$temps['videos'] = $this->Video_model->getVideo(FALSE, 4, 0);
+		$temps['about_us'] = $this->Guide_model->getGuideSlug('ve-chung-toi');
 		$temps['site'] = 'home';
-		$temps['saleProduct'] = $saleProduct;
 		$temps['showView'] = $showView;
 		$temps['data'] = $data;
 		$this->load->view("user/index", $temps);

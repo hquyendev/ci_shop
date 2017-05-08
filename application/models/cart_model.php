@@ -104,10 +104,11 @@ class Cart_model extends CI_Model {
 
 	public function getNew($limit = 20)
 	{
-		$this->db->select('*');
-		$this->db->from('product');
-		$this->db->where('active',1);
-		$this->db->order_by('time', 'desc');
+		$this->db->select('p.*, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('product p');
+		$this->db->join('cate c', 'c.id = p.cate');
+		$this->db->where('p.active',1);
+		$this->db->order_by('p.time', 'desc');
 		$this->db->limit($limit,0);
 		$q = $this->db->get();
 

@@ -42,6 +42,7 @@ class Product extends HQ_Controller{
 	public function news_sm()
 	{
 		$name 		= $this->input->post('name');
+		$slug 		= $this->input->post('slug');
 		$price 		= $this->input->post('price');
 		$cate 		= $this->input->post('cate');
 		$qty 		= $this->input->post('qty');
@@ -54,6 +55,7 @@ class Product extends HQ_Controller{
 		$image = $_FILES['image'];
 
 		if(!$name) {message('Tên sản phẩm không được để trống!');return;}
+		if($this->Product_model->getProductSlug($slug)) {message('Slug sản phẩm này đã có!');return;}
 		if(!$cate) {message('Danh mục sản phẩm không được để trống!');return;}
 
 		if(!$image['tmp_name']) {message('Hình ảnh chính không được bỏ trống!'); return; } 
@@ -103,6 +105,7 @@ class Product extends HQ_Controller{
         	$param = array(
         		'name'		=> $name,
         		'price'		=> $price,
+        		'slug'		=> $slug,
         		'cate'		=> $cate,
         		'qty'		=> $qty,
         		'color'		=> $color,
@@ -130,6 +133,7 @@ class Product extends HQ_Controller{
 	public function edit_sm($id = FALSE)
 	{
 		$name 		= $this->input->post('name');
+		$slug 		= $this->input->post('slug');
 		$price 		= $this->input->post('price');
 		$cate 		= $this->input->post('cate');
 		$qty 		= $this->input->post('qty');
@@ -144,11 +148,13 @@ class Product extends HQ_Controller{
 		if(!$prod = $this->Product_model->getProduct($id)) {message('Sản phẩm không tồn tại trong hệ thống!');return;}
 
 		if(!$name) {message('Tên sản phẩm không được để trống!');return;}
+		if($this->Product_model->getProductSlug($slug, $id)) {message('Slug sản phẩm này đã có!');return;}
 		if(!$cate) {message('Danh mục sản phẩm không được để trống!');return;}
 
 		
     	$param = array(
     		'name'		=> $name,
+    		'slug'		=> $slug,
     		'price'		=> $price,
     		'cate'		=> $cate,
     		'qty'		=> $qty,
@@ -183,8 +189,6 @@ class Product extends HQ_Controller{
 	        }else{
 	            message($this->upload->display_errors());return;
 	        }
-	    }else{
-	    	$listImage = explode('|', $prod['image']);
 	    }
 
     	if($id?($this->Product_model->updateProduct($id,$param)):($this->Product_model->insertProduct($param)))

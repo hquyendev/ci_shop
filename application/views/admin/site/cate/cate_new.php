@@ -52,6 +52,32 @@
 		</select>
     </div>
   </div>
+
+  
+  <div class="form-group">
+    <label for="detail" class="col-sm-2 control-label">Mô tả chi tiết</label>
+    <div class="col-sm-9">
+      <textarea name="detail" id="detail" ></textarea>
+      <script src="<?=PUB?>ckeditor/ckeditor.js"></script>
+      <script src="<?=PUB?>ckfinder/ckfinder.js"></script>
+      <script>
+          $(function() 
+          {   var editor = CKEDITOR.replace('detail', 
+              { 
+                  filebrowserBrowseUrl : '<?=ROOT?>public/ckfinder/ckfinder.html', 
+                  filebrowserImageBrowseUrl : '<?=ROOT?>public/ckfinder/ckfinder.html?Type=Images', 
+                  filebrowserFlashBrowseUrl : '<?=ROOT?>public/ckfinder/ckfinder.html?Type=Flash', 
+                  filebrowserUploadUrl : '<?=ROOT?>public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files', 
+                  filebrowserImageUploadUrl : '<?=ROOT?>public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images', 
+                  filebrowserFlashUploadUrl : '<?=ROOT?>public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash', 
+                  filebrowserWindowWidth : '800', 
+                  filebrowserWindowHeight : '480' }); 
+                  CKFinder.setupCKEditor( editor, "<?=ROOT?>public/ckfinder/" ); 
+              }
+          ) 
+      </script>
+    </div>
+  </div>
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">

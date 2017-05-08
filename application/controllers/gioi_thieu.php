@@ -20,6 +20,7 @@ class Gioi_thieu extends HQ_Controller{
 			}
 
 			$temps['site'] = 'intro';
+			$temps['title'] = $content['name'].' - Khách hàng';
 			$temps['data'] = $data;
 			$temps['content'] = $content;
 			$temps['listParent'] = $listParent;

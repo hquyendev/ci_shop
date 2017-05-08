@@ -42,7 +42,7 @@ class Cate_model extends CI_Model {
 	public function getSlug($slug)
 	{
 		if(!$slug) return FALSE;
-		$this->db->select('id');
+		$this->db->select('*');
 		$this->db->from('cate');
 		$this->db->where('slug', $slug);
 		//$this->db->where('parent', $parent);

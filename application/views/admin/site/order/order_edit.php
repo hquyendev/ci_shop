@@ -21,7 +21,7 @@
     <tr id="item-<?=$value['id']?>">
       <td ><?=$key + 1?></td>
       <td ><?=$value['id']?></td>
-      <td><a href="<?=ROOT?>san-pham/<?=$value['product']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
+      <td><a href="<?=ROOT?>hai-san/<?=$value['c_slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
       <td><?=$value['qty']?> cái</td>
       <td><span class="text-danger"><?=number_format($value['price'])?> VNĐ</span></td>
       <td><span class="text-danger"><?=number_format($value['price']*$value['qty'])?> VNĐ</span></td>

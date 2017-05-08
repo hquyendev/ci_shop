@@ -1,10 +1,19 @@
+<script src="<?=PUB?>assets/js/adminjs.js"></script>
 <link rel="stylesheet" href="<?=PUB?>assets/css/bootstrap-fileupload.min.css" />
 <?php $image = isset($data)?explode('|', $data['image']):array(); ?>
 <form class="form-horizontal" action="<?=ROOT?>admin/product/edit-sm/<?=isset($data['id'])?$data['id']:''?>" method="post" target="main" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Tên sản phẩm</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" name="name" value="<?=isset($data['name'])?$data['name']:''?>" id="name" placeholder="Tên sản phẩm">
+      <input type="text" class="form-control" name="name" id="name-slug" value="<?=isset($data['name'])?$data['name']:''?>" id="name" placeholder="Tên sản phẩm">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="slug-alilas" class="col-sm-2 control-label">Slug</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" name="slug" id="slug-alilas" value="<?=isset($data['slug'])?$data['slug']:''?>" placeholder="Slug">
     </div>
   </div>
 

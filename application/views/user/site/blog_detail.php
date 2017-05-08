@@ -10,20 +10,20 @@
 		<div class="item-post-detail item-post col s8 x12">
 			<?php if($data) { ?>
 			<div class="box-item-post">
-				<a href="<?=ROOT?>blog/<?=$data['id']?>-<?=$data['slug']?>.html" title="<?=$data['name']?>" class="name" ><?=$data['name']?> <span class="time"><span class="fa fa-history"></span> <?=date('d-m-Y', $data['time'])?></span></a>
+				<a href="<?=ROOT?>huong-dan/<?=$data['slug']?>.html" title="<?=$data['name']?>" class="name" ><?=$data['name']?> <span class="time"><span class="fa fa-history"></span> <?=date('d-m-Y', $data['time'])?></span></a>
 				<div class="image">
-					<a href="<?=ROOT?>blog/<?=$data['id']?>-<?=$data['slug']?>.html" title="<?=$data['name']?>"><img src="<?=ROOT?>upload/post/450/<?=$data['image']?>" alt=""></div>
+					<a href="<?=ROOT?>huong-dan/<?=$data['slug']?>.html" title="<?=$data['name']?>"><img src="<?=ROOT?>upload/post/450/<?=$data['image']?>" alt=""></div>
 					</a>
 				</div>
 
 				<div class="info-item" style="margin-bottom: 10px;">
-					<div class="fb-like" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+					<div class="fb-like" data-href="<?=ROOT?>huong-dan/<?=$data['slug']?>.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 				</div>
 				<div class="content"><?=$data['content']?></div>
 				
 				<div class="col s12">
 					<div class="description">
-						<div class="fb-comments" data-href="<?=ROOT?>blog/<?=$data['id']?>-<?=$data['slug']?>.html" data-numposts="5"></div>
+						<div class="fb-comments" data-href="<?=ROOT?>huong-dan/<?=$data['slug']?>.html" data-numposts="5"></div>
 					</div>
 				</div>
 			</div>
@@ -36,8 +36,8 @@
 			<?php foreach ($data_view as $key => $value) { ?>
 				<div class="box-item-post">
 					<div class="image">
-						<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>"></a>
-					<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?> </a>
+						<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>"></a>
+					<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?> </a>
 					</div>
 				</div>
 			<?php } } ?>

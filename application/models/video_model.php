@@ -66,7 +66,6 @@ class Video_model extends CI_Model {
 		$q = $this->db->get();
 
 		$data = $q->result_array();
-		var_dump($data);
 		return $data;
 	}
 

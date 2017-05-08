@@ -279,6 +279,9 @@ a.title-item:hover{
 	-o-transform:  scale(1); 
 	transform:  scale(1); 
 }
+.show-item.show-item-small .item.show{
+	width: 33.333333333333333%;
+}
 .show-item .item .box-item{
 	width: 100%;
 	background-color: #FFF;
@@ -1171,4 +1174,55 @@ div.view-more a.view-more-item.disable{
     text-align: center;
     display: block;
     color: #739eb8;
+}
+.about-cate{
+	line-height: 10px;
+	display: block;
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+    border-bottom: 1px solid #f7f7f7;
+
+}
+.about-us{
+	line-height: 10px;
+	height: 130px;
+	overflow: hidden;
+	display: block;
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+
+}
+.about-us.in{
+	height: inherit !important;
+}
+.about-us .view-more{
+    position: absolute;
+    display: block;
+    text-align: center;
+    bottom: 5px;
+    width: 100%;
+    font-weight: bold;
+    color: #478eff;
+    cursor: pointer;
+}
+
+.show-item-vert img{
+	width: 100%;
+}
+.show-item-vert .name{
+	text-transform: uppercase;
+    color: #8bb4cd;
+    font-size: 14px;
+}
+.show-item-vert .price{
+    font-size: 12px;
+    color: #808080;
+}
+.show-item-vert .row{
+    border-bottom: 1px solid #f5f5f5;
+}
+.show-item-vert .row:last-child{
+    border-bottom: none;
 }

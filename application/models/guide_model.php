@@ -9,7 +9,7 @@ class Guide_model extends CI_Model {
 
 	public function insertGuide($param)
 	{
-		$this->db->insert('Guide', $param);
+		$this->db->insert('guide', $param);
 		return $this->db->insert_id();
 	}
 

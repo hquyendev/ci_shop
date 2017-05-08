@@ -10,7 +10,7 @@
   <div class="form-group">
     <label for="slug-alilas" class="col-sm-2 control-label">Slug</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" name="slug" value="<?=$data['slug']?>" id="slug-alilas" value="<?=$data['slug']?>" placeholder="Slug">
+      <input type="text" readonly class="form-control" name="slug" value="<?=$data['slug']?>" id="slug-alilas" value="<?=$data['slug']?>" placeholder="Slug">
     </div>
   </div>
   <div class="form-group">

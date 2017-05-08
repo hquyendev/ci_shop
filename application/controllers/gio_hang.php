@@ -240,6 +240,7 @@ class Gio_hang extends HQ_Controller{
 		$data = $this->Cart_model->getOrder($this->login['id']);
 		$temps['site'] = 'list_order';
 		$temps['data'] = $data;
+		$temps['title'] = 'Giỏ hàng - Hải sản Ông Vũ';
 		$temps['listParent'] = $listParent;
 		$this->load->view("user/index", $temps);
 	}

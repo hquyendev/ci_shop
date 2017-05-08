@@ -21,11 +21,46 @@ class Product_model extends CI_Model {
 
 	public function getProduct($id = FALSE)
 	{
-		$this->db->select('*');
-		$this->db->from('product');
+		$this->db->select('p.*, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('product p');
+		$this->db->join('cate c', 'c.id = p.cate');
 		if($id)
-			$this->db->where('id', $id);
-		$this->db->where('active', 1);
+			$this->db->where('p.id', $id);
+		$this->db->where('p.active', 1);
+		$q = $this->db->get();
+
+		$data = $q->result_array();
+
+		return $data;
+	}
+
+	public function getProductSlug($slug = FALSE, $id = FALSE)
+	{
+		$this->db->select('p.*, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('product p');
+		$this->db->join('cate c', 'c.id = p.cate');
+		if($slug)
+			$this->db->where('p.slug', $slug);
+		if($id)
+			$this->db->where('p.id !=', $id);
+		$this->db->where('p.active', 1);
+		$q = $this->db->get();
+
+		$data = $q->result_array();
+
+		return $data;
+	}
+
+	public function getProductHot($cateId)
+	{
+		$this->db->select('p.*, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('product p');
+		$this->db->join('cate c', 'c.id = p.cate');
+		if($cateId)
+			$this->db->where('p.cate', $cateId);
+		$this->db->where('p.active', 1);
+		$this->db->order_by('p.view','desc');
+		$this->db->limit(5, 0);
 		$q = $this->db->get();
 
 		$data = $q->result_array();
@@ -92,11 +127,12 @@ class Product_model extends CI_Model {
 		$listCate = $this->getAllChild($cate, $allChild = array());
 
 
-		$this->db->select('*');
-		$this->db->from('product');
-		$this->db->where_in('cate',$listCate);
-		$this->db->where('active', 1);
-		$this->db->order_by('time','desc');
+		$this->db->select('p.*, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('product p');
+		$this->db->join('cate c', 'c.id = p.cate');
+		$this->db->where_in('p.cate',$listCate);
+		$this->db->where('p.active', 1);
+		$this->db->order_by('p.time','desc');
 		$this->db->limit($perpage, $page);
 		$q = $this->db->get();
 		return $q->result_array();
@@ -118,12 +154,13 @@ class Product_model extends CI_Model {
 			$listCate = $this->getAllChild($cate, $allChild = array());
 			$this->db->where_in('cate',$listCate);
 		}
-		$this->db->select('*');
-		$this->db->from('product');
-		$this->db->where('active',1);
+		$this->db->select('p.*, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('product p');
+		$this->db->join('cate c', 'c.id = p.cate');
+		$this->db->where('p.active',1);
 		if($key)
-			$this->db->like('name',$key);
-		$this->db->order_by('time', 'desc');
+			$this->db->like('p.name',$key);
+		$this->db->order_by('p.time', 'desc');
 		$this->db->limit($perpage, $page);
 		$q = $this->db->get();
 

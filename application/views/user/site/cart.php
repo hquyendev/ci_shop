@@ -1,7 +1,7 @@
 <div class="breakcrum">
 	<a href="<?=ROOT?>" title="Trang chủ">Home</a> <span class="right-arrow fa fa-angle-right"></span>
 	<?php for ($i=0; $i < count($listParent) - 1; $i++) { ?>
-	<a href="<?=ROOT?>danh-muc/<?=$listParent[$i]['slug']?>.html" title="<?=$listParent[$i]['name']?>"><?=$listParent[$i]['name']?></a> <span class="right-arrow fa fa-angle-right"></span>
+	<a href="<?=ROOT?>hai-san/<?=$listParent[$i]['slug']?>.html" title="<?=$listParent[$i]['name']?>"><?=$listParent[$i]['name']?></a> <span class="right-arrow fa fa-angle-right"></span>
 	<?php } ?>
 	<span class="final"><?=$listParent[count($listParent)-1]['name']?></span>
 </div>
@@ -30,7 +30,7 @@
 						<tr id="item-<?=$value['id']?>">
 							<td ><?=$key + 1?></td>
 							<td><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" title="<?=$value['name']?>" width="100%"></td>
-							<td><a href="<?=ROOT?>san-pham/<?=$value['id']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
+							<td><a href="<?=ROOT?>hai-san/<?=$value['c_slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
 							<td><input type="number" name="qty" value="<?=$value['_qty']?>" style="padding:0; text-align:center"></td>
 							<td><span class="price"><?=number_format($value['price'])?> VNĐ</span></td>
 							<td><span id="item-total-price-<?=$value['id']?>" class="price"><?=number_format($value['price']*$value['_qty'])?> VNĐ</span></td>

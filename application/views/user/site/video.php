@@ -14,10 +14,10 @@
 				<div class="col s6">
 					<div class="box-item-post">
 						<div class="image">
-							<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
+							<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
 							</a>
 						</div>
-						<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name" ><?=$value['name']?></a>
+						<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name" ><?=$value['name']?></a>
 					</div>
 				</div>
 			
@@ -34,8 +34,8 @@
 			<?php foreach ($data_view as $key => $value) { ?>
 				<div class="box-item-post">
 					<div class="image">
-						<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
-					<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?> </a>
+						<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
+					<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?> </a>
 					</div>
 				</div>
 			<?php } } ?>

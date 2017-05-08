@@ -1,11 +1,10 @@
 <?php $image = explode('|', $data['image']); ?>
-<?php $color = explode(',', $data['color']); ?>
-<?php $size = explode(',', $data['size']); ?>
 <div style="padding:3px">
 	<div class="breakcrum">
 		<a href="<?=ROOT?>" title="Trang chủ">Home</a> <span class="right-arrow fa fa-angle-right"></span>
+		<a href="<?=ROOT?>" title="Hải sản">Hải sản</a> <span class="right-arrow fa fa-angle-right"></span>
 		<?php for ($i=0; $i < count($listParent) - 1; $i++) { ?>
-		<a href="<?=ROOT?>danh-muc/<?=$listParent[$i]['slug']?>.html" title="<?=$listParent[$i]['name']?>"><?=$listParent[$i]['name']?></a> <span class="right-arrow fa fa-angle-right"></span>
+		<a href="<?=ROOT?>hai-san/<?=$listParent[$i]['slug']?>.html" title="<?=$listParent[$i]['name']?>"><?=$listParent[$i]['name']?></a> <span class="right-arrow fa fa-angle-right"></span>
 		<?php } ?>
 		<span class="final"><?=$listParent[count($listParent)-1]['name']?></span>
 	</div>
@@ -60,14 +59,14 @@
 					<div class="info-items">
 						<div class="info-item">
 							<span class="key">Danh mục:</span>
-							<span class="val"><a href="<?=ROOT?>danh-muc/<?=$listParent[count($listParent)-2]['slug']?>.html" title="<?=$listParent[count($listParent)-2]['name']?>"><?=$listParent[count($listParent)-2]['name']?></a></span>
+							<span class="val"><a href="<?=ROOT?>hai-san/<?=$listParent[count($listParent)-2]['slug']?>.html" title="<?=$listParent[count($listParent)-2]['name']?>"><?=$listParent[count($listParent)-2]['name']?></a></span>
 						</div>
 						<div class="info-item">
 							<span class="key">Mã sản phẩm:</span>
 							<span class="val"><?=$data['id']?></span>
 						</div>
 						<div class="info-item">
-							<div class="fb-like" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+							<div class="fb-like" data-href="<?=ROOT?>hai-san/<?=$cate['slug']?>/<?=$data['slug']?>.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 						</div>
 					</div>
 				</div>
@@ -94,9 +93,9 @@
 							<div class="box-item">
 								<div class="image">
 									<a href="<?=ROOT?>gio-hang/add/<?=$value['id']?>.html" title="Thêm <?=$value['name']?> vào giỏ hàng" target="main" class="action-item buy"><span class="fa fa-cart-plus"></span> <span class="buy-text">Mua hàng</span></a>
-									<a href="<?=ROOT?>san-pham/<?=$value['id']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" alt="<?=$value['name']?>" ></a></div>
+									<a href="<?=ROOT?>hai-san/<?=$cate['slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" alt="<?=$value['name']?>" ></a></div>
 								<div class="info">
-									<a href="<?=ROOT?>san-pham/<?=$value['id']?>-<?=url_encode($value['name'])?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a>
+									<a href="<?=ROOT?>hai-san/<?=$cate['slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a>
 									<div class="price"><?=number_format($value['price'])?> VNĐ</div>
 								</div>
 							</div>
@@ -113,7 +112,7 @@
 	<div class="row">
 		<div class="col s12">
 			<div class="description">
-				<div class="fb-comments" data-href="<?=ROOT?>san-pham/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-numposts="5"></div>
+				<div class="fb-comments" data-href="<?=ROOT?>hai-san/<?=$cate['slug']?>/<?=$data['id']?>-<?=url_encode($data['name'])?>.html" data-numposts="5"></div>
 			</div>
 		</div>
 	</div>

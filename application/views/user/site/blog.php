@@ -11,9 +11,9 @@
 			<?php if($data) { ?>
 			<?php foreach ($data as $key => $value) { ?>
 				<div class="box-item-post">
-					<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name" ><?=$value['name']?> <span class="time"><span class="fa fa-history"></span> <?=date('d-m-Y', $value['time'])?></span></a>
+					<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name" ><?=$value['name']?> <span class="time"><span class="fa fa-history"></span> <?=date('d-m-Y', $value['time'])?></span></a>
 					<div class="image">
-						<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>"><div class="img-bg" style="background: url('<?=ROOT?>upload/post/450/<?=$value['image']?>');background-size: cover; background-position: center center;"></div>
+						<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>"><div class="img-bg" style="background: url('<?=ROOT?>upload/post/450/<?=$value['image']?>');background-size: cover; background-position: center center;"></div>
 						</a>
 					</div>
 				</div>
@@ -29,8 +29,8 @@
 			<?php foreach ($data_view as $key => $value) { ?>
 				<div class="box-item-post">
 					<div class="image">
-						<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>"></a>
-					<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?> </a>
+						<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>"></a>
+					<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?> </a>
 					</div>
 				</div>
 			<?php } } ?>

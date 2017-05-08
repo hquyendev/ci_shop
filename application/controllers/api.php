@@ -35,10 +35,10 @@ class Api extends HQ_Controller{
 				$html .= '		<div class="image">';
 				$html .= '			<a href="'.ROOT.'gio-hang/add/'.$value['id'].'.html" title="Thêm '.$value['name'].' vào giỏ hàng" target="main" class="action-item buy"><span class="fa fa-cart-plus"></span></a>';
 				$html .= '			<a href="'.ROOT.'tai-khoan/san-pham-yeu-thich/'.$value['id'].'.html" title="Thêm '.$value['name'].' vào danh sách yêu thích" target="main" class="action-item like"><span class="fa fa-heart"></span></a>';
-				$html .= '			<a href="'.ROOT.'san-pham/'.$value['id'].'-'.url_encode($value['name']).'.html" title="'.$value['name'].'"><img src="'.ROOT.'upload/product/450/'.$image[0].'" alt="'.$value['name'].'" ></a></div>';
+				$html .= '			<a href="'.ROOT.'hai-san/'.$value['c_slug'].'/'.$value['slug'].'.html" title="'.$value['name'].'"><img src="'.ROOT.'upload/product/450/'.$image[0].'" alt="'.$value['name'].'" ></a></div>';
 				$html .= '		<div class="info">';;
 				$html .= '			<div class="price">'.number_format($value['price']).' VNĐ</div>';
-				$html .= '			<a href="'.ROOT.'san-pham/'.$value['id'].'-'.url_encode($value['name']).'.html" title="'.$value['name'].'" class="name">'.$value['name'].'</a>';
+				$html .= '			<a href="'.ROOT.'hai-san/'.$value['c_slug'].'/'.$value['slug'].'.html" title="'.$value['name'].'" class="name">'.$value['name'].'</a>';
 				$html .= '		</div>';
 				$html .= '	</div>';
 				$html .= '</div>';
@@ -75,10 +75,10 @@ class Api extends HQ_Controller{
 				$html .= '		<div class="image">';
 				$html .= '			<a href="'.ROOT.'gio-hang/add/'.$value['id'].'.html" title="Thêm '.$value['name'].' vào giỏ hàng" target="main" class="action-item buy"><span class="fa fa-cart-plus"></span></a>';
 				$html .= '			<a href="'.ROOT.'tai-khoan/san-pham-yeu-thich/'.$value['id'].'.html" title="Thêm '.$value['name'].' vào danh sách yêu thích" target="main" class="action-item like"><span class="fa fa-heart"></span></a>';
-				$html .= '			<a href="'.ROOT.'san-pham/'.$value['id'].'-'.url_encode($value['name']).'.html" title="'.$value['name'].'"><img src="'.ROOT.'upload/product/450/'.$image[0].'" alt="'.$value['name'].'" ></a></div>';
+				$html .= '			<a href="'.ROOT.'hai-san/'.$value['c_slug'].'/'.$value['slug'].'.html" title="'.$value['name'].'"><img src="'.ROOT.'upload/product/450/'.$image[0].'" alt="'.$value['name'].'" ></a></div>';
 				$html .= '		<div class="info">';;
 				$html .= '			<div class="price">'.number_format($value['price']).' VNĐ</div>';
-				$html .= '			<a href="'.ROOT.'san-pham/'.$value['id'].'-'.url_encode($value['name']).'.html" title="'.$value['name'].'" class="name">'.$value['name'].'</a>';
+				$html .= '			<a href="'.ROOT.'hai-san/'.$value['c_slug'].'/'.$value['slug'].'.html" title="'.$value['name'].'" class="name">'.$value['name'].'</a>';
 				$html .= '		</div>';
 				$html .= '	</div>';
 				$html .= '</div>';

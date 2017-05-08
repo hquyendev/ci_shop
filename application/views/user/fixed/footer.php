@@ -69,7 +69,7 @@ $(document).ready(function(){
           <h5 class="footer-title">Chuyên mục </h5>
           <ul class="footer-cate block">
             <?php for ($i=0; $i < count($this->data['guide']); $i++) { ?>
-            <li><a href="<?=ROOT?>huong-dan/<?=$this->data['guide'][$i]['slug']?>.html" title="<?=$this->data['guide'][$i]['name']?>" ><span class="fa fa-angle-right"></span> <?=$this->data['guide'][$i]['name']?></a></li>
+            <li><a href="<?=ROOT?>khach-hang/<?=$this->data['guide'][$i]['slug']?>.html" title="<?=$this->data['guide'][$i]['name']?>" ><span class="fa fa-angle-right"></span> <?=$this->data['guide'][$i]['name']?></a></li>
             <?php } ?>
           </ul>
         </div>
@@ -79,7 +79,7 @@ $(document).ready(function(){
             <?php $cate = $this->data['cate']; ?>
             <?php 
             foreach ($cate as $key => $value) {
-              echo '<li><a href="'.ROOT.'danh-muc/'.$value['slug'].'.html" title="'.$value['name'].'"><span class="fa fa-angle-right"></span> '.$value['name'].'</a></li>';
+              echo '<li><a href="'.ROOT.'hai-san/'.$value['slug'].'.html" title="'.$value['name'].'"><span class="fa fa-angle-right"></span> '.$value['name'].'</a></li>';
               }
             ?>
           </ul>

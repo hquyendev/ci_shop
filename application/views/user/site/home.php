@@ -3,6 +3,7 @@
 <div class="show-menu">
 		<div class="panel-title">Giới thiệu</div>
 		<div class="panel-desc">Về chúng tôi</div>
+		<div class="about-us" style="line-height: 10px;"><?=$about_us[0]['content']?><span class="view-more2">Xem thêm >>></span></div>
 	<div class="row">
 		<?php 
 		foreach ($intros as $key => $value) { ?>
@@ -30,7 +31,7 @@
 			if(!$value['children']) { ?>
 				<div class="col s3">
 					<div class="box-menu">
-						<a href="<?=ROOT?>danh-muc/<?=$value['slug']?>.html" title="<?=$value['name']?>">
+						<a href="<?=ROOT?>hai-san/<?=$value['slug']?>.html" title="<?=$value['name']?>">
 							<img src="<?=ROOT?>upload/cate/350/<?=$value['image']?>" alt="<?=$value['name']?>">
 							<div class="overlay"></div>
 							<span class="text"><?=$value['name']?></span>
@@ -53,12 +54,12 @@
 		foreach ($blogs as $key => $value) { ?>
 			<div class="col s3">
 				<div class="box-menu">
-					<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>">
+					<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>">
 						<img src="<?=ROOT?>upload/post/450/<?=$value['image']?>" alt="<?=$value['name']?>">
 						<div class="overlay"></div>
 					</a>
 				</div>
-				<a href="<?=ROOT?>blog/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
+				<a href="<?=ROOT?>huong-dan/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
 			</div>
 		<?php	
 		}
@@ -74,14 +75,14 @@
 		foreach ($videos as $key => $value) { ?>
 			<div class="col s3">
 				<div class="box-menu">
-					<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
+					<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>" _getThumbnail="<?=$value['image']?>" class="_getThumbnail">
 
 					</a>
-					<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>">
+					<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>">
 						<div class="overlay"></div>
 					</a>
 				</div>
-				<a href="<?=ROOT?>video/<?=$value['id']?>-<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
+				<a href="<?=ROOT?>video/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="blog-title"><span class="text"><?=$value['name']?></span></a>
 			</div>
 		<?php	
 		}

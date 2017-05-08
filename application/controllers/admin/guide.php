@@ -57,6 +57,7 @@ class Guide extends HQ_Controller{
     		'name'		=> $name,
     		'slug'		=> $slug,
     		'content'	=> $content,
+    		'remove'	=> 0,
     		'time'		=> $time
     		);
     	if($this->Guide_model->insertGuide($param))
@@ -77,7 +78,6 @@ class Guide extends HQ_Controller{
 			message('Không tìm thấy bài viết này');return;
 		}
 		$name 		= $this->input->post('name');
-		$slug 		= $this->input->post('slug');
 		$content 	= $this->input->post('content', FALSE);
 		$time 		= time();
 
@@ -87,13 +87,12 @@ class Guide extends HQ_Controller{
 		}
 
 		if(!$name) {message('Tên bài viết không được để trống!');return;}
-		if(!$slug) {message('Slug bài viết không được để trống!');return;}
 		if($this->Guide_model->getSlug($slug, $id)){message('Slug bài viết này đã có. Vui lòng dùng slug khác!');return;}
 
     	$param = array(
     		'name'		=> $name,
-    		'slug'		=> $slug,
     		'content'	=> $content,
+    		'remove'	=> 0,
     		'time'		=> $time
     		);
     	if($this->Guide_model->updateGuide($id,$param))

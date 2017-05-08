@@ -42,6 +42,7 @@ class Cate extends HQ_Controller{
 		is_ajax();
 		$name = $this->input->post('name');
 		$slug = $this->input->post('slug');
+		$detail = $this->input->post('detail');
 		$meta = $this->input->post('meta');
 		$desc = $this->input->post('desc');
 		$parent = intval($this->input->post('parent'));
@@ -120,6 +121,7 @@ class Cate extends HQ_Controller{
   		}
 	  	$param = array(
 	  		'name'		=> $name,
+	  		'detail'		=> $detail,
 	  		'slug'		=> $slug,
 	  		'meta'		=> $meta,
 	  		'des'		=> $desc,
@@ -142,6 +144,7 @@ class Cate extends HQ_Controller{
 		is_ajax();
 		$name = $this->input->post('name');
 		$slug = $this->input->post('slug');
+		$detail = $this->input->post('detail');
 		$meta = $this->input->post('meta');
 		$desc = $this->input->post('desc');
 		$image = $_FILES['image'];
@@ -184,6 +187,16 @@ class Cate extends HQ_Controller{
   			message('Slug danh mục này đã có!'); return;
   		}
 
+
+	  	$param = array(
+	  		'name'		=> $name,
+	  		'slug'		=> $slug,
+	  		'detail'		=> $detail,
+	  		'meta'		=> $meta,
+	  		'des'		=> $desc,
+	  		'parent'	=> $parent,
+	  		);
+
   		if($image){
 	  		$imageSize = getimagesize($image['tmp_name']);
 
@@ -200,7 +213,7 @@ class Cate extends HQ_Controller{
 	            {
 	            	copy($image['tmp_name'], BASE.'upload/cate/origin/'.$check['file_name']);
 	            }
-	            $image_name = $check['file_name'];
+	            $param['image'] = $check['file_name'];
 	            $this->load->library("image_lib");
 
 	           	$config['image_library'] = 'gd2';
@@ -221,15 +234,6 @@ class Cate extends HQ_Controller{
 	            $this->image_lib->watermark();
 	        }
   		}
-
-	  	$param = array(
-	  		'name'		=> $name,
-	  		'slug'		=> $slug,
-	  		'meta'		=> $meta,
-	  		'des'		=> $desc,
-	  		'parent'	=> $parent,
-	  		'image'	=> $image_name,
-	  		);
 
 	  	if($this->Cate_model->updateCate($id,$param))
 	  	{

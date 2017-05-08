@@ -1,9 +1,18 @@
+<script src="<?=PUB?>assets/js/adminjs.js"></script>
 <link rel="stylesheet" href="<?=PUB?>assets/css/bootstrap-fileupload.min.css" />
 <form class="form-horizontal" action="<?=ROOT?>admin/product/news-sm" method="post" target="main" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Tên sản phẩm</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" name="name" id="name" placeholder="Tên sản phẩm">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="slug-alilas" class="col-sm-2 control-label">Slug</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" name="slug" id="slug-alilas"  placeholder="Slug">
     </div>
   </div>
 

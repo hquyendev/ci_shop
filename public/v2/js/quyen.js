@@ -12,7 +12,9 @@ $(document).ready(function(){
 		QTitle: function (title){
 			return title = title ? title : 'Thông báo';
 		},
-		QValue: null,
+		QValue: {
+			page: 0,
+		},
 		QFadeIn: function(msg, timeout, link, type){
 			id = parseInt(Math.random()*1000);
 			var mark = '#qdev_mark_'+id;
@@ -154,5 +156,15 @@ $(document).ready(function(){
 		$(item).append(img);
 	});
 	$('.video-embed').attr('src', 'https://www.youtube.com/embed/' + youtube_parser($('.video-embed').attr('src')));
+
+	$('.view-more2').on('click', function(){
+		if($(this).attr('expand') == 1){
+			$('.about-us').removeClass('in');
+			$(this).attr('expand',0).text('Xem thêm >>>');
+		}else{
+			$('.about-us').addClass('in');
+			$(this).attr('expand',1).text('Thu gọn <<<');
+		}
+	})
 
 });
