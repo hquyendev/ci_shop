@@ -45,7 +45,7 @@ class Huong_dan extends HQ_Controller{
 		$temps['site'] = 'blog_detail';
 		$temps['data'] = $data[0];
 		$temps['title'] = $data[0]['name'].' - Hướng dẫn';
-		$temps['dât_view'] = $data_view;
+		$temps['data_view'] = $data_view;
 		$temps['listParent'] = $listParent;
 		return $this->load->view("user/index", $temps);
 	}
