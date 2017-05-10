@@ -33,8 +33,8 @@
 					<div class="box-menu">
 						<a href="<?=ROOT?>hai-san/<?=$value['slug']?>.html" title="<?=$value['name']?>">
 							<img src="<?=ROOT?>upload/cate/350/<?=$value['image']?>" alt="<?=$value['name']?>">
-							<div class="overlay">asdasdasasdasdasdasdasd</div>
-							<span class="text"><?=$value['name']?>asdasda</span>
+							<div class="overlay"><span class="text"><?=$value['name']?></span></div>
+							
 						</a>
 					</div>
 				</div>
