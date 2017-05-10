@@ -215,19 +215,16 @@ class Gio_hang extends HQ_Controller{
 		    	{
 		    		$this->Cart_model->deleteCartError($id);
 		    		message('Gửi đơn hàng thất bại. Vui lòng xóa giỏ hàng và thử lại sau!');
-					transfer(FALSE);
 					return;
 		    	}
 		    }
 
 			$this->cart->destroy();
-			message('Gửi đơn hàng thành công. Bạn vui lòng chờ nhân viên gọi điện lại xác nhận thông tin đơn hàng!', 5000, ROOT.'tai-khoan/danh-sach-dat-hang/'.$id.'.html', 'success');
-			transfer(ROOT.'tai-khoan/danh-sach-dat-hang/'.$id.'.html', 5000);
+			message('Gửi đơn hàng thành công. Bạn vui lòng chờ nhân viên gọi điện lại xác nhận thông tin đơn hàng!', 5000, false,'success');
 			return;
 		}
 		else{
 			message('Gửi đơn hàng thất bại. Vui lòng xóa giỏ hàng và thử lại sau!');
-			transfer(FALSE);
 			return;
 		}
 

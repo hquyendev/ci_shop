@@ -62,23 +62,23 @@
 				<div class="col s6">
 					<h4 class="text-center">Thông tin đặt hàng</h4>
 					<hr>
-					<form action="<?=ROOT?>gio-hang/submit.html" target="main" method="post">
+					<form action="<?=ROOT?>gio-hang/submit.html" target="main" id="form-cart" method="post">
 					      <div class="row">
 					      	<div class="col s4"> <span class="right">Tên người nhận <span class="required">*</span></span> </div>
 					        <div class="input-field col s8">
-					          <input placeholder="Tên người nhận" name="name"type="text" value="<?=@$this->login['name']?>" class="validate">
+					          <input placeholder="Tên người nhận" id="cart_name" name="name" type="text" value="<?=@$this->login['name']?>" class="validate get-cookie">
 					        </div>
 					      </div>
 					      <div class="row">
 					      	<div class="col s4"> <span class="right">Số điện thoại nhận <span class="required">*</span></span> </div>
 					        <div class="input-field col s8">
-					          <input placeholder="Số điện thoại nhận" name="phone"type="text" value="<?=@$this->login['phone']?>" class="validate">
+					          <input placeholder="Số điện thoại nhận"  id="cart_phone" name="phone"type="text" value="<?=@$this->login['phone']?>" class="validate get-cookie">
 					        </div>
 					      </div>
 					      <div class="row">
 					      	<div class="col s4"> <span class="right">Địa chỉ nhận <span class="required">*</span></span> </div>
 					        <div class="input-field col s8">
-					          <input placeholder="Địa chỉ nhận" name="add"type="text" value="<?=@$this->login['add']?>" class="validate">
+					          <input placeholder="Địa chỉ nhận" id="cart_add" name="add"type="text" value="<?=@$this->login['add']?>" class="validate get-cookie">
 					        </div>
 					      </div>
 					      <div class="row">
@@ -113,6 +113,48 @@
 </div>
 
 <script type="text/javascript">
+	function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+	function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        console.log(c)
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+	}
+
+	$(document).ready(function(){
+		var inputs = $('#form-cart').find('.get-cookie');
+		$.each(inputs, function(idx, input){
+			var cookie_key = $(input).attr('id');
+			var cookie_val = getCookie(cookie_key);
+			console.log(cookie_val);
+			if(cookie_val){
+				$(input).val(cookie_val);
+			}
+		});
+
+		$('.get-cookie').on('change', function(){
+			var cookie_key = $(this).attr('id');
+			var cookie_val = $(this).val();
+			console.log(cookie_val)
+			setCookie(cookie_key, cookie_val, 365);
+		})
+	});
+
 	function showNullCart() {
 		$('#cart-table').animate({opacity:0}, 250, function(){$('#cart-table').remove();$('#null-cart').css({display:'block'});});
 		
