@@ -196,6 +196,7 @@ img.logo{
     font-size: 21px;
     font-weight: 500;
     color: white;
+    z-index: 99999;
 }
 .show-menu .box-menu .overlay{
     position: absolute;
