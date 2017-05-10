@@ -9,7 +9,7 @@
 	<div id="cart-table"  class="col s12 ">
 		<?php if($data){ ?>
 		<div class="cart">
-			<table class="responsive-table">
+			<table class="">
 				<thead>
 					<tr>
 						<th width="30">#</th>
