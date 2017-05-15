@@ -1177,7 +1177,6 @@ div.view-more a.view-more-item.disable{
     color: #739eb8;
 }
 .about-cate{
-	line-height: 10px;
 	display: block;
 	margin-bottom: 10px;
 	padding-bottom: 20px;
@@ -1186,7 +1185,6 @@ div.view-more a.view-more-item.disable{
 
 }
 .about-us{
-	line-height: 10px;
 	height: 130px;
 	overflow: hidden;
 	display: block;
@@ -1198,15 +1196,17 @@ div.view-more a.view-more-item.disable{
 .about-us.in{
 	height: inherit !important;
 }
-.about-us .view-more{
-    position: absolute;
-    display: block;
-    text-align: center;
-    bottom: 5px;
-    width: 100%;
-    font-weight: bold;
-    color: #478eff;
-    cursor: pointer;
+.about-us .view-more2{
+  position: absolute;
+  text-align: center;
+  bottom: 5px;
+  width: 100%;
+  font-weight: bold;
+  color: #478eff;
+  cursor: pointer;
+  background: white;
+  height: 26px;
+  line-height: 26px;
 }
 
 .show-item-vert img{
@@ -1226,4 +1226,8 @@ div.view-more a.view-more-item.disable{
 }
 .show-item-vert .row:last-child{
     border-bottom: none;
+}
+.brand-logo{
+  position: absolute !important;
+  width: 50px !important;
 }

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/materialize.css?t=1.1">
 	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/font-awesome.css?t=1.1">
-	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/style.css?t=1.2">
+	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/style.css?t=1.4">
 	<link rel="stylesheet" type="text/css" href="<?=PUB?>v2/css/jquery.pslider.css?t=1.1" />
 	<script type="text/javascript" src="<?=PUB?>v2/js/jquery.js?t=1.1"></script>
 	<script type="text/javascript" src="<?=PUB?>v2/js/quyen.js?t=1.1"></script>

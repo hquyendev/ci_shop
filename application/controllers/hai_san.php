@@ -31,7 +31,7 @@ class Hai_san extends HQ_Controller{
 			$showView = FALSE;
 		}
 
-		$data = $this->Product_model->getNew($id, 1, $perpage);
+		$data = $this->Product_model->getNew($id, 0, $perpage);
 		$listParent = $this->Product_model->getAllParent($id, $allParent = array());
 		$productHot = $this->Product_model->getProductHot($id);
 		$listParent = array_reverse ($listParent);
@@ -57,7 +57,7 @@ class Hai_san extends HQ_Controller{
 			return;	
 		}
 
-		$data_relate = $this->Product_model->getProductByCate($data[0]['cate'], 0,5);
+		$data_relate = $this->Product_model->getProductByCate($data[0]['cate'], 0,4);
 		$view = $data[0]['view'] + 1;
 		$params = array(
 			'view'=> $view

@@ -32,7 +32,7 @@
 							<td><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" title="<?=$value['name']?>" width="100%"></td>
 							<td><a href="<?=ROOT?>hai-san/<?=$value['c_slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
 							<td><input type="number" name="qty" value="<?=$value['_qty']?>" style="padding:0; text-align:center"></td>
-							<td><span class="price"><?=number_format($value['price'])?> VNĐ</span></td>
+							<td><span class="price"><?=number_format($value['price'])?> VNĐ / <?=$value['unit']?></span></td>
 							<td><span id="item-total-price-<?=$value['id']?>" class="price"><?=number_format($value['price']*$value['_qty'])?> VNĐ</span></td>
 							<td>
 								<button type="submit" class="btn btn-action light-blue accent-3 tooltipped" data-position="top" data-delay="10" data-tooltip="Cập nhật"><span class="fa fa-save"></span></button>

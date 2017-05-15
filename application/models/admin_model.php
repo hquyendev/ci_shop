@@ -98,4 +98,9 @@ class Admin_model extends CI_Model {
 		$this->db->delete('right');
 	}
 
+	public function updatePassword($id, $params){
+		$this->db->where('id',$id);
+		return $this->db->update('admin', $params);
+	}
+
 }

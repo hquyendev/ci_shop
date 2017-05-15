@@ -3,7 +3,7 @@
 <div class="show-menu">
 		<div class="panel-title">Giới thiệu</div>
 		<div class="panel-desc">Về chúng tôi</div>
-		<div class="about-us" style="line-height: 10px;"><?=$about_us[0]['content']?><span class="view-more2">Xem thêm >>></span></div>
+		<div class="about-us" ><?=$about_us[0]['content']?><span class="view-more2">Xem thêm >>></span></div>
 	<div class="row">
 		<?php 
 		foreach ($intros as $key => $value) { ?>
@@ -62,6 +62,7 @@
 		<?php	
 		}
 		?>
+		<div class="col s12"><a href="<?=ROOT?>huong-dan.html" style="display: block; text-align: center;">Xem thêm >>></a></div>
 	</div>
 </div>
 
@@ -85,5 +86,6 @@
 		<?php	
 		}
 		 ?>
+		<div class="col s12"><a href="<?=ROOT?>video.html" style="display: block; text-align: center;">Xem thêm >>></a></div>
 	</div>
 </div>

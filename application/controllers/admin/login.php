@@ -2,7 +2,6 @@
 session_start();
 class Login extends HQ_Controller
 {
-	
 	function __construct()
 	{
 		parent::__construct();

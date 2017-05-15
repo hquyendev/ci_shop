@@ -19,7 +19,7 @@
   <div class="form-group">
     <label for="slug-alilas" class="col-sm-2 control-label">Link youtube</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" name="video" value="<?=isset($data['id'])?$data['video']:''?>"  placeholder="Link video">
+      <input type="text" class="form-control" name="image" value="<?=isset($data['id'])?$data['image']:''?>"  placeholder="Link video">
     </div>
   </div>
 

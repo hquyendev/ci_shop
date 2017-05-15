@@ -107,16 +107,11 @@ class Cate extends HQ_Controller{
 	            $config['width'] = 450;
 	            $config['height'] = $config['width'] * $imageSize[1] / $imageSize[0];
 	            $this->image_lib->initialize($config);
-	            
 	            $this->image_lib->resize();
-	            $config['wm_type'] = 'overlay';
-				$config['wm_overlay_path'] = BASE.'upload/watermark.png';
-				$config['wm_vrt_alignment'] = 'bottom';
-				$config['wm_hor_alignment'] = 'right';
-				$config['wm_padding'] = -10;
-				$config['wm_opacity'] = 50;
-	            $this->image_lib->initialize($config);
-	            $this->image_lib->watermark();
+
+	            
+	            
+	            
 	        }
   		}
 	  	$param = array(
@@ -224,14 +219,7 @@ class Cate extends HQ_Controller{
 	            $config['height'] = $config['width'] * $imageSize[1] / $imageSize[0];
 	            $this->image_lib->initialize($config);
 	            $this->image_lib->resize();
-	            $config['wm_type'] = 'overlay';
-				$config['wm_overlay_path'] = BASE.'upload/watermark.png';
-				$config['wm_vrt_alignment'] = 'bottom';
-				$config['wm_hor_alignment'] = 'right';
-				$config['wm_padding'] = -10;
-				$config['wm_opacity'] = 50;
-	            $this->image_lib->initialize($config);
-	            $this->image_lib->watermark();
+	            
 	        }
   		}
 

@@ -50,8 +50,8 @@
 				<div class="info">
 					<form action="<?=ROOT?>gio-hang/add/<?=$data['id']?>.html" method="post" target="main">
 						<h3 class="name"><?=$data['name']?></h3>
-						<p class="price"><?=number_format($data['price'])?> VNĐ</p>
-				      	Số lượng <input value="1" id="first_name2"  name="qty" type="number" class="validate input-qty"> Kg
+						<p class="price"><?=number_format($data['price'])?> VNĐ / <?=$data['unit']?></p>
+				      	Số lượng <input value="1" id="first_name2"  name="qty" type="number" class="validate input-qty"> <?=$data['unit']?>
 						<div>
 							<button class="waves-effect waves-light btn btn-buy"><span class="fa fa-shopping-cart"></span> Mua hàng</button>
 						</div>
@@ -96,7 +96,7 @@
 									<a href="<?=ROOT?>hai-san/<?=$cate['slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>"><img src="<?=ROOT?>upload/product/450/<?=$image[0]?>" alt="<?=$value['name']?>" ></a></div>
 								<div class="info">
 									<a href="<?=ROOT?>hai-san/<?=$cate['slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a>
-									<div class="price"><?=number_format($value['price'])?> VNĐ</div>
+									<div class="price"><?=number_format($value['price'])?> VNĐ / <?=$value['unit']?></div>
 								</div>
 							</div>
 						</div>

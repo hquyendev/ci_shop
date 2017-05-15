@@ -87,6 +87,16 @@
                         <i class="fa fa-arrows-v"></i> Quản lý đơn hàng
                     </a>                   
                 </li>
+                <li class="panel <?=$this->router->fetch_class()=='admin'?'active':''?>">
+                    <a href="<?=ROOT?>admin/admin/lists.html" >
+                        <i class="fa fa-user"></i> Admin
+                    </a>                   
+                </li>
+                <li class="panel <?=$this->router->fetch_class()=='customer'?'active':''?>">
+                    <a href="<?=ROOT?>admin/customer/lists.html" >
+                        <i class="fa fa-users"></i> Thông tin khách hàng
+                    </a>                   
+                </li>
                 <li class="panel">
                     <a href="<?=ROOT?>admin/login/logout.html" >
                         <i class="fa fa-sign-out"></i> Đăng xuất

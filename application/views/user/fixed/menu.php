@@ -3,7 +3,6 @@
 	<div class="container">
 	    <div class="nav-wrapper">
 	      	<a href="<?=ROOT?>" title="Trang chủ" class="brand-logo"><span class="fa fa-home"></span></a>
-	      	<a href="#" title="Menu" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
 	      	<ul class="menu-main" style="text-transform: uppercase;  ">
 	      		<li><a href="#" title="Danh mục">Hải sản</a>
 	      			<ul class="dropdown-menu nav-sub-menu">

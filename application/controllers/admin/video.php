@@ -45,13 +45,13 @@ class Video extends HQ_Controller{
 		is_ajax();
 		$name 		= $this->input->post('name');
 		$slug 		= $this->input->post('slug');
-		$video 		= $this->input->post('video');
+		$image 		= $this->input->post('image');
 		$content 	= $this->input->post('content', FALSE);
 		$time 		= time();
 
 
 		if(!$name) {message('Tiêu đề video không được để trống!');return;}
-		if(!$video) {message('Tiêu đề video không được để trống!');return;}
+		if(!$image) {message('Tiêu đề video không được để trống!');return;}
 		if(!$slug) {message('Slug video không được để trống!');return;}
 		if($this->Video_model->getSlug($slug, $id)){message('Slug video này đã có. Vui lòng dùng slug khác!');return;}
 
@@ -59,7 +59,7 @@ class Video extends HQ_Controller{
     		'name'		=> $name,
     		'slug'		=> $slug,
     		'content'	=> $content,
-    		'image'	    => $video,
+    		'image'	    => $image,
     		'time'		=> $time,
     		'type'		=> 'video',
     		'status'    => 1

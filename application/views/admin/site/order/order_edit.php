@@ -23,7 +23,7 @@
       <td ><?=$value['id']?></td>
       <td><a href="<?=ROOT?>hai-san/<?=$value['c_slug']?>/<?=$value['slug']?>.html" title="<?=$value['name']?>" class="name"><?=$value['name']?></a></td>
       <td><?=$value['qty']?> cái</td>
-      <td><span class="text-danger"><?=number_format($value['price'])?> VNĐ</span></td>
+      <td><span class="text-danger"><?=number_format($value['price'])?> VNĐ / <?=$value['unit']?></span></td>
       <td><span class="text-danger"><?=number_format($value['price']*$value['qty'])?> VNĐ</span></td>
     </tr>
   <?php } ?>

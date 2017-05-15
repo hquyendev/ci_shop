@@ -8,6 +8,11 @@
   });
 }
 
+var updateCart = function(num, price){
+  $(".cart-total-item").text("(" + num + " SP)");
+  $(".cart-total-price").text(price + " VNĐ");
+}
+updateCart(<?=$this->cart->total_items()?>, <?=$this->cart->total()?>);
 var undisable = function(){
   var button = $('#view-more-item');
   if(QDEV.QValue.page*QDEV.QValue.perpage>=QDEV.QValue.total)
@@ -18,21 +23,21 @@ var undisable = function(){
   var href = button.attr('api') + page;
   if(button.attr('c'))
     href = href + '?c=' + button.attr('c');
-  button.attr('href', href)
+  button.attr('href', href);
 
 
 
-}
+};
 $('#view-more-item').on('click', function(){
   if(QDEV.QValue.page === undefined || (QDEV.QValue.page*QDEV.QValue.perpage>=QDEV.QValue.total))
   {
     button.remove();
   }
-})
+});
 
 $(document).ready(function(){
   $('#show-item>.item').addClass('show');
-})
+});
 </script>
 
 <script>(function(d, s, id) {

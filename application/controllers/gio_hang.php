@@ -2,6 +2,7 @@
 class Gio_hang extends HQ_Controller{
 	function __construct(){
 		parent:: __construct();	
+		$this->load->model('Customer_model');
 	}
 	public function index($slug = FALSE)
 	{
@@ -193,7 +194,12 @@ class Gio_hang extends HQ_Controller{
 			'money'		=> $this->cart->total(),
 			'time'		=> $time
 			);
-
+		$paramCustomer = array(
+			"name" => $name,
+			"phone" => $phone,
+			"address" => $add
+			);
+		$this->Customer_model->insert($paramCustomer);
 		if($id = $this->Cart_model->insertCart($param))
 		{
 			foreach ($carts as $key => $value)

@@ -23,6 +23,12 @@
       <input type="text" class="form-control" name="price" value="<?=isset($data['price'])?$data['price']:''?>" id="price" placeholder="Giá tiền">
     </div>
   </div>
+  <div class="form-group">
+    <label for="unit" class="col-sm-2 control-label">Đơn vị</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" name="unit" value="<?=isset($data['unit'])?$data['unit']:''?>" id="unit" placeholder="Đơn vị tính">
+    </div>
+  </div>
 
   <div class="form-group">
     <label for="price" class="col-sm-2 control-label">Danh mục</label>
@@ -45,13 +51,6 @@
               <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Xóa</a>
           </div>
       </div>
-    </div>
-  </div>
-
- <div class="form-group">
-    <label for="water" class="col-sm-2 control-label">Đóng dấu watermark ảnh</label>
-    <div class="col-sm-6">
-      <input type="checkbox" value="1" name="water" id="water" checked /> <label for="water">Đóng dấu ảnh</label>
     </div>
   </div>
 

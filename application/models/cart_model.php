@@ -81,11 +81,15 @@ class Cart_model extends CI_Model {
 	}
 	public function getOrderDetailA($id)
 	{
-		$this->db->select('*');
-		$this->db->from('order_detail');
+
+		$this->db->select('o.*, p.name, p.slug, p.unit, c.id as c_id, c.slug as c_slug, c.name as c_name');
+		$this->db->from('order_detail o');
+		$this->db->join('product p', 'p.id = o.product');
+		$this->db->join('cate c', 'c.id = p.cate');
+
 		if($id)
-			$this->db->where('order', $id);
-		$this->db->where('active', 1);
+			$this->db->where('o.order', $id);
+		$this->db->where('o.active', 1);
 		$q = $this->db->get();
 
 		$data = $q->result_array();

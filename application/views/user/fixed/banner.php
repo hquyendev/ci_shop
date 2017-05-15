@@ -30,8 +30,8 @@
 				<a href="<?=ROOT?>gio-hang.html" title="Xem giỏ hàng" >
 					<span class="circle"><span class="fa fa-shopping-cart"></span></span>
 					<div class="item-banner-title">
-						<div>GIỎ HÀNG <span class="total">(<?=$this->cart->total_items()?> SP)</span></div>
-						<div><span class="total"><?=number_format($this->cart->total())?> VNĐ</span></div>
+						<div>GIỎ HÀNG <span class="cart-total-item">(<?=$this->cart->total_items()?> SP)</span></div>
+						<div><span class="cart-total-price"><?=number_format($this->cart->total())?> VNĐ</span></div>
 					</div>
 				</a>
 			</div>
