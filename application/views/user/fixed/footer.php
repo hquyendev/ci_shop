@@ -9,10 +9,22 @@
 }
 
 var updateCart = function(num, price){
+  console.log(num, price);
   $(".cart-total-item").text("(" + num + " SP)");
   $(".cart-total-price").text(price + " VNĐ");
 }
-updateCart(<?=$this->cart->total_items()?>, <?=$this->cart->total()?>);
+$.ajax({
+  url:  window.location.href + 'api/get_cart', 
+  type:   'get',  
+  contentType:  false,
+  cache:      false,
+  dataType:     "json",
+  processData:  false,   
+  success:function(data){
+    console.log(data);
+  }
+})
+// updateCart(<?=$this->cart->total_items()?>, <?=$this->cart->total()?>);
 var undisable = function(){
   var button = $('#view-more-item');
   if(QDEV.QValue.page*QDEV.QValue.perpage>=QDEV.QValue.total)

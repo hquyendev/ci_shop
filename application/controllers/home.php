@@ -7,6 +7,7 @@ class Home extends HQ_Controller{
 		$this->load->model('Blog_model');
 		$this->load->model('Video_model');
 		$this->load->model('Guide_model');
+		$this->load->library('cart');	
 	}
 	public function index()
 	{

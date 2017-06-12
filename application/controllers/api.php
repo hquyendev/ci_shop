@@ -89,4 +89,16 @@ class Api extends HQ_Controller{
 			java("undisable();");
 		}
 	}
+
+	public function get_cart()
+	{	
+		$cart_total_items = $this->cart->total_items();
+		$cart_total = $this->cart->total();
+		$data = array(
+			'cart_total_items' => $cart_total_items,
+			'cart_total' => $cart_total,
+			);
+		return java('updateCart('.$cart_total_items.', '.$cart_total.')');
+	}
+
 }
